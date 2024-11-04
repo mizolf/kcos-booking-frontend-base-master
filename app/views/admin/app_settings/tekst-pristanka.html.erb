@@ -1,0 +1,27 @@
+<section class="section--12">
+	<%= render 'header' %>
+</section>
+
+<section class="section section--padded section--6">
+	<p><em><%= t('app_settings.consent_texts_desc') %></em></p>
+
+ 	<%= form_for [:admin, @app_settings], url: admin_app_setting_path do |f| %>
+		<div class="form__field ">
+			<%= f.label :space_booking_consent, class: "label" %>
+			<%= f.text_area :space_booking_consent, class: "input consent-tinymce" %>
+		</div>
+
+		<div class="form__field ">
+			<%= f.label :space_rent_consent, class: "label" %>
+			<%= f.text_area :space_rent_consent, class: "input consent-tinymce" %>
+		</div>
+
+		<div class="actions">
+			<%= f.submit class: "btn btn--primary", value: t('save'), data: { disable_with: t('please_wait') } %>
+		</div>
+	<% end %>
+</section>
+
+<script>
+	initConsentTiny("<%= I18n.locale %>");
+</script>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="24px" viewBox="0 0 18 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>pin-3-3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="09-Kontakt" transform="translate(-912.000000, -1113.000000)">
+            <g id="pin-3-3" transform="translate(912.000000, 1113.000000)">
+                <path d="M18,9.14285714 C18,14.7428571 9,24 9,24 C9,24 0,14.7428571 0,9.14285714 C0,3.31428571 4.6125,0 9,0 C13.3875,0 18,3.31428571 18,9.14285714 Z" id="Shape" fill="#006738"></path>
+                <ellipse id="Oval" fill="#FFFFFF" cx="9" cy="9.14285714" rx="3.375" ry="3.42857143"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<header class="header header--small">
+	<%= link_to admin_legal_pages_path, class: "btn btn--back" do %>
+		<div class="arrow--left"></div>
+	<% end %>
+
+	<div class="header__content">
+		<h1><%= t('admin_nav.legal_pages') %></h1>
+		<p><%= t('new_record') %></p>
+	</div>
+</header>
+
+<section class="section section--12 section--padded">
+	<%= render 'form' %>
+</section>

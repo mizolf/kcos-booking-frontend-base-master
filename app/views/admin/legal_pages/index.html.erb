@@ -1,0 +1,7 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.legal_pages') %></h1>
+  <%= link_to t('new_record'), new_admin_legal_page_path, class: 'btn btn--primary' %>
+</header>
+<div id="legal_pages" class="section--12">
+	<%= render 'legal_pages', legal_pages: @legal_pages %>
+</div>

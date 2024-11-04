@@ -1,0 +1,62 @@
+/*------------------------------------*\
+# UI-DATEPICKER
+\*------------------------------------*/
+
+.ui-datepicker {
+  width: auto !important;
+  background-color: $white!important;
+  border: 1px solid #d8d8d8;
+  //border-top: none!important;
+  border-radius: 4px!important;
+  padding-top: 1rem;
+  padding-bottom: 0.43rem;
+  padding-left: 0;
+  padding-right: 0;
+
+  thead span {
+    color: $color-gray;
+    font-family: $base-font-family;
+    font-size: 0.71rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  tbody .ui-state-default {
+    color: $color-gray--darker;
+    background: none;
+    border: none;
+    border-radius: $button-radius;
+    font-family: $base-font-family;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 0.36rem;
+    margin-right: 0.36rem;
+    padding: 0.71rem;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.ui-datepicker-header {
+  border: none!important;
+  margin-bottom: 1.43rem;
+}
+
+.ui-datepicker-title {
+  color: $color-gray;
+  font-family: $category-font-family;
+  font-size: 0.86rem;
+  letter-spacing: 0.5px;
+}
+
+.ui-datepicker-current-day .ui-state-default.ui-state-highlight.ui-state-active {
+  color: $white;
+  background-color: $color-primary;
+
+  &:hover {
+    color: $white;
+    background-color: $color-secondary;
+  }
+}

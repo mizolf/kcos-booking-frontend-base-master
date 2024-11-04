@@ -1,0 +1,208 @@
+/*------------------------------------*\
+** COLORS
+\*------------------------------------*/
+
+$bamboo                 : #A4D867; // http://mera.se/PMS/367C.html
+
+$mine-shaft             : #323232;
+$asbestos               : #7f8c8d;
+$concrete               : #95a5a6;
+$silver                 : #c0c0c0;
+$mercury                : #E5E5E5;
+$alabaster              : #fafafa;
+$clouds                 : #ecf0f1;
+
+$turquoise              : #1abc9c;
+$green-sea              : #16a085;
+$emerald                : #2ecc71;
+$nephritis              : #27ae60;
+$peter-river            : #3498db;
+$belize-hole            : #2980b9;
+$amethyst               : #9b59b6;
+$wisteria               : #8e44ad;
+$sun-flower             : #f1c40f;
+$orange                 : #f39c12;
+$carrot                 : #e67e22;
+$pumpkin                : #d35400;
+$alizarin               : #e74c3c;
+$pomegranate            : #c0392b;
+$wet-asphalt            : #34495e;
+$midnight-blue          : #2c3e50;
+
+$color-primary          : #329da9;
+$color-secondary        : $wisteria;
+$color-tertiary         : $emerald;
+
+$white--true            : #FFFFFF;
+$white                  : #F9F9F9;
+$color-gray--lighter    : $mercury;
+$color-gray--light      : $silver;
+$color-gray             : $concrete;
+$color-gray--dark       : $asbestos;
+$color-gray--darker     : $mine-shaft;
+$black                  : #1A1A1A;
+$black--true            : #000000;
+
+$black-10               : rgba($black, 0.1);
+$black-20               : rgba($black, 0.2);
+$black-30               : rgba($black, 0.3);
+$black-40               : rgba($black, 0.4);
+$black-50               : rgba($black, 0.5);
+$black-60               : rgba($black, 0.6);
+$black-70               : rgba($black, 0.7);
+$black-80               : rgba($black, 0.8);
+$black-90               : rgba($black, 0.9);
+
+$white-10               : rgba($white, 0.1);
+$white-20               : rgba($white, 0.2);
+$white-30               : rgba($white, 0.3);
+$white-40               : rgba($white, 0.4);
+$white-50               : rgba($white, 0.5);
+$white-60               : rgba($white, 0.6);
+$white-70               : rgba($white, 0.7);
+$white-80               : rgba($white, 0.8);
+$white-90               : rgba($white, 0.9);
+
+$color-info             : #2196f3;
+$color-success          : #4caf50;
+$color-warning          : #f1c40f;
+$color-alert            : #f44336;
+
+
+
+/*------------------------------------*\
+** BREAKPOINTS
+\*------------------------------------*/
+
+$small: 340px;
+$medium: 640px;
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1440px;
+
+$breakpoints: (
+  small   : $small,
+  medium  : $medium,
+  large   : $large,
+  xlarge  : $xlarge,
+  xxlarge : $xxlarge
+  );
+
+$bp--navbar: $large; // hamburger menu breakpoint
+
+/*------------------------------------*\
+# GRID
+\*------------------------------------*/
+
+$gutter: 1rem;
+$width: 80rem;
+$text-width: 40rem;
+$text-width: calc(8/12*100%);
+
+
+
+/*------------------------------------*\
+** BUTTONS
+\*------------------------------------*/
+
+$button-radius: 0.5rem;
+$button-padding--lr: 2rem;
+$button-padding--tb: 0.5rem;
+$button-icon--size: 1.5rem;
+
+
+
+/*------------------------------------*\
+** INPUTS
+\*------------------------------------*/
+
+$input-radius: 0.5rem;
+$input-padding: 0.5rem;
+$input-border: 1px solid $color-gray--light;
+
+
+
+/*------------------------------------*\
+** FONT WEIGHTS
+\*------------------------------------*/
+
+$font-weight--light:     300;
+$font-weight--regular:   400;
+$font-weight--medium:    500;
+$font-weight--semibold:  600;
+$font-weight--bold:      700;
+$font-weight--extrabold: 800;
+$font-weight--heavy:     900;
+
+$font-weights: (
+  light: $font-weight--light,
+  regular: $font-weight--regular,
+  medium: $font-weight--medium,
+  semibold: $font-weight--semibold,
+  bold: $font-weight--bold,
+  extrabold: $font-weight--extrabold,
+  heavy: $font-weight--heavy
+);
+
+
+
+/*------------------------------------*\
+** FONT CONFIG
+\*------------------------------------*/
+
+$base-font-family: 'Raleway', sans-serif;
+$base-font-weight: $font-weight--regular;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+$base-font-color: $black;
+
+$heading-font-family: 'Berkshire Swash', cursive;
+
+
+
+/*------------------------------------*\
+** FONT SIZES
+\*------------------------------------*/
+
+$copy-font-sizes: (
+  min: (1rem, $base-line-height),
+  max: (1rem, $base-line-height)
+  );
+
+$h1-font-sizes: (
+  min: (1.875rem, 1.2),
+  max: (3.75rem, 1.2)
+  );
+
+$h2-font-sizes: (
+  min: (1.875rem, 1.2),
+  max: (2.5rem, 1.2)
+  );
+
+$h3-font-sizes: (
+  min: (1.375rem, 1.2),
+  max: (1.375rem, 1.2)
+  );
+
+$h4-font-sizes: (
+  min: (1rem, 1.2),
+  max: (1rem, 1.2)
+  );
+
+$h5-font-sizes: (
+  min: (1rem, 1.2),
+  max: (1rem, 1.2)
+  );
+
+$h6-font-sizes: (
+  min: (1rem, 1.2),
+  max: (1rem, 1.2)
+);
+
+
+
+/*------------------------------------*\
+# Transitions
+\*------------------------------------*/
+
+$transition-time: 0.3s;

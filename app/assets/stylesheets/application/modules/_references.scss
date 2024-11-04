@@ -1,0 +1,16 @@
+.references {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: $gutter;
+	margin-bottom: $gutter;
+
+	&__title {
+		font-weight: $font-weight--semibold;
+		margin-bottom: 0.75rem;
+	}
+
+	&__item {
+		font-size: 0.75rem;
+		margin-bottom: 0.25rem;
+	}
+}

@@ -1,0 +1,43 @@
+.header {
+  grid-column: 1/span 12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.14rem;
+
+  &--double {
+    margin-bottom: 4.79rem;
+  }
+
+  &--small {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .header__content {
+    margin-left: 1.71rem;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    color: $color-gray;
+    font-size: 1.14rem;
+    margin: 0;
+  }
+}
+
+
+
+/*------------------------------------*\
+# IE ADJUSTMENTS
+\*------------------------------------*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  
+  .header {
+    width: 100%;
+  }
+}

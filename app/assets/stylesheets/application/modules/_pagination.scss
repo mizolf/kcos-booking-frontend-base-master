@@ -1,0 +1,62 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3*$gutter;
+	margin-bottom: 3*$gutter;
+}
+
+.pagination > .page {
+  margin-left: 1/4*$gutter;
+  margin-right: 1/4*$gutter;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &.current {
+    border-radius: 50%;
+    background: $color-primary;
+    color: $white;
+  }
+}
+
+.pagination > .next,
+.pagination > .prev {
+  margin-left: 1/4*$gutter;
+  margin-right: 1/4*$gutter;
+
+  & > a {
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+.pagination > .first,
+.pagination > .last {
+  margin-left: 1/4*$gutter;
+  margin-right: 1/4*$gutter;
+
+  & > a {
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}

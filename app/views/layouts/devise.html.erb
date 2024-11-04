@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+  <title>User login</title>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <%= stylesheet_link_tag 'admin' %>
+  <%= javascript_include_tag 'admin' %>
+
+  <%= analytics_init if Rails.env.production? %>
+
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
+</head>
+
+<body>
+
+  <main role="main" class="main-devise layout--padded">
+
+    <div class="text--center">
+        <%= inline_svg 'logo.svg', class: 'logo-primary' %>
+    </div>
+    <div class="layout--text">
+      <%= yield %>
+    </div>
+
+  </main>
+
+</body>
+</html>

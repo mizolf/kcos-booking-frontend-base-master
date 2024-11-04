@@ -1,0 +1,23 @@
+.mce-tinymce {
+	box-shadow: none!important;
+	border-radius: $input-radius!important;
+	margin-bottom: 1.5rem!important;
+}
+
+.mce-panel {
+	border: solid 1px #d8d8d8!important;	
+}
+
+.mce-top-part:before {
+	box-shadow: none!important;
+}
+
+.mce-last {
+	border: none!important;
+	border-radius: $input-radius!important;
+}
+
+.mce-stack-layout-item {
+	border-left: none!important;
+  border-right: none!important;
+}

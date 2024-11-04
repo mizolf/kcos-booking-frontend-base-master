@@ -1,0 +1,70 @@
+.accordion__item {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.accordion__head {
+  color: $color-primary;
+  border-bottom: 2px solid $color-primary;
+  font-size: 1.25rem;
+  transition: 0.3s;
+  padding-bottom: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-primary;
+  }
+}
+
+.accordion__body {
+  display: none;
+  // padding-top: 1rem;
+  // padding-bottom: 1rem;
+
+  & > p:not(:last-child) {
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+}
+
+
+.accordion__arrow {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  display: inline-block;
+  transform: translate( -16px , 0 );
+
+
+  &:before, &:after {
+    content: "";
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    background-color: $color-primary;
+    width: 3px;
+    height: 16px;
+  }
+
+  &:before {
+    transform: translate(8px, 0) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+  }
+}
+
+.accordion__item.active .accordion__arrow {
+
+  &:before {
+    transform: translate(-2px, 0) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(8px, 0) rotate(-45deg);
+  }
+}
+
+.accordion__item.active .accordion__head {
+  border-bottom: none;
+}

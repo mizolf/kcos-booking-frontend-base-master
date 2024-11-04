@@ -1,0 +1,15 @@
+<nav class="nav--desktop sticky-header">
+  <div class="layout--main flex flex--between">
+    <%= render 'layouts/navigation_links' %>
+  </div>
+</nav>
+<nav class="nav--mobile">
+  <div class="flex flex--between">
+    <button class="js_burger burger-button">
+      <div class="icon--burger"></div>
+    </button>
+  </div>
+  <div class="js_nav_user nav--mobile__content">
+    <%= render 'layouts/navigation_links' %>
+  </div>
+</nav>

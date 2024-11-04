@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g transform="translate(0, 0)"><polygon fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="8.5,7.5 
+	8.5,0.5 15.5,0.5 15.5,5.5 12,5.5 " data-cap="butt" data-color="color-2"></polygon>
+<path fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M8.5,15.5h-8v-1
+	c0-1.657,1.343-3,3-3h2c1.657,0,3,1.343,3,3V15.5z" data-cap="butt"></path>
+<circle fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="4.5" cy="7.5" r="2" data-cap="butt"></circle></g></svg>

@@ -1,0 +1,66 @@
+// TABLE RESET
+
+.clear-user-agent-styles,
+.clear-user-agent-styles thead,
+.clear-user-agent-styles tbody,
+.clear-user-agent-styles tfoot,
+.clear-user-agent-styles tr,
+.clear-user-agent-styles th,
+.clear-user-agent-styles td {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    vertical-align: inherit;
+    text-align: left;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+}
+
+
+
+// DEFAULTS
+
+.table {
+  width: 100%;
+
+  & td, & th {
+    padding: 1rem;
+    text-align: left;
+  }
+}
+
+
+
+// CUSTOM TABLES
+
+
+
+/** stackable **/
+.stacktable { width: 100%; }
+.st-head-row { padding-top: 1em; }
+.st-head-row.st-head-row-main { font-size: 1rem; padding-top: 0; }
+.st-key {
+  width: 49%;
+  text-align: center;
+  padding-right: 1%;
+  border: 1px solid $color-secondary;
+}
+.st-val {
+  width: 49%;
+  padding-left: 1%;
+  border: 1px solid $color-secondary;
+}
+
+.stacktable.large-only { display: table; }
+.stacktable.small-only { display: none; }
+
+@media (max-width: 1024px) {
+  .stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; }
+}

@@ -1,0 +1,87 @@
+hr:
+  devise:
+    shared_links:
+      log_in: "Prijavite se"
+      sign_up: "Registrirajte se"
+      forgot_password: "Zaboravili ste lozinku?"
+      didnt_receive_confirmation: "Niste primili upute za potvrdu računa?"
+      didnt_receive_unlock: "Niste primili upute za otključavanje računa?"
+    credentials_email:
+      description: "Dobili ste administratorske ovlasti za %{application}."
+      set_password_link: "Postavi lozinku"
+      login_link: "Poveznica za prijavu"
+      first_time_instructions: "Prilikom prve prijave trebate postaviti svoju lozinku putem sljedeće poveznice:"
+      other_times_instructions: "Svakog sljedećeg puta prijavu ćete vršiti unošenjem Vašeg emaila i lozinke na adresi:"
+    failure:
+      already_authenticated: Već ste prijavljeni.
+    confirmations:
+      already_authenticated: Već ste prijavljeni.
+      confirmed: Vaša email adresa je uspješno potvrđena.
+      inactive: Vaš račun još nije aktiviran.
+      invalid: Nevaljan %{authentication_keys} ili lozinka.
+      last_attempt: Imate još jedan pokušaj prije no što vam se račun zaključa.
+      locked: Vaš račun je zaključan.
+      not_found_in_database: Nevaljani %{authentication_keys} ili lozinka.
+      send_instructions: Primit ćete email sa uputama kako potvrditi  svoju email adresu za nekoliko minuta.
+      send_paranoid_instructions: Ako vaša email adresa postoji u našoj bazi podataka, primit ćete email sa uputama kako ju potvrditi za nekoliko minuta.
+      timeout: Vaša sesija je istekla. Molimo vas, prijavite se ponovo kako bi nastavili.
+      unauthenticated: Morate se registrirati ili prijaviti prije no što nastavite.
+      unconfirmed: Morate potvrditi svoju email adresu prije no što nastavite.
+    mailer:
+      confirmation_instructions:
+        subject: 'Upute za potvrđivanje'
+      email_changed:
+        subject: 'Email adresa je promijenjena'
+        title: Nova email adresa
+      password_change:
+        subject: 'Lozinka je promijenjena'
+      reset_password_instructions:
+        subject: 'Upute za resetiranje lozinke'
+      unlock_instructions:
+        subject: 'Upute za otključavanje'
+    omniauth_callbacks:
+      failure: Ne možemo vas autentificirati sa %{kind} zbog "%{reason}".
+      success: Uspješno autentificiran sa %{kind} računa.
+    passwords:
+      no_token: Ne možete pristupiti ovoj stranici bez dolaženja sa emaila za resetiranje lozinke. Ako dolazite sa tog emaila, pazi da koristite potpuni link koji vam je dan.
+      send_instructions: Primit ćete email sa uputama kako resetirati svoju lozinku za nekoliko minuta.
+      send_paranoid_instructions: Ako vaša email adresa postoji u našoj bazi podataka, primit ćete link za povrat lozinke na svoju email adresu za nekoliko minuta.
+      updated: Vaša lozinka je uspješno izmijenjena. Sada ste prijavljeni.
+      updated_not_active: Vaša lozinka je uspješno izmijenjena.
+      send_me_password_instructions: "Pošalji mi upute za ponovno postavljanje lozinke"
+      change_your_password: "Postavi novu lozinku"
+      new_password: "Nova lozinka"
+      characters_minimum: "Lozinka mora sadržavati minimalno %{minimum} znakova."
+      reset_password_email:
+        title: "Izmjena lozinke za %{application}"
+        greeting: "Pozdrav %{email}"
+        description: "Netko je zatražio izmjenu Vaše lozinke. To možete učiniti putem sljedeće poveznice:"
+        reset_password_link: "Izmjeni moju lozinku"
+        ignore_email: "Ako niste zatražili promjenu lozinke zanemarite ovaj email."
+        wont_change: "Vaša lozinka ostat će nepromjenjena ako je ne izmjenite putem poveznice."
+    registrations:
+      destroyed: Zbogom! Vaš račun je uspješno otkazan. Nadamo se da ćemo te vidjeti ponovo.
+      signed_up: Dobro došli! Uspješno ste se prijavili.
+      signed_up_but_inactive: Uspješno ste se registrirali. No, ne možete se prijaviti, jer vam račun još nije aktiviran.
+      signed_up_but_locked: Uspješno ste se registrirali. No, ne možete se prijaviti jer je vaš račun zaključan.
+      signed_up_but_unconfirmed: Poruka sa linkom za potvrđivanje je poslana na vašu email adresu. Molimo, slijedite link kako bi vaš račun bio aktiviran.
+      update_needs_confirmation: Vaš račun je uspješno ažuriran, ali trebamo provjeriti vašu novu email adresu. Molimo, provjerite svoj email i slijedite link za potvrđivanje kako bi vaša nova email adresa bila potvrđena.
+      updated: Vaš račun je uspješno ažuriran.
+    sessions:
+      already_signed_out: Uspješno ste odjavljeni.
+      signed_in: Uspješno ste prijavljeni.
+      signed_out: Uspješno ste odjavljeni.
+    unlocks:
+      send_instructions: Primit ćete email sa uputama kako otključati svoj račun za nekoliko minuta.
+      send_paranoid_instructions: Ako vaš račun postoji, primit ćete email sa uputama kako ga otključati za nekoliko minuta.
+      unlocked: Vaš račun je uspješno otključan. Prijavite se kako bi nastavili.
+  errors:
+    messages:
+      already_confirmed: je već potvrđen, pokušajte se prijaviti
+      confirmation_period_expired: mora biti potvrđen u roku od %{period}, molimo zatražite novi
+      expired: je istekao, zatražite novu
+      not_found: nije nađen
+      not_locked: nije zaključan
+      not_saved:
+        one: '1 greška je zabranila da ovaj %{resource} bude sačuvan:'
+other: "%{count} greške su zabranile da ovaj %{resource} bude sačuvan:"

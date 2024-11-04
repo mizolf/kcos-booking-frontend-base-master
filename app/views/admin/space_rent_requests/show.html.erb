@@ -1,0 +1,33 @@
+<header class="header header--small">
+	<%= link_to admin_space_rent_requests_path, class: "btn btn--back" do %>
+		<div class="arrow--left"></div>
+	<% end %>
+
+	<div class="header__content">
+		<h1><%= t('admin_nav.space_rent_requests') %></h1>
+		<p><%= t('overview') %></p>
+	</div>
+</header>
+
+<section class="section section--4 section--padded">
+	<label class="label"><%= tf('space_rent_request.for_space') %></label>
+	<p><%= link_to @space_rent_request.space.name, [:admin, @space_rent_request.space], class: 'link' %></p>
+	<label class="label"><%= tf('space_rent_request.full_name') %></label>
+	<p><%= @space_rent_request.full_name %></p>
+	<label class="label"><%= tf('space_rent_request.organisation') %></label>
+	<p><%= @space_rent_request.organisation %></p>
+	<label class="label"><%= tf('space_rent_request.phone') %></label>
+	<p><%= @space_rent_request.phone %></p>
+	<label class="label"><%= tf('space_rent_request.email') %></label>
+	<p><%= mail_to @space_rent_request.email, @space_rent_request.email, class: 'link' %></p>
+	<label class="label"><%= tf('space_rent_request.people_count') %></label>
+	<p><%= @space_rent_request.people_count %></p>
+	<label class="label"><%= tf('space_rent_request.work_plan') %></label>
+	<p><%= @space_rent_request.work_plan %></p>
+	<label class="label"><%= tf('space_rent_request.work_goal') %></label>
+	<p><%= @space_rent_request.work_goal %></p>
+	<label class="label"><%= tf('space_rent_request.partners') %></label>
+	<p><%= @space_rent_request.partners %></p>
+	<label class="label"><%= tf('space_rent_request.other') %></label>
+	<p><%= @space_rent_request.other %></p>
+</section>

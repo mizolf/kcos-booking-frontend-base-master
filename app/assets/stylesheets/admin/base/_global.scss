@@ -1,0 +1,23 @@
+/*------------------------------------*\
+** GLOBAL
+\*------------------------------------*/
+
+html {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+	background: #f7f7f7;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}

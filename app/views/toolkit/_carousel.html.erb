@@ -1,0 +1,72 @@
+<!-- ### CAROUSEL ### -->
+<section class="section">
+	<h2 class="toolkit__headline">Carousel</h2>
+	<section class="subsection">
+		<pre><code>
+      vendors/_glide.scss
+      vendors/_owl_carousel.scss
+      application/glide.js
+      application/owl_carousel_init.js
+      application/owl_carousel_lib.js
+    </code></pre>
+	</section>
+</section>
+<!-- ## OWL CAROUSEL ## -->
+
+<section class="section">
+	<h3 class="toolkit__subheadline">Owl Carousel</h3>
+	<div class="wrapper">
+
+		<div class="owl-carousel--wrapper">
+			<div class="owl-carousel owl-carousel--toolkit">
+				<div>
+					<%= image_tag  "dummy/photo_1.jpg" %>
+				</div>
+				<div>
+					<%= image_tag  "dummy/photo_2.jpg" %>
+				</div>
+				<div>
+					<%= image_tag  "dummy/photo_3.jpg" %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<!-- ## GLIDE.JS ## -->
+
+<section class="section">
+	<h3 class="toolkit__subheadline">Glide.js</h3>
+	<div class="wrapper">
+
+		<div class="glide--toolkit">
+			<div class="glide__track" data-glide-el="track">
+				<ul class="glide__slides">
+					<li class="glide__slide">
+						<%= image_tag  "dummy/photo_1.jpg" %>
+					</li>
+					<li class="glide__slide">
+						<%= image_tag  "dummy/photo_1.jpg" %>
+					</li>
+					<div class="glide__slide">
+						<%= image_tag  "dummy/photo_1.jpg" %>
+					</li>
+				</ul>
+			</div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+      </div>
+		</div>
+
+	</div>
+</section>
+
+<script>
+	var glide = new Glide('.glide--toolkit', {
+	        type: 'carousel',
+	        startAt: 0,
+	        perView: 1
+	    }).mount();
+</script>

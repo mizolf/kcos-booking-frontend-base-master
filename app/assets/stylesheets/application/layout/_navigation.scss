@@ -1,0 +1,148 @@
+/*------------------------------------*\
+** NAVIGATION GLOBAL
+\*------------------------------------*/
+.meta-tags-button{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  white-space: nowrap;
+}
+
+.nav {
+  width: 100%;
+  background-color: $color-gray--lighter;
+  border-bottom: 1px solid $color-gray;
+  position: relative;
+  z-index: 1;
+  padding: $gutter;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+
+  .nav__link--wrap {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: $color-primary;
+    font-weight: $font-weight--semibold;
+    transition: color 0.2s;
+
+    &:hover {
+      color: lighten($color-primary, 10%);
+    }
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}
+.nav__link--active{
+  font-weight: bold;
+}
+
+
+/*------------------------------------*\
+** NAVIGATION DESKTOP
+\*------------------------------------*/
+
+.nav--desktop {
+  display: none;
+
+  @include breakpoint ($bp--navbar) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    width: 100%;
+    padding: 0 $gutter;
+     //box-shadow: 0 1px 10px 0 rgba(22,22,22,0.1);
+  }
+
+  .nav__link--wrap {
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  .nav__link {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-left: $gutter;
+  }
+
+  &__logo {
+    height: 2rem;
+    object-fit: contain;
+    img {
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+** NAVIGATION MOBILE
+\*------------------------------------*/
+
+.nav--mobile {
+  position: fixed;
+  z-index: 1;
+  background-color: $white--true;
+  top: 0;
+  width: 100%;
+  left: 0;
+  padding: $gutter*0.5;
+  box-shadow: 0 1px 10px 0 rgba(22,22,22,0.1);
+
+
+  @include breakpoint ($bp--navbar) {
+    display: none;
+  }
+
+  .nav__link--wrap {
+    display: none;
+    width: 100%;
+    background-color: $color-gray--lighter;
+    position: absolute;
+    top: 90px;
+    left: 0;
+  }
+
+  .nav__link {
+    display: block;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+  }
+
+  &__logo {
+    display: block;
+    height: 2rem;
+    img {
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    background: $white--true;
+    width: 100%;
+    top: 4rem;
+    left: 0;
+  }
+}

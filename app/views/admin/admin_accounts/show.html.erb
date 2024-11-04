@@ -1,0 +1,60 @@
+<header class="header header--small">
+  <%= link_to admin_root_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= t('admin_nav.account') %></h1>
+    <p><%= t('editing') %></p>
+  </div>
+</header>
+
+
+<div class="section__wrap--6">
+
+  <section class="section section--col section--padded">
+    <h1><%= @admin.full_name %></h1>
+    <%= form_for [:admin, @admin], url: { action: "update", controller: "admin_accounts" }, :html => {role: 'form', class: 'form'} do |f| %>
+
+    <fieldset class="form__fieldset">
+      <div class="field input__field--text">
+        <%= f.label :image, class: "label" %>
+        <div class="image_field">
+          <img src="<%= f.object.image_url %>" class= "img_prev" alt='Drop File here or click to upload'>
+          <%= f.file_field :image, class: "image_file_field", accept: 'image/jpeg,image/gif,image/png' %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form__fieldset">
+      <div class="form__field">
+        <%= f.label :password, class: 'label' %>
+        <%= f.password_field :password, readonly: true, onfocus: "this.removeAttribute('readonly');", class: "input" %>
+      </div>
+
+      <div class="form__field">
+        <%= f.label :password_confirmation, class: 'label' %>
+        <%= f.password_field :password_confirmation, class: "input" %>
+      </div>
+
+    </fieldset>
+
+    <fieldset class="form__fieldset">
+        <%= f.label :current_password, class: 'label' %>
+        <%= f.password_field :current_password, class: "input" %>
+    </fieldset>
+
+    <fieldset class="form__fieldset">
+      <div class="field">
+        <%= f.submit t('save'), class: 'btn btn--primary', data: {disable_with: t('please_wait')} %>
+      </div>
+    </fieldset>
+
+  <% end %>
+
+</section>
+
+
+</div>
+

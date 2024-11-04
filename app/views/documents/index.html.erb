@@ -1,0 +1,7 @@
+<h2><%= t('pages_nav.documents') %></h2>
+<% @documents.each do |document| %>
+  <%= document.name %>
+  <%= link_to document.file_url, target: '_blank', class: 'document-item__button' do %>
+    <%= inline_svg 'icons/download.svg' %>
+  <% end %>
+<% end %>

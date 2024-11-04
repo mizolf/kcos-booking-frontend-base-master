@@ -1,0 +1,5 @@
+<ul class="users__premissions">
+	<% admin.resource_permissions.map(&:resource).each do |resource| %>
+		<li title="<%= t("resource_permissions.description.#{resource}") %>"><%= t("resource_permissions.#{resource}") if admin.permitted?(resource) %></li>
+	<% end %>
+</ul>

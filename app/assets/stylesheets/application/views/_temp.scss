@@ -1,0 +1,64 @@
+.temp-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  @include breakpoint ($medium) {
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.temp-content {
+  width: 100%;
+  min-height: 60vh;
+  padding: 2*$gutter;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  @include breakpoint ($large) {
+    width: 40%;
+    min-height: none;
+  }
+
+  &.temp-content--inverse {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.temp-logo {
+  height: 3rem;
+
+  @include breakpoint ($large) {
+    height: 20%;
+  }
+}
+
+.temp-image {
+  width: 100%;
+  min-height: 40vh;
+  object-fit: cover;
+
+  @include breakpoint ($large) {
+    width: 60%;
+    min-height: none;
+  }
+}
+
+.temp-heading {
+  font-size: 3rem;
+  line-height: 4rem;
+
+  @include breakpoint ($large) {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+}

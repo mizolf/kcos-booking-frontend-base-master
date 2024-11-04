@@ -1,0 +1,61 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.spaces') %></h1>
+  <%= link_to t('new_record'), new_admin_space_path, class: "btn btn--primary btn--large" %>
+</header>
+
+<section class="section section--12 section--double users">
+	<table class="clear-admin-agent-styles table datatable table__icon--4">
+		<thead>
+			<tr class="table__head--wrap">
+		    <th class="table__head col col--1"><%= tf('space.name') %></th>
+		    <th class="table__head col col--1"><%= tf('space.surface_area') %></th>
+		    <th class="table__head col col--1"><%= tf('space.rentable') %></th>
+		    <th class="table__head col col--1"><%= tf('space.rent_price_cents') %></th>
+		    <th class="table__head col col--1"><%= tf('space.bookable') %></th>
+		    <th class="table__head col col--1"><%= tf('space.book_price_cents') %></th>
+		    <th class="table__head col col--1"><%= tf('space.available') %></th>
+		    <th class="table__head col col--1"><%= t('actions') %></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+			<% @spaces.each do |space| %>
+	  		<tr class="table__item--wrap">
+		      <td class="table__item col col--1">
+		      	<%= space.name %>
+		      </td>
+		      <td class="table__item col col--1">
+				<%= surface(space.surface_area) %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= boolean_indicator(space.rentable) %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= humanized_money_with_symbol(space.rent_price) %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= boolean_indicator(space.bookable) %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= humanized_money_with_symbol(space.book_price) %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= boolean_indicator(space.available) %>
+		      </td>
+		      <td class="table__item table__icon--wrap col col--1">	
+					<%= link_to admin_space_path(space), class: "table__icon" do %>
+						<%= inline_svg "icons/eye-ban-18.svg" %>
+					<% end %>
+					<%= link_to admin_space_path(space), method: :delete, data: {confirm: t('delete_confirm')}, class: "table__icon" do %>
+						<%= inline_svg "icons/trash-simple.svg" %>
+					<% end %>
+		      </td>
+				</tr>
+		  <% end %>
+		</tbody>
+	</table>
+</section>
+
+<script>
+	init_datatable({lang: "<%= I18n.locale %>"});
+</script>

@@ -1,0 +1,7 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.faqs') %></h1>
+  <%= link_to t('new_record'), new_admin_faq_path, class: 'btn btn--primary' %>
+</header>
+<div id="faqs" class="section--12">
+	<%= render 'faqs', faqs: @faqs %>
+</div>

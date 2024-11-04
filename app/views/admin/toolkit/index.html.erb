@@ -1,0 +1,319 @@
+<script>
+  $(function(){
+    var $tab = $('.js-toolkit-link');
+    var $content = $('.js-toolkit-section');
+    <% if @element %>
+      $('.js-toolkit-section#' + '<%= @element %>').show();
+    <% else %>
+      $content.first().show();
+    <% end %>
+
+
+
+    $tab.on('click', toggleTab);
+
+    function toggleTab() {
+      $content.hide();
+      var $id = $(this).attr('id');
+      window.location = "<%= request.base_url %>/admin/toolkit?element="+$id;
+    }
+
+    //$('#toolkit-maps').on('click', initMap);
+
+  });
+</script>
+
+  <div class="section__wrap--2 relative">
+    <div class="toolkit__navigation">
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-playground" class="js-toolkit-link toolkit__navigation-head">
+          Playground
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-colors" class="js-toolkit-link toolkit__navigation-head">
+          Colors
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">Content</div>
+        <div class="toolkit__navigation-item">Grays</div>
+        <div class="toolkit__navigation-item">Notifications</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-icons" class="js-toolkit-link toolkit__navigation-head">
+          Icons
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-grid" class="js-toolkit-link toolkit__navigation-head">
+          Grid
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">W/O gutters</div>
+        <div class="toolkit__navigation-item">W/ gutters</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-layout" class="js-toolkit-link toolkit__navigation-head">
+          Layout
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-typography" class="js-toolkit-link toolkit__navigation-head">
+          Typography
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">Copy</div>
+        <div class="toolkit__navigation-item">Headings</div>
+        <div class="toolkit__navigation-item">Lists</div>
+        <div class="toolkit__navigation-item">Links</div>
+        <div class="toolkit__navigation-item">Code</div>
+        <div class="toolkit__navigation-item">Blockquote</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-buttons" class="js-toolkit-link toolkit__navigation-head">
+          Buttons
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">White / Black</div>
+        <div class="toolkit__navigation-item">Primary / Secondary / Tertiary</div>
+        <div class="toolkit__navigation-item">Small / Large</div>
+        <div class="toolkit__navigation-item">Full width</div>
+        <div class="toolkit__navigation-item">Ghost</div>
+        <div class="toolkit__navigation-item">Underline</div>
+        <div class="toolkit__navigation-item">Arrow</div>
+        <div class="toolkit__navigation-item">Disabled</div>
+        <div class="toolkit__navigation-item">Icon buttons</div>
+        <div class="toolkit__navigation-item">Utility buttons</div>
+        <div class="toolkit__navigation-item">Button group</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-tables" class="js-toolkit-link toolkit__navigation-head">
+          Tables
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-forms" class="js-toolkit-link toolkit__navigation-head">
+          Forms
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">HTML</div>
+        <div class="toolkit__navigation-item">Error indication</div>
+        <div class="toolkit__navigation-item">Captcha</div>
+        <div class="toolkit__navigation-item">Thankyou page</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-inputs" class="js-toolkit-link toolkit__navigation-head">
+          Inputs
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">Datepicker</div>
+        <div class="toolkit__navigation-item">Toggle</div>
+        <div class="toolkit__navigation-item">Checkbox</div>
+        <div class="toolkit__navigation-item">Radio</div>
+        <div class="toolkit__navigation-item">Disabled</div>
+        <div class="toolkit__navigation-item">Select</div>
+        <div class="toolkit__navigation-item">URL</div>
+        <div class="toolkit__navigation-item">Password</div>
+        <div class="toolkit__navigation-item">Mail</div>
+        <div class="toolkit__navigation-item">Text</div>
+        <div class="toolkit__navigation-item">Textarea</div>
+        <div class="toolkit__navigation-item">Attachment</div>
+        <div class="toolkit__navigation-item">Range slider</div>
+        <div class="toolkit__navigation-item">Large / small</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-figures" class="js-toolkit-link toolkit__navigation-head">
+          Figures
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">Photos</div>
+        <div class="toolkit__navigation-item">Icons</div>
+        <div class="toolkit__navigation-item">Video</div>
+        <div class="toolkit__navigation-item">Audio</div>
+        <div class="toolkit__navigation-item">Caption</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-notifications" class="js-toolkit-link toolkit__navigation-head">
+          Notifications
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-accordion" class="js-toolkit-link toolkit__navigation-head">
+          Accordion
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">Success</div>
+        <div class="toolkit__navigation-item">Warning</div>
+        <div class="toolkit__navigation-item">Error</div>
+        <div class="toolkit__navigation-item">Neutral</div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-tabs" class="js-toolkit-link toolkit__navigation-head">
+          Tabs
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-slider" class="js-toolkit-link toolkit__navigation-head">
+          Slider
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-carousel" class="js-toolkit-link toolkit__navigation-head">
+          Carousel
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-mediaobject" class="js-toolkit-link toolkit__navigation-head">
+          Media object
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-navigation" class="js-toolkit-link toolkit__navigation-head">
+          Navigation
+        </div>
+        <div class="toolkit__navigation-separator"></div>
+        <div class="toolkit__navigation-item">Horizontal</div>
+        <div class="toolkit__navigation-item">Vertical</div>
+        <div class="toolkit__navigation-item">Slidein</div>
+        <div class="toolkit__navigation-item">Hamburger</div>
+        <div class="toolkit__navigation-item">Pagination</div>
+        <div class="toolkit__navigation-item">Breadcrumbs</div>
+
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-tooltips" class="js-toolkit-link toolkit__navigation-head">
+          Tooltips
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-tags" class="js-toolkit-link toolkit__navigation-head">
+          Tags
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-logos" class="js-toolkit-link toolkit__navigation-head">
+          Logos
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-references" class="js-toolkit-link toolkit__navigation-head">
+          References
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-summary" class="js-toolkit-link toolkit__navigation-head">
+          Summary
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-errorpages" class="js-toolkit-link toolkit__navigation-head">
+          Error pages
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-header" class="js-toolkit-link toolkit__navigation-head">
+          Header
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-footer" class="js-toolkit-link toolkit__navigation-head">
+          Footer
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-mailer" class="js-toolkit-link toolkit__navigation-head">
+          Mailer
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-maps" class="js-toolkit-link toolkit__navigation-head">
+          Maps
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-cookies" class="js-toolkit-link toolkit__navigation-head">
+          Cookies
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-project" class="js-toolkit-link toolkit__navigation-head">
+          Project specific
+        </div>
+      </div>
+
+      <div class="toolkit__navigation-block">
+        <div id="toolkit-utilities" class="js-toolkit-link toolkit__navigation-head">
+          Utilities
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="toolkit__content section__wrap--10">
+
+      <div class="js-toolkit-section" id="toolkit-playground"><%= render 'playground' %></div>
+
+      <div class="js-toolkit-section" id="toolkit-colors"><%= render 'colors' %></div>
+      <div class="js-toolkit-section" id="toolkit-icons"><%= render 'icons' %></div>
+      <div class="js-toolkit-section" id="toolkit-grid"><%= render 'grid' %></div>
+      <div class="js-toolkit-section" id="toolkit-layout"><%= render 'layout' %></div>
+      <div class="js-toolkit-section" id="toolkit-typography"><%= render 'typography' %></div>
+      <div class="js-toolkit-section" id="toolkit-buttons"><%= render 'buttons' %></div>
+      <div class="js-toolkit-section" id="toolkit-tables"><%= render 'tables' %></div>
+      <div class="js-toolkit-section" id="toolkit-forms"><%= render 'forms' %></div>
+      <div class="js-toolkit-section" id="toolkit-inputs"><%= render 'inputs' %></div>
+      <div class="js-toolkit-section" id="toolkit-figures"><%= render 'figures' %></div>
+      <div class="js-toolkit-section" id="toolkit-notifications"><%= render 'notifications' %></div>
+      <div class="js-toolkit-section" id="toolkit-accordion"><%= render 'accordion' %></div>
+      <div class="js-toolkit-section" id="toolkit-tabs"><%= render 'tabs' %></div>
+      <div class="js-toolkit-section" id="toolkit-slider"><%= render 'slider' %></div>
+      <div class="js-toolkit-section" id="toolkit-carousel"><%= render 'carousel' %></div>
+      <div class="js-toolkit-section" id="toolkit-mediaobject"><%= render 'media_object' %></div>
+      <div class="js-toolkit-section" id="toolkit-navigation"><%= render 'navigation' %></div>
+      <div class="js-toolkit-section" id="toolkit-tooltips"><%= render 'tooltips' %></div>
+      <div class="js-toolkit-section" id="toolkit-tags"><%= render 'tags' %></div>
+      <div class="js-toolkit-section" id="toolkit-logos"><%= render 'logos' %></div>
+      <div class="js-toolkit-section" id="toolkit-references"><%= render 'references' %></div>
+      <div class="js-toolkit-section" id="toolkit-summary"><%= render 'summary' %></div>
+      <div class="js-toolkit-section" id="toolkit-errorpages"><%= render 'error_pages' %></div>
+      <div class="js-toolkit-section" id="toolkit-header"><%= render 'header' %></div>
+      <div class="js-toolkit-section" id="toolkit-footer"><%= render 'footer' %></div>
+      <div class="js-toolkit-section" id="toolkit-mailer"><%= render 'mailer' %></div>
+      <div class="js-toolkit-section" id="toolkit-maps"><%= render 'maps' %></div>
+      <div class="js-toolkit-section" id="toolkit-cookies"><%= render 'cookies' %></div>
+      <div class="js-toolkit-section" id="toolkit-project"><%= render 'project_specific' %></div>
+      <div class="js-toolkit-section" id="toolkit-utilities"><%= render 'utilities' %></div>
+
+    </div>
+

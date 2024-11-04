@@ -1,0 +1,25 @@
+<div class="nav--user__burger">
+  <div class="burger"></div>
+</div>
+
+<div class="nav--lang">
+  <%= render 'layouts/nav_lang' %>
+</div>
+
+<div class="js-nav--user">
+  <nav class="nav--user skew-fix">
+
+    <div class="nav--user__item-container skew">
+
+      <% if current_user %>
+      <%= render partial: "pages/when_user_loged_in" %>
+      <% else %>
+      <div class="js-form_wrapper">
+        <div class="js-error_container">  <ul class="list"> </ul> </div>
+        <%= render partial: "pages/custom_devise_forms" %>
+      </div>
+      <% end %>
+
+    </div>
+  </nav>
+</div>

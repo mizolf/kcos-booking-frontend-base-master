@@ -1,0 +1,6 @@
+<% @spaces.each do |space| %>
+	<%= image_tag space.featured_image.image_url(:thumb), class: '' unless space.featured_image.blank? %>
+	<p><%= surface(space.surface_area)  %></p>
+	<p><%= rent_options(space) %></p>
+	<p><%= link_to space.name, space_path(space), class: 'link' %></p>
+<% end %>

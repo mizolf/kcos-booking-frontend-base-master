@@ -1,0 +1,535 @@
+/*------------------------------------*\
+# DEFAULT
+\*------------------------------------*/
+
+.input__label {
+  color: $color-gray--darker;
+  padding-left: 1.71rem;
+  // padding-left: 2.71rem;
+
+  &--secondary {
+    color: $color-gray;
+    font-size: 0.86rem;
+    font-style: italic;
+    margin-left: 1.14rem;
+  }
+}
+
+.input__wrapper {
+
+  .input, .label {
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  .label {
+    margin-left: 0.5rem;
+  }
+
+  display: flex;
+  align-items: center;
+}
+
+select:disabled {
+  background: #d8d8d8;
+}
+
+/*------------------------------------*\
+# CHECKBOX
+\*------------------------------------*/
+.input--checkbox__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  label {
+    cursor: pointer;
+  }
+}
+
+input[type="checkbox"] + label,
+input[type="checkbox"] + span {
+  cursor: pointer;
+  position: relative;
+  padding-left: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 0.625rem;
+  display: flex;
+  opacity: 0.85;
+  font-size: 0.875rem;
+  user-select: none;
+
+  &:after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    border: 1px solid $black;
+    border-radius: 0.125rem;
+    transition: $transition-time;
+  }
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+
+  &:checked + label:after,
+  &:checked + span:after {
+    background: image-url("icons/check.svg") no-repeat center, $color-primary;
+    background-size: 70%;
+    border-color: $color-primary;
+  }
+}
+/*------------------------------------*\
+# RADIO
+\*------------------------------------*/
+
+.input--radio {
+  width: 24px;
+  height: 16px;
+  position: relative;
+
+  label {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid $color-gray--light;
+    border-radius: 50%;
+
+    &:hover {
+      border: 2px solid $color-primary;
+    }
+
+  }
+
+  input[type=radio] {
+    visibility: hidden;
+
+    &:checked + label:after {
+      opacity: 1;
+    }
+
+    &:checked + label {
+      border: 2px solid $color-primary;
+      background: $color-primary;
+    }   
+
+  }
+
+}
+
+
+
+/*------------------------------------*\
+# TEXT
+\*------------------------------------*/
+
+.input__field--text {
+  grid-column: 1/span 6;
+}
+
+
+
+/*------------------------------------*\
+# TEXTAREA
+\*------------------------------------*/
+
+.textarea {
+  resize: none;
+}
+
+.input__field--textarea {
+  grid-column: 1/span 12;
+}
+
+.input__field--smalltextarea {
+  grid-column: 1/span 6;
+}
+
+
+
+/*------------------------------------*\
+# SELECT
+\*------------------------------------*/
+
+.input--select {
+  border-color: $color-gray--lighter;
+  padding: $input-padding;
+}
+
+.select--hidden {
+  visibility: hidden;
+}
+
+.select {
+  display: inline-block;
+  width: 20rem;
+  border: 1px solid #d8d8d8;
+  border-radius: $input-radius;
+  position: relative;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.select--styled {
+  color: $color-gray--darker;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: $input-padding;
+}
+
+.select--styled:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-radius: 2px;
+  border-color: $color-gray--darker transparent transparent transparent;
+  position: absolute;
+  top: 22px;
+  right: 16px;
+  transition: .2s;
+}
+
+.select--styled:active, .select--styled.active {
+  background-color: transparent;
+
+  &:after {
+    top: 17px;
+    transform: rotate(180deg);
+  }
+}
+
+.options {
+  display: none;
+  width: 20rem;
+  background-color: $white;
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  border-radius: $input-radius;
+  list-style: none;
+  position: absolute;
+  top: 44px;
+  left: -1px;
+  right: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.35rem;
+  transition: .2s;
+}
+
+.options li {
+  background-color: $white;
+  border-radius: $input-radius;
+  margin: 0;
+  margin-left: 0.57rem;
+  margin-right: 0.57rem;
+  padding: 0.71rem 0.57rem;
+}
+
+.options li:hover {
+  color: $white;
+  background-color: $color-primary;
+}
+
+
+
+/*------------------------------------*\
+# DATEPICKER
+\*------------------------------------*/
+
+.input--datepicker {
+  background-image: image-url('icons/calendar-icon.svg');
+  background-position: calc(100% - 16px) calc(100% - 16px);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+
+.input__field--datepicker {
+  grid-column: 1/span 4;
+}
+
+.input__field--smalldatepicker {
+  grid-column: auto/span 3;
+}
+
+.ui-datepicker-today {
+
+.ui-state-highlight {
+  border: 1px solid $color-primary !important;
+
+  &:hover {
+    color: $black !important;
+  }
+}
+
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  border: none;
+  color: white !important;
+  background-color: $color-primary !important;
+  color: $color-primary;
+}
+
+
+/*------------------------------------*\
+# FILE
+\*------------------------------------*/
+
+.input__file--hide {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+}
+
+.input--file {
+
+}
+
+.input__field--file {
+  grid-column: 1/span 6;
+}
+
+.input__file--doc {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    text-align: right;
+    margin-right: 1rem;
+  }
+}
+
+.input--image-header {
+  width: 100%;
+  height: 160px;
+  position: absolute;
+  z-index: 3;
+  opacity: 0;
+}
+
+.input__file--header {
+  grid-column: 7/span 6;
+  position: relative;
+
+  .label--file {
+    width: 100%;
+    position: absolute;
+    margin-top: 0;
+  }
+
+  .btn__group--edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .header__img--wrap {
+    width: 100%;
+    height: 160px;
+    border-radius: $button-radius;
+    position: absolute;
+    z-index: 5;
+
+    .header__img {
+      width: 100%;
+      height: 160px;
+      border-radius: $button-radius;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+# IMAGE FIELDS
+\*------------------------------------*/
+
+.input--image-file {
+  width: 100%;
+  height: 160px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 3;
+}
+
+.image_field, .image_file_field {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+  margin: 20px;
+  background-image: image-url("icons/upload.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  margin-left: 0;
+  overflow: hidden;
+
+  &.seo_image {
+    width: 800px;
+    height: 600px;
+  }
+
+  &.post_image {
+    width: 708px;
+    height: 342px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  input {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //width: 100%;
+    height: 100%;
+    background-color: white;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  img[src=""], img[src="/default.png"] {
+    display: none;
+  }
+
+  &:hover {
+    filter: brightness(90%);
+    transition: all 0.2s ease-out;
+  } 
+
+}
+
+.image_field > * {
+  cursor: pointer;
+
+}
+
+.image_field--small{
+
+
+  width: 150px;
+  height: 150px;
+
+
+  input  {
+
+    width: 150px;
+
+  }
+
+
+}
+
+
+
+
+/*------------------------------------*\
+# IE ADJUSTMENTS
+\*------------------------------------*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .input__field--text {
+    width: 100%;
+
+    .input {
+      width: 50%;
+    }
+  }
+
+  .posts .input__field--text:first-child {
+    width: 50%;
+  }
+
+  .contact .input__field--text .input {
+    width: 100%;
+  }
+
+  .input__field--smalltextarea {
+    width: 100%;
+
+    .input {
+      width: 50%;
+    }
+  }
+
+  .input__field--textarea {
+    width: 100%;
+  }
+
+  .input__field--datepicker {
+    width: 100%;
+
+    .input--datepicker {
+      width: 30%;
+    }
+  }
+
+  .input__field--smalldatepicker {
+    width: 100%;
+
+    .input--datepicker {
+      width: 24%;
+    }
+  }
+
+  .input__file--header {
+    width: 49%;
+  }
+
+  .input__field--file {
+    width: 100%;
+
+    .input__file--doc {
+      width: 50%;
+    }
+  }
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}

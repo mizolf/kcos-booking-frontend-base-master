@@ -1,0 +1,40 @@
+.email--wrapper{
+	margin: 20px;
+	max-width: 600px;
+	//padding: 2px;
+	border: 1px solid $color-primary;
+}
+
+.message--timestamp{
+	background-color: $color-primary;
+	color: $white;
+}
+
+.email--footer{
+	color: $color-primary;
+	margin-top: 40px;
+	padding: 10px;
+	border-top: 1px solid $color-primary;
+	font-weight: 800;
+}
+
+h1{
+	background-color: $color-primary;
+	color: $white;
+	font-weight: 800;
+	padding: 10px;
+	margin: 0;
+}
+
+p{
+	font-size: 1.5rem;
+	padding: 0 15px;
+}
+
+h1, p, a{
+	text-align: center;
+}
+
+.margin--bottom{
+	margin-bottom: 50px;
+}

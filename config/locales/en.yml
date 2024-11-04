@@ -1,0 +1,51 @@
+en:
+#ERRORS#
+  locale_missing: Language doesn't exist
+  text404: Ooh. This page doesn't exist
+  text500: Ooh. Internal server error going on
+  text422: Ooh. Can't process this request.
+  error_bottom_text: Don't worry. You can head back to
+  our_homepage: our homepage
+#COMMON PHRASES#
+  "yes": "Yes"
+  "no": "No"
+  english: "English"
+  croatian: "Croatian"
+  languages: "Languages"
+  actions: "Actions"
+  delete: "Delete"
+  create: "Create new"
+  edit: "Edit"
+  show: "Show"
+  created_at: "Created at"
+  delete_confirm: "Are you sure?"
+  save: "Save"
+  send: "Send"
+  back: "Back"
+  name: "Name"
+  saved_successfully: "Saved successfully"
+  read: "Read"
+  read_again: "Read again"
+  today: "Today"
+  yesterday: "yesterday"
+  preview: "Preview"
+  details: "Details"
+  activity: "Activity"
+  date: "Date"
+  email: "Email"
+  password: "Password"
+  editing: "Editing"
+  please_wait: "Please wait..."
+  current_meta_tags: "Current meta tags"
+  mailing:
+    cms_credentials:
+      subject: "Administrative rights for %{app_name} CMS"
+  mobile_dashboard_info: "You can access the CMS only on desktop devices"
+  message:
+    created: "Successfully created"
+    updated: "Successfully updated"
+    deleted: "Successfully deleted"
+    status_changed: "Status changed successfully"
+    something_wrong: "Something went wrong"
+    not_allowed: "Sorry, this action is not allowed"
+    imported: "Successfully imported"

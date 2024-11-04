@@ -1,0 +1,363 @@
+/*------------------------------------*\
+# CORE BUTTONS
+\*------------------------------------*/
+
+button, .btn {
+  display: inline-block;
+  font-family: $category-font-family;
+  font-size: 0.79rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: $button-radius;
+  transition: .2s ease-in-out;
+
+  padding-left: $button-padding--lr;
+  padding-right: $button-padding--lr;
+  padding-top: $button-padding--tb;
+  padding-bottom: $button-padding--tb;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0px 0px transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/*------------------------------------*\
+# PRIMARY / SECONDARY / TERTIARY
+\*------------------------------------*/
+
+.btn--primary {
+  color: $white;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: lighten($color-primary, 5%);
+  }
+
+  &:focus, &:active {
+    background-color: lighten($color-primary, 5%);
+    box-shadow: inset 0 0.5px 0.5px 0 #525252;
+  }
+}
+
+.btn--primary.disabled {
+  color: $color-gray--light;
+  background-color: $color-gray--lighter;
+  cursor: default;
+}
+
+.btn--secondary {
+  color: $color-primary;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+
+  &:hover {
+    color: $white;
+    background-color: $color-tertiary;
+    border-color: $color-tertiary;
+  }
+
+  &:focus, &:active {
+    color: $color-primary;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    box-shadow: inset 0 1px 2px 0 rgba(45, 45, 45, 0.2);
+  }
+}
+
+.btn--secondary.disabled {
+  color: $color-gray--lighter;
+  background-color: transparent;
+  border-color: $color-gray--lighter;
+  cursor: default;
+
+  &:hover, &:focus, &:active {
+    color: $color-gray--lighter;
+    background-color: transparent;
+    border-color: $color-gray--lighter;
+  }
+}
+
+.btn--tertiary {
+  color: $color-primary;
+  background-color: transparent;
+  font-family: $base-font-family;
+  font-size: 1.14rem;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-decoration: underline;
+  text-transform: none;
+  padding: 0;
+
+  &:focus, &:active, &:hover {
+    color: $color-secondary;
+  }
+}
+
+.btn--tertiary.disabled {
+  color: $color-gray--lighter;
+  cursor: default;
+}
+
+
+
+/*------------------------------------*\
+# BACK BUTTON
+\*------------------------------------*/
+
+.btn--back {
+  background-color: transparent;
+  border: 1px solid $color-gray--light;
+  border-radius: $button-radius;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.86rem;
+  padding-right: 0.86rem;
+
+  .arrow--left {
+    transition: .2s ease-in-out;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-bottom: 1px solid $color-gray--darker;
+      border-right: 1px solid $color-gray--darker;
+      transform: rotate(135deg);
+      vertical-align: middle;
+      margin-bottom: 1px;
+    }
+
+    &:after { 
+      content: '';
+      display: inline-block;
+      width: 22px;
+      border-bottom: 1px solid $color-gray--darker;
+      vertical-align: middle;
+      margin-left: -3px;
+      margin-bottom: 1px;
+    }
+  }
+
+  &:focus, &:active, &:hover {
+    border-color: $color-secondary;
+
+    .arrow--left:before, .arrow--left:after {
+      border-color: $color-secondary;
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+# SMALL / LARGE
+\*------------------------------------*/
+
+.btn--small {
+  font-size: 0.71rem;
+  padding-top: 0.57rem;
+  padding-bottom: 0.57rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn--medium {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2.57rem;
+  padding-right: 2.57rem;
+}
+
+.btn--large {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3.29rem;
+  padding-right: 3.29rem;
+}
+
+
+
+/*------------------------------------*\
+# EDIT BUTTONS
+\*------------------------------------*/
+
+.btn__group--edit {
+  align-self: flex-end;
+}
+
+.btn--edit, .btn--remove {
+  padding: 0;
+  cursor: pointer;
+
+  svg {
+    height: 1rem;
+  }
+
+  g, path {
+    stroke: #c0c4ca;
+  }
+
+  &:focus, &:active, &:hover {
+
+    g, path {
+      stroke: $color-primary;
+    }
+  }
+}
+
+.btn--remove {
+  padding-left: 1.14rem; 
+}
+
+
+
+/*------------------------------------*\
+# OTHER
+\*------------------------------------*/
+
+.btn--save {
+  position: absolute;
+  top: 117px;
+  right: 1.43rem;
+}
+
+.btn--add {
+  display: block;
+  color: $color-gray;
+  font-family: $category-font-family;
+  font-size: 0.71rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 3.57rem;
+
+  .add__icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid $color-primary;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 0.57rem;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 1px;
+      background-color: $color-primary;
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 7px);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 14px;
+      background-color: $color-primary;
+      position: absolute;
+      top: calc(50% - 7px);
+      left: 50%;
+    }
+  }
+}
+
+.btn--navigation {
+  padding: 0;
+  margin:0;
+
+  display: block;
+  background-color: transparent;
+  padding: 5px;
+  color: $white;
+  border-right: 0.5rem solid transparent;
+
+  &:focus, &:active, &:hover {
+    background-color: $color-primary;
+  }
+}
+
+.btn--full {
+  background-color: $color-secondary;
+  color: $white;
+  width: 100%;
+
+  &:focus, &:active, &:hover {
+    background-color: $color-primary;
+    color: $white;
+  }
+}
+
+.btn--full-red {
+  background-color: $color-alert;
+  color: $white;
+
+  &:focus, &:active, &:hover {
+    background-color: lighten($color-alert, 5%);
+    color: $white;
+  }
+}
+
+.btn--create {
+  background-color: transparent;
+  color: $color-secondary;
+  border: 1px solid $color-secondary;
+
+  &:focus, &:active, &:hover {
+    background-color: $color-secondary;
+    color: $white;
+  }
+}
+
+.btn--navigate {
+  background-color: transparent;
+  color: $color-info;
+  border: 1px solid $color-info;
+
+  &:focus, &:active, &:hover {
+    background-color: $color-info;
+    color: $white;
+  }
+}
+
+.btn--log{
+  background-color: #01579b;
+  color: $white;
+  border: 1px solid #01579b;
+
+  &:focus, &:active, &:hover {
+    border: 1px solid #01579b;
+    background-color: transparent;
+    color: #01579b;
+  }  
+}
+
+.btn--sm{
+  margin: 3px;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+}
+
+
+.sticky-submit {
+  position: fixed;
+  bottom: 1rem;
+  right: 20px;
+}
+
+.add-fields {
+  padding: 0;
+  width: 40px;
+}

@@ -1,0 +1,11 @@
+<% @action_logs.each do |action_log| %>
+	var action_log_date = "<%= action_log.created_at.strftime('%d.%m.%Y') %>";
+	var container = $(".js_date_container[data-date='"+action_log_date+"']");
+	if(container.length==0){
+		$(".js_action_logs").append("<div class='js_date_container' data-date='"+action_log_date+"'><h2>"+action_log_date+"</h2></div>");
+	}
+	container = $(".js_date_container[data-date='"+action_log_date+"']");
+	container.append("<%= j render 'admin/action_logs/action_log', action_log: action_log %>");
+<% end %>
+$("#js_show_more_link").html('<%= link_to_next_page @action_logs, t("show_more"), params:{id: @admin.id}, class: "btn btn--tertiary", remote: true %>');
+renameDates();

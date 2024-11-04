@@ -1,0 +1,172 @@
+/*------------------------------------*\
+** VARIABLES
+\*------------------------------------*/
+
+// http://www.zell-weekeat.com/responsive-typography
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+$base-font-family: 'Raleway', sans-serif;
+$base-font-weight: $font-weight--regular;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+$base-font-color: $black;
+
+$heading-font-family: 'Bree Serif', sans-serif;
+
+
+
+/*------------------------------------*\
+** HEADINGS
+\*------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.67em;
+  font-weight: $font-weight--regular;
+}
+
+h1 {
+  @include fluid-typography($h1-font-sizes);
+}
+
+h2 {
+  @include fluid-typography($h2-font-sizes);
+}
+
+h3 {
+  @include fluid-typography($h3-font-sizes);
+}
+
+h4 {
+  @include fluid-typography($h4-font-sizes);
+}
+
+h5 {
+  @include fluid-typography($h5-font-sizes);
+}
+
+h6 {
+  @include fluid-typography($h6-font-sizes);
+}
+
+
+
+/*------------------------------------*\
+** LISTS
+\*------------------------------------*/
+
+ul li {
+  list-style-type: none;
+}
+
+ol li {
+  list-style-type: none;
+}
+
+
+
+/*------------------------------------*\
+** LINKS
+\*------------------------------------*/
+
+.link {
+  outline-width: 0;
+  text-decoration: none;
+  color: $color-primary;
+  transition: 0.2s;
+}
+
+.link:hover, .link:focus, .link:active {
+  color: lighten($color-primary, 10%);
+}
+
+/*------------------------------------*\
+** ARTICLES
+\*------------------------------------*/
+
+.article {
+  h1 {
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid $black-20;
+  }
+
+  h1 {
+    @include fluid-typography($h2-font-sizes);
+  }
+  
+  h2 {
+    @include fluid-typography($h3-font-sizes);
+  }
+  
+  h3 {
+    @include fluid-typography($h4-font-sizes);
+  }
+  
+  h4 {
+    @include fluid-typography($h5-font-sizes);
+  }
+  
+  h5 {
+    @include fluid-typography($h6-font-sizes);
+  }
+  
+  h6 {
+    @include fluid-typography($h6-font-sizes);
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  a {
+    @extend .link;
+  }
+}
+
+/*------------------------------------*\
+** OTHER
+\*------------------------------------*/
+
+b, strong, .strong {
+  font-weight: $font-weight--bold;
+}
+
+p {
+  @include font-size($copy-font-sizes);
+  font-family: $base-font-family;
+  margin-bottom: 1.5rem;
+}
+
+pre,
+code {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/*------------------------------------*\
+** FONT WEIGHTS
+\*------------------------------------*/
+
+@each $name, $value in $font-weights {
+  .text--#{$name} {
+    font-weight: $value;
+  }
+}
+
+
+
+/*------------------------------------*\
+** TEXT MODIFIERS
+\*------------------------------------*/
+
+// TODO: Dodaj text-- klase za debljinu, velicinu, boju, itd

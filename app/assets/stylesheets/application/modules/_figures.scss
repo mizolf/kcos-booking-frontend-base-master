@@ -1,0 +1,63 @@
+.figure {
+  margin: 0;
+  padding: 0;
+}
+
+// Place black transparent overlay over image
+.dim {
+  position: relative;
+
+  & > img {
+    width: 100%;
+    vertical-align: top;
+  }
+
+  &:after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background:rgba($black, 0.5);
+    transition: all 1s;
+  }
+
+  &--low {
+
+
+    &:after {
+      background:rgba($black, 0.2);
+    }
+  }
+}
+
+.video--16-9 {
+  position: relative;
+  padding-bottom: calc( 9 / 16 * 100% );
+  width: auto;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.video--21-9 {
+  position: relative;
+  padding-bottom: calc( 9 / 21 * 100% );
+  width: auto;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

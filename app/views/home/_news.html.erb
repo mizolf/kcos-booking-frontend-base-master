@@ -1,0 +1,8 @@
+<h1><%= t('pages_nav.posts') %></h1>
+<%= image_tag @post.image_url(:medium) %>
+<h2><%= @post.title %></h2>
+<p>
+  <%= @post.summary %>
+</p>
+<%= post_timestamp(@post.publish_at) %>
+<%= link_to t('post.see_other_posts'), posts_path, class: 'section__button' %>

@@ -1,0 +1,319 @@
+/*------------------------------------*\
+# LAYOUT
+\*------------------------------------*/
+
+.layout {
+
+   &--text {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint ($large) {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: $text-width;
+    }
+  }
+
+  &--main {
+    width: 100%;
+    //max-width: calc(305/375*100vw);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 91.5rem;;
+
+    @include breakpoint ($large) {
+      //max-width: calc(1512/1920*100vw);
+    }
+
+  }
+
+  &--full {
+    width: 100%;
+    @include breakpoint ($large) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  
+
+  &--padded {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+
+    @include breakpoint ($medium) {
+      padding-top: 2 * $gutter;
+      padding-bottom: 2 * $gutter;
+    }
+  }
+
+  &--padded--double {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+
+    @include breakpoint ($medium) {
+      padding-top: 4 * $gutter;
+      padding-bottom: 4 * $gutter;
+    }
+  }
+
+  &--soft-horizontal-pad {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.subsection {
+  margin-bottom: $gutter;
+}
+
+.section {
+  margin-bottom: $gutter;
+
+  @include breakpoint ($medium) {
+    margin-bottom: 2 * $gutter;
+  }
+}
+
+.section--double {
+  margin-bottom: 2 * $gutter;
+
+  @include breakpoint ($medium) {
+    margin-bottom: 4 * $gutter;
+  }
+}
+
+.section--dark {
+  background-color: $black;
+  color: $color-primary;
+}
+
+
+
+
+/*------------------------------------*\
+# FLEX
+\*------------------------------------*/
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+}
+
+// .: Align items :.
+
+.flex-align--start {
+  align-items: flex-start;
+}
+
+.flex-align--center {
+  align-items: center;
+}
+
+.flex-align--end {
+  align-items: flex-end;
+}
+
+.flex-align--stretch {
+  align-items: stretch;
+}
+
+// .: Justify content :.
+
+.flex--start {
+  justify-content: flex-start;
+}
+
+.flex--center {
+  justify-content: center;
+}
+
+.flex--end {
+  justify-content: flex-end;
+}
+
+.flex--stretch {
+  justify-content: stretch;
+}
+
+.flex--between {
+  justify-content: space-between;
+}
+
+.flex--around {
+  justify-content: space-around;
+}
+
+.flex--evenly {
+  justify-content: space-evenly;
+}
+
+// .: Wrap :.
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--nowrap {
+  flex-wrap: nowrap;
+}
+
+// .: Directions :.
+
+.flex--row {
+  flex-direction: row;
+}
+
+.flex--row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--column-reverse {
+  flex-direction: column-reverse;
+}
+
+// .: Gutters & Cells :.
+
+.flex--gutters {
+  margin-left: calc( #{$gutter} / -2 );
+  margin-right: calc( #{$gutter} / -2 );
+}
+
+.flex--gutters > .cell {
+  padding-left: calc( #{$gutter} / 2 );
+  padding-right: calc( #{$gutter} / 2 );
+}
+
+.flex--gutters--double {
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+.flex--gutters--double > .cell {
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+.cell {
+  box-sizing: border-box;
+}
+
+.cell--auto {
+  flex: 1;
+}
+
+@for $i from 1 through 12 {
+  .cell--#{$i} {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: calc( 100% * ( #{$i} / 12 ) )
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @include breakpoint ($value) {
+    @for $i from 1 through 12 {
+      .cell--#{$i}--#{$key} {
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: calc( 100% * ( #{$i} / 12 ) )
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+# CSS GRID
+\*------------------------------------*/
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-column-gap: $gutter*0.9375;
+
+  @include breakpoint($large) {
+    grid-template-columns: repeat(12, minmax(auto, 1fr));
+    grid-column-gap: $gutter*1.5;
+  }
+
+  &--center {
+    align-items: center;
+  }
+}
+
+.grid--gutters {
+    grid-row-gap: $gutter*1.75;
+}
+
+.grid--no-gutters {
+  grid-column-gap: 0;
+}
+
+@each $key, $value in $breakpoints {
+  @include breakpoint ($value) {
+    @for $i from 1 through 12 {
+      .col--#{$i}--#{$key} {
+        grid-column: auto/span #{$i};
+      }
+    }
+  }
+}
+
+//to make col first in the row add class .col--start
+@each $key, $value in $breakpoints {
+  @include breakpoint ($value) {
+    @for $i from 1 through 12 {
+      .col--start.col--#{$i}--#{$key} {
+        grid-column: 1/span #{$i};
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+# DEV SERVER NOTICE
+\*------------------------------------*/
+
+
+.dev-server-notice{
+  position: fixed;
+  bottom: -100px;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: $color-alert;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease-out;
+  z-index: 99;
+  .close--wrapper{
+    height: 100%;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &.float-up{
+    transform: translate(-50%, -100px);
+  }
+  p{
+    margin: 0;
+    padding: 0.5rem;
+  }
+}

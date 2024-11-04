@@ -1,0 +1,45 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.space_rent_requests') %></h1>
+</header>
+
+<section class="section section--12 section--double users">
+	<table class="clear-admin-agent-styles table datatable table__icon--4">
+		<thead>
+			<tr class="table__head--wrap">
+		    <th class="table__head col col--1"><%= tf('space_rent_request.created_at') %></th>
+		    <th class="table__head col col--1"><%= tf('space_rent_request.for_space') %></th>
+		    <th class="table__head col col--1"><%= tf('space_rent_request.organisation') %></th>
+		    <th class="table__head col col--1"><%= tf('space_rent_request.full_name') %></th>
+		    <th class="table__head col col--1"><%= t('actions') %></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+			<% @space_rent_requests.each do |space_rent_request| %>
+	  		<tr class="table__item--wrap">
+		      <td class="table__item col col--1" data-sort="<%= space_rent_request.created_at.strftime('%Y%m%d') %>">
+				<%= timestamp(space_rent_request.created_at) %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= link_to space_rent_request.space.name, admin_space_path(space_rent_request.space), class: 'link' %>
+		      </td>
+		      <td class="table__item col col--1">
+		      	<%= space_rent_request.organisation %>
+		      </td>
+		      <td class="table__item col col--1">
+						<%= space_rent_request.full_name %>
+		      </td>
+		      <td class="table__item table__icon--wrap col col--1">	
+					<%= link_to admin_space_rent_request_path(space_rent_request), class: "table__icon" do %>
+						<%= inline_svg "icons/eye-ban-18.svg" %>
+					<% end %>
+		      </td>
+				</tr>
+		  <% end %>
+		</tbody>
+	</table>
+</section>
+
+<script>
+	init_datatable({lang: "<%= I18n.locale %>"});
+</script>

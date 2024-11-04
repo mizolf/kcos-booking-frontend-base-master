@@ -1,0 +1,164 @@
+/*------------------------------------*\
+** FLUID TYPOGRAPHY
+\*------------------------------------*/
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function strip-rem-unit($value) {
+  @return $value / ($value * 0 + 1) * 16;
+}
+
+// $fs-map syntax: (min: (min_fs, min_lh), max: (max_fs, max_lh))
+@mixin fluid-typography($fs-map) {
+  $min-vw: $small;
+  $max-vw: $large;
+  $min-font-size: nth(map-get($fs-map, "min"), 1);
+  $max-font-size: nth(map-get($fs-map, "max"), 1);
+  $min-line-height: nth(map-get($fs-map, "min"), 2) * $min-font-size;
+  $max-line-height: nth(map-get($fs-map, "max"), 2) * $max-font-size;
+
+  font-size: $min-font-size;
+  line-height: $min-line-height;
+
+  @media screen and (min-width: $min-vw) {
+    font-size: calc(
+      #{$min-font-size} + #{strip-rem-unit($max-font-size - $min-font-size)} *
+        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+    );
+
+    line-height: calc(
+      #{$min-line-height} + #{strip-rem-unit($max-line-height - $min-line-height)} *
+        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+    );
+  }
+
+  @media screen and (min-width: $max-vw) {
+    font-size: $max-font-size;
+    line-height: $max-line-height;
+  }
+}
+
+/*------------------------------------*\
+** RESPONSIVE FONT SIZES
+\*------------------------------------*/
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == small {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+** UTILIY FUNCTION FOR FONT-SIZE MIXIN
+\*------------------------------------*/
+
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+
+
+/*------------------------------------*\
+** BREAKPOINTS
+\*------------------------------------*/
+
+// Legacy fallback
+@mixin breakpoint($name){
+  @media only screen and (min-width:$name + 1px) {
+    @content;
+  }
+}
+
+@mixin min-breakpoint($name){
+  @media only screen and (min-width:$name + 1px) {
+    @content;
+  }
+}
+
+@mixin max-breakpoint($name){
+  @media only screen and (max-width:$name) {
+    @content;
+  }
+}
+
+
+
+/*------------------------------------*\
+** VERTICAL CENTERING
+\*------------------------------------*/
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+/*------------------------------------*\
+** CARD DEPTH
+\*------------------------------------*/
+
+@mixin card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
+
+
+/*------------------------------------*\
+** UTILITY FUNCTION FOR CARD DEPTH MIXIN
+\*------------------------------------*/
+
+@function top-shadow($depth) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+
+
+/*------------------------------------*\
+** UTILITY FUNCTION FOR CARD DEPTH MIXIN
+\*------------------------------------*/
+
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}

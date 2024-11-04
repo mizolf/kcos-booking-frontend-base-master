@@ -1,0 +1,125 @@
+<!-- ### TABLES ### -->
+
+<section class="section">
+
+  <h2 class="toolkit__headline">Tables</h2>
+
+  <section class="subsection">
+    <pre><code>
+      modules/_tables.scss
+    </code></pre>
+  </section>
+
+</section>
+
+  
+
+<div class="wrapper toolkit__tables">
+  <h3 class="toolkit__subheadline margin--bottom">Table with filter and new record</h3>
+
+	<header class="header header--double">
+    <h1>Table title</h1>
+    <%= link_to "New record", admin_root_path, class: "btn btn--primary btn--large" %>
+  </header>
+
+  <section class="section section--12 section--double">
+    
+    <table class="datatable table__icon--4">
+      <thead>
+        <tr class="table__head--wrap">
+          <th class="table__head col col--1"><%= t('published_at') %></th>
+          <th class="table__head col col--5"><%= t('title') %></th>
+          <th class="table__head col col--1">action></th>
+          <th class="table__head col col--1">actions></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr class="table__item--wrap">
+            <td class="table__item col col--1">12.12.2018.</td>
+            <td class="table__item col col--5">Style mailer and setup cms toolkit</td>
+            <td class="table__item table__icon--wrap col col--1">
+             	 <%= link_to admin_root_path, class: "table__icon" do %>
+                <%= inline_svg "icons/eye-ban-18.svg" %>
+              <% end %>
+            </td>
+            <td class="table__item table__icon--wrap col col--1">
+              <%= link_to admin_root_path, class: "table__icon" do %>
+                <%= inline_svg "icons/eye-ban-18.svg" %>
+              <% end %>
+
+              <%= link_to admin_root_path, class: "table__icon" do %>
+                <%= inline_svg "icons/pen-group-3.svg" %>
+              <% end %>
+
+              <%= link_to admin_root_path, method: :delete, data: { confirm: t('delete_confirm') }, class: "table__icon" do %>
+                <%= inline_svg "icons/trash-simple.svg" %>
+              <% end %>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<div class="wrapper toolkit__tables">
+  <h3 class="toolkit__subheadline margin--bottom">Table with filter without new record</h3>
+
+  <section class="subsection">
+    <pre><code>
+      section with class .no-new-record
+    </code></pre>
+  </section>
+
+  <header class="header header--double">
+    <h1>Table title</h1>
+  </header>
+
+  <section class="section section--12 section--double no-new-record">
+    
+    <table class="datatable table__icon--4">
+      <thead>
+        <tr class="table__head--wrap">
+          <th class="table__head col col--1"><%= t('published_at') %></th>
+          <th class="table__head col col--5"><%= t('title') %></th>
+          <th class="table__head col col--1">action></th>
+          <th class="table__head col col--1">actions></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr class="table__item--wrap">
+            <td class="table__item col col--1">12.12.2018.</td>
+            <td class="table__item col col--5">Style mailer and setup cms toolkit</td>
+            <td class="table__item table__icon--wrap col col--1">
+               <%= link_to admin_root_path, class: "table__icon" do %>
+                <%= inline_svg "icons/eye-ban-18.svg" %>
+              <% end %>
+            </td>
+            <td class="table__item table__icon--wrap col col--1">
+              <%= link_to admin_root_path, class: "table__icon" do %>
+                <%= inline_svg "icons/eye-ban-18.svg" %>
+              <% end %>
+
+              <%= link_to admin_root_path, class: "table__icon" do %>
+                <%= inline_svg "icons/pen-group-3.svg" %>
+              <% end %>
+
+              <%= link_to admin_root_path, method: :delete, data: { confirm: t('delete_confirm') }, class: "table__icon" do %>
+                <%= inline_svg "icons/trash-simple.svg" %>
+              <% end %>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+
+
+<script>
+  init_datatable({lang: "<%= I18n.locale %>"});
+</script>
+

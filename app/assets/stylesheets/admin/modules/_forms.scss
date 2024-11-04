@@ -1,0 +1,396 @@
+/*------------------------------------*\
+** DEFAULTS
+\*------------------------------------*/
+
+.form__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fieldset {
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-color: #d8d8d8;
+}
+
+.form__field {
+  margin-bottom: 1.14rem;
+}
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  color: $color-gray--darker;
+  background: transparent;
+  border: 1px solid #d8d8d8;
+  border-radius: $input-radius;
+  font-family: $base-font-family;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: $input-padding;
+  transition: .2s ease;
+
+  &:focus {
+    border-color: $color-primary;
+    outline: 0;
+    transition: .2s ease;
+  }
+
+  &::placeholder {
+    color: $color-gray;
+  }
+}
+
+.label {
+  display: block;
+  color: $color-gray;
+  font-family: $category-font-family;
+  font-size: 0.71rem;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.71rem;
+
+  &--primary {
+    color: #4b4b4b;
+    font-size: 1.14rem;
+    line-height: 1.5;
+    margin-top: 1.14rem;
+    margin-bottom: 1.71rem;
+  }
+
+  &--secondary {
+    color: $color-gray;
+    float: right;
+    margin-bottom: 0;
+  }
+
+  &--legend {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+
+  &--file {
+    height: 160px;
+    color: $color-gray--dark;
+    border: 1px solid $color-gray--light;
+    border-radius: $input-radius;
+    cursor: pointer;
+    text-align: center;
+    text-transform: none;
+    transition: $transition-time;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    p {
+      margin-top: 0.29rem;
+      margin-bottom: 0.71rem;
+    }
+
+    span {
+      display: block;
+      color: $color-gray;
+      font-family: $base-font-family;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+
+      span {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &--edit {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
+}
+
+.legend {
+  @include font-size($h1-font-sizes);
+  margin-bottom: 1em;
+}
+
+
+.form__field--error {
+  .input, .textarea {
+    transition: all 0.3s ease;
+    outline: 0;
+  }
+}
+
+.form__message {
+  display: none;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  color: $color-secondary;
+  border: 1px solid $white;
+  border-radius: 2rem;
+  background-color: $color-success;
+}
+
+.form__btn {
+  margin-top: 2.75rem;
+}
+
+.form__lang {
+  grid-column: 1/span 12;
+}
+
+
+
+/*------------------------------------*\
+** SEARCH
+\*------------------------------------*/
+
+.form--search {
+  position: relative;
+
+  .input {
+    background-color: rgba(216, 216, 216, 0.3);
+    background-image: image-url('icons/search-icon-2.svg');
+    background-position: calc(100% - 16px) calc(100% - 12px);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border-color: rgba(216, 216, 216, 0.1);
+    width: auto;
+
+    &:focus {
+      background-image: none;
+      border-color: $color-gray--light;
+    }
+
+    &::placeholder {
+      color: #c0c0c0;
+      font-size: 0.86rem;
+      font-style: italic;
+    }
+  }
+
+  .input:focus + .search__close {
+    display: block;
+  }
+
+  .search__close {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:before, &:after {
+      content:'';
+      display: block;
+      width: 26px;
+      height: 1px;
+      background: $color-gray--darker;
+      position: absolute;
+      top: 16px;
+      right: 1px;
+      cursor: pointer;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+** EDIT FORM
+\*------------------------------------*/
+
+.edit_post {
+  //position: relative;
+}
+
+
+
+/*------------------------------------*\
+** SIGN IN
+\*------------------------------------*/
+
+.form--sign-in {}
+
+
+
+
+/*------------------------------------*\
+** MATERIAL FORMS
+\*------------------------------------*/
+
+.form__field--materialize {
+
+  .input,
+  .textarea {
+    outline: none;
+    z-index: 1;
+    position: relative;
+    box-shadow: none;
+    background: none;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    color: gray;
+    font-size: 22px;
+    font-weight: 400;
+
+    &:focus {
+      ~ .label {
+        color: #9d9d9d;
+        transform: translate(-12%, -50%) scale(0.75);
+      }
+
+      ~ .bar {
+        &:before,
+        &:after {
+          width: 50%;
+        }
+      }
+    }
+
+    &:valid {
+      ~ .label {
+        color: #9d9d9d;
+        transform: translate(-12%, -50%) scale(0.75);
+      }
+    }
+  }
+
+  .textarea {
+   height: 300px;
+   padding-top: 1rem;
+   resize: none;
+ }
+
+ .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: gray;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 60px;
+  transition: all 0.2s ease;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: gray;
+  width: 100%;
+  height: 1px;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    transition: .2s ease;
+    background: $color-primary;
+  }
+
+  &:before {
+    left: 50%;
+  }
+
+  &:after {
+    right: 50%;
+  }
+}
+}
+
+.field-error{
+  color: red;
+}
+
+.field-success{
+  color: green;
+}
+
+/*------------------------------------*\
+** IMAGE
+\*------------------------------------*/
+
+.delete_image{
+  opacity: 0.7;
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8) blur(2px);
+}
+
+
+
+
+/*------------------------------------*\
+** OSM COORDINATES
+\*------------------------------------*/
+
+.input__coordinate {
+  display: inline-block;
+  width: 30%;
+  padding: 0.5rem 1.14rem;
+}
+
+.btn__coordinate {
+  display: inline-block;
+  width: 50px;
+  padding: 0.5rem 1.14rem;
+  line-height: 2;
+}
+
+.form__coordinate {
+  width: 400px;
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  .input__wrapper {
+    align-items: stretch;
+  }
+
+  input {
+    margin: 0 10px;
+    min-width: 140px;
+  }
+
+}
+
+.label__coordinate {
+  font-size: 1rem;
+}
+
+
+
+
+/*------------------------------------*\
+** ALERTS
+\*------------------------------------*/
+
+.form__alert {
+  &--error {
+    color: $color-alert;
+  }
+}

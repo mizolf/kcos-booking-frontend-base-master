@@ -1,0 +1,63 @@
+<!-- ### TABS ### -->
+
+<section class="section">
+
+  <h2 class="toolkit__headline">Tabs</h2>
+
+  <section class="subsection">
+    <pre><code>
+      modules/_tabs.scss
+      visitors/tabs.js
+    </code></pre>
+  </section>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <!-- <h3 class="toolkit__subheadline">Subheadline</h3> -->
+
+  <div class="wrapper">
+
+    <div class="tabs tabs__wrapper tabs-margin--small">
+      <div class="tabs__navigation">
+        <a class= "btn--tabs js_tabs is-active">Tab 1</a>
+          <a class= "btn--tabs js_tabs">Tab 2</a>
+          <a class= "btn--tabs js_tabs">Tab 3</a>
+        <a class= "btn--tabs js_tabs">Tab 4</a>
+      </div>
+    </div>
+
+    <div class="js_part">
+      <p>Content 1</p>
+    </div>
+    <div class="js_part">
+      <p>Content 2</p>
+    </div>
+    <div class="js_part">
+      <p>Content 3</p>
+    </div>
+    <div class="js_part">
+      <p>Content 4</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<script>
+  $(function(){
+    $(".js_part").hide();
+    $(".js_part").first().show();
+    $(".js_tabs").on("click", function(){
+      $(".js_part").hide();
+      $(".js_part:eq("+$(this).index()+")").show();
+      $(".btn--tabs").removeClass("is-active");
+      $(this).addClass("is-active");
+    })
+  })
+</script>

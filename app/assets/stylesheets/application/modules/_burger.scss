@@ -1,0 +1,87 @@
+/*------------------------------------*\
+# HAMBURGER
+\*------------------------------------*/
+
+$sliceHeight: 0.15rem;
+$button-color: $color-primary;
+
+body.burger-is-active {
+  overflow: hidden;
+
+  @include breakpoint($bp--navbar) {
+    overflow: auto;
+  }
+}
+
+.burger-button {
+  width: 2rem;
+  height: 2rem;
+
+  background: transparent;
+
+  border-radius: 100%;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav--user__burger {
+  display: inline-block;
+  position: absolute;
+  height: 1rem;
+  right: $gutter;
+  top: 1.75rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  z-index: 3;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.icon--burger {
+  display: block;
+  height: $sliceHeight;
+  width: 1.5rem;
+  background: $button-color;
+  position: relative;
+  transition: $transition-time;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    width: 100%;
+    left: 0;
+    height: $sliceHeight;
+    background: $button-color;
+    transition: 0.2s;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 100%;
+    height: $sliceHeight;
+    background: $button-color;
+    transition: 0.2s;
+  }
+
+  &.is-active {
+    background: transparent;
+
+    &:before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+    &:after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+  }
+}

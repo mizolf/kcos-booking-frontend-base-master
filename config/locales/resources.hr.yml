@@ -1,0 +1,294 @@
+hr:
+#RESOURCES
+  admin:
+    new_record: "Novi korisnik"
+    number_of_logins: "Broj pristupa"
+    first_name: "Ime "
+    profile: "Profil"
+    last_name: "Prezime"
+    email: "Email adresa "
+    role: "Uloga "
+    password: "Lozinka "
+    password_confirmation: "Potvrda lozinke "
+    image: "Slika "
+    number_of_logs: "Broj izmjena"
+    resource_permissions: "Moderatorske ovlasti"
+  space:
+    deleted: "Obrisani prostor"
+    back_to_home: "Povratak na naslovnicu"
+    back_to_spaces: "Povratak na prostore"
+    bookable_desc: "Određuje može li se ovaj prostor iznajmiti po terminu"
+    rentable_desc: "Određuje može li se ovaj prostor iznajmiti po mjesecu"
+    available_desc: "Ukoliko uklonite oznaku, ovaj prostor neće se moći rezervirati i na stranicama biti će prikazan kao zauzet"
+    space_for_rent: "Prostor za najam"
+    surface: "Površina: %{surface}"
+    rent_monthly: "Iznajmi za %{price} na mjesec"
+    rent_hourly: "Bookiraj za %{price} po terminu"
+    form_tabs:
+      basic: "Osnovno"
+      renting: "Najam"
+      images: "Slike"
+    rent_options: "%{options}"
+    unavailable: "trenutno nedostupno"
+    rent_option:
+      monthly: "mjesečno"
+      hourly: "po terminu"
+  space_booking:
+    send_notification_desc: "Pošaljite email notifikaciju korisniku da se status termina izmijenio."
+    send_notification: "Pošalji"
+    send_confirm: "Jeste li sigurni? Email će biti poslan korisniku na %{email}"
+    last_email_sent: "Zadnji notifikacijski email poslan je: %{timestamp}"
+    picked_terms: "Odabrani termini"
+    pick_date: "Odaberite datum"
+    pick_time: "Odaberite vrijeme početka i završetka"
+    title: "Rezervacija"
+    general: "Općenito"
+    back_to_general: "Povratak na općenito"
+    finish: "Završi rezervaciju"
+    pick_terms: "Odaberi termine"
+    successfully_booked: "Uspješno rezervirano"
+    terms: 'Termini'
+    terms_for: 'Termini za'
+    bookings_for: "Rezervacije za"
+    whole_hour_description: "Rezervacija prostora moguća je samo u trajanju cijelog sata."
+    status:
+      new: "Nova"
+      outdated: "Zastarjela"
+      pending: "Na čekanju"
+      partially_pending: "Djelomično riješena"
+      resolved: "Riješena"
+  space_booking_term:
+    taken: "Termin je zauzet"
+    add_term: "Dodaj termin"
+    declining_description: "Ukoliko status termina izmijenite u \"Odbijeno\", taj termin biti će oslobođen za rezervaciju. Ukoliko postoji odobreni ili termin na čekanju koji se preklapa sa odbijenim terminom, tada tom odbijenom terminu ne možete promijeniti status. Osim toga, svim terminima u prošlosti ne možete mijenjati status."
+    status:
+      pending: 'Nepotvrđeno'
+      confirmed: 'Potvrđeno'
+      declined: 'Odbijeno'
+  space_rent_request:
+    title: "Zahtjev za najam"
+    submit: "Predaj"
+  post:
+    see_other_posts: "Pogledaj ostale novosti"
+    publish_at_visibility_desc: "Novost sa datumom objave u budućnosti će biti vidljiva samo administratorima i posjetitelji je neće vidjeti do datuma objave."
+    preview_desc: "Novost u \"Pregled\" režimu na stranicama će biti vidljiva samo administratorima i posjetitelji je neće vidjeti. Preporučeno je ostaviti novost u pregledu dokle god se ne uvjerite da je spremna za objavu."
+    post_tabs:
+      basic: "Osnovno"
+      content: "Sadržaj"
+      seo: "SEO"
+  document:
+    attach_file: "Učitaj datoteku"
+  page_meta_tag:
+    title_desc: "Naslov prikazan u kartici (tabu) preglednika"
+  app_settings:
+    consent_texts_desc: "Tekst koji se ispisuje uz potvrdni okvir za rezervaciju i zahtjev za prostor"
+  landing_page:
+    tabs:
+      about_project: "O projektu"
+      gallery: "Galerija"
+#RESOURCE FIELDS#
+  activerecord:
+    attributes:
+      admin:
+        first_name: "Ime "
+        last_name: "Prezime"
+        email: "Email adresa "
+        role: "Uloga "
+        password: "Lozinka "
+        password_confirmation: "Potvrda lozinke "
+        image: "Slika "
+        remember_me: "Zapamti moju prijavu"
+        current_password: "Trenutna lozinka"
+      space:
+        name: "Naziv"
+        book_price_cents: "Cijena najma po satu"
+        rent_price_cents: "Cijena mjesečnog najma"
+        surface_area: "Površina m²"
+        description: "Opis"
+        bookable: "Rentabilno po satu"
+        rentable: "Rentabilno mjesečno"
+        available: "Raspoloživo"
+      space_image:
+        image: "Slika"
+      space_booking:
+        created_at: "Datum"
+        first_name: "Ime"
+        last_name: "Prezime"
+        full_name: "Ime i prezime"
+        status: "Status"
+        organisation: "Udruga/Organizacija/Tvrtka"
+        phone: "Broj telefona odgovorne osobe"
+        email: "Email"
+        people_count: "Broj osoba"
+        purpose: "Svrha"
+        for_space: "Za prostor"
+      space_rent_request:
+        created_at: "Datum"
+        first_name: "Ime"
+        last_name: "Prezime"
+        full_name: "Ime i prezime"
+        status: "Status"
+        organisation: "Udruga/Organizacija/Tvrtka"
+        phone: "Broj telefona odgovorne osobe"
+        email: "Email"
+        people_count: "Broj osoba"
+        work_plan: "Popis aktivnosti/okviran plan rada i programa"
+        work_goal: "Cilj rada"
+        partners: "Potencijalni partneri, suradnici s kojima ćete raditi u prostorima"
+        other: "Ostalo (pitanja ili napomene)"
+        for_space: "Za prostor"
+      post:
+        title: "Naslov"
+        summary: "Sažetak"
+        text: "Sadržaj"
+        publish_at: "Datum objave"
+        image: "Slika"
+        image_alt: "Alt tekst slike"
+        slug: "Slug"
+        seo_title: "Naslov - name=\"og_title\""
+        seo_description: "Opis - name=\"description\""
+        seo_keywords: "Ključne riječi - name=\"keywords\""
+        seo_image: "Slika - name=\"image\""
+        preview: "Pregled"
+      document:
+        file: "Datoteka"
+        name: "Naziv"
+      faq:
+        question: "Pitanje"
+        answer: "Odgovor"
+      page_meta_tag:
+        title: "Naslov stranice"
+        og_title: "name=\"og_title\""
+        description: "name=\"description\""
+        keywords: "name=\"keywords\""
+        image: "name=\"image\""
+      legal_page:
+        name: "Naziv poveznice"
+        title: "Naslov"
+        content: "Sadržaj"
+        slug: "Slug"
+        list: "Prikaži na stranicama"
+        seo_description: "SEO Opis"
+        seo_title: "SEO Naslov"
+        seo_keywords: "SEO Ključne riječi"
+      app_setting:
+        space_booking_consent: "Potvrda za rezervaciju prostora"
+        space_rent_consent: "Potvrda za najam prostora"
+      landing_page:
+        about_project: "O projektu"
+      gallery_image:
+        image: "Slika"
+        image_alt: "ALT slike"
+#RESOURCE ERRORS#
+    errors:
+      models:
+        admin:
+          attributes:
+            current_password:
+              blank: "Unesite vašu trenutnu lozinku"
+              invalid: "Lozinka nije točna"
+            password_confirmation:
+              confirmation: "Potvrda lozinke i unešena lozinka se ne podudaraju"
+        space:
+          attributes:
+            name:
+              blank: "Ne može ostati neispunjeno"
+            surface_area:
+              blank: "Ne može ostati neispunjeno"
+            description:
+              blank: "Ne može ostati neispunjeno"
+        space_booking:
+          attributes:
+            base:
+              at_least_one_term: "Odaberite željeni termin"
+            first_name:
+              blank: "Ne može ostati neispunjeno"
+            last_name:
+              blank: "Ne može ostati neispunjeno"
+            organisation:
+              blank: "Ne može ostati neispunjeno"
+            phone:
+              blank: "Ne može ostati neispunjeno"
+            email:
+              blank: "Ne može ostati neispunjeno"
+              invalid: "Email adresa nije valjana"
+            people_count:
+              blank: "Ne može ostati neispunjeno"
+            purpose:
+              blank: "Ne može ostati neispunjeno"
+        space_booking_term:
+          attributes:
+            base:
+              overlapping: "Termin je zauzet"
+            date:
+              blank: "Datum ne može ostati prazan"
+            time_from:
+              blank: "Vrijeme početka ne može ostati prazno"
+            time_to:
+              blank: "Vrijeme završetka ne može ostati prazno"
+        space_rent_request:
+          attributes:
+            first_name:
+              blank: "Ne može ostati neispunjeno"
+            last_name:
+              blank: "Ne može ostati neispunjeno"
+            organisation:
+              blank: "Ne može ostati neispunjeno"
+            phone:
+              blank: "Ne može ostati neispunjeno"
+            email:
+              blank: "Ne može ostati neispunjeno"
+              invalid: "Email adresa nije valjana"
+            people_count:
+              blank: "Ne može ostati neispunjeno"
+            work_plan:
+              blank: "Ne može ostati neispunjeno"
+            work_goal:
+              blank: "Ne može ostati neispunjeno"
+        post:
+          attributes:
+            title:
+              blank: "Ne može ostati prazno"
+              too_long: "Unos je predugačak"
+            summary:
+              blank: "Ne može ostati prazno"
+              too_long: "Unos je predugačak"
+            text:
+              blank: "Ne može ostati prazno"
+            publish_at:
+              blank: "Ne može ostati prazno"
+            image:
+              blank: "Ne može ostati prazno"
+            seo_keywords:
+              blank: "Ne može ostati prazno"
+            seo_description:
+              too_long: "Unos je predugačak"
+        document:
+          attributes:
+            name:
+              blank: "Ne može ostati prazno"
+              too_long: "Unos je predugačak"
+            file:
+              blank: "Učitajte datoteku"
+        faq:
+          attributes:
+            question:
+              blank: "Ne može ostati prazno"
+            answer:
+              blank: "Ne može ostati prazno"
+        page_meta_tag:
+          attributes:
+            title:
+              blank: "Ne može ostati prazno"
+              too_long: "Unos je predugačak"
+            description:
+              blank: "Ne može ostati prazno"
+              too_long: "Unos je predugačak"
+            keywords:
+              blank: "Ne može ostati prazno"
+              too_long: "Unos je predugačak"
+        legal_page:
+            attributes:
+              name:
+                blank: "Ne može ostati prazno"
+                too_long: "Unos je predugačak"

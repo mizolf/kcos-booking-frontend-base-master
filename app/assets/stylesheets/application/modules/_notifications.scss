@@ -1,0 +1,39 @@
+.alert-box{
+  position: fixed;
+  text-align: center;
+  padding: 0.75rem;
+  z-index: 1;
+  margin: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  bottom: 0;
+  box-shadow: 0 0.625rem 1rem 0 rgba(0, 0, 0, 0.05);
+  left: 1rem;
+  right: 1rem;
+  width: auto;
+  font-weight: 600;
+  font-size: 1rem;
+
+  @include breakpoint($large) {
+    bottom: 0;
+    max-width: 24rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 1rem;
+    width: 100%;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.success{
+  color: white;
+  background-color: $color-success;
+}
+
+.alert{
+  color: white;
+  background-color: $color-alert;
+}

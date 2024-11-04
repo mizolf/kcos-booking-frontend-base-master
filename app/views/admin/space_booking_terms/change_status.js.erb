@@ -1,0 +1,3 @@
+$('[data-space-booking-term-id="<%= @space_booking_term.id %>"]').val("<%= @space_booking_term.reload.status %>");
+$('#email-notification').html("<%= j render 'admin/space_bookings/email_notification', space_booking: @space_booking_term.space_booking %>");
+$('.js_notifications').html("<%= j render 'layouts/notifications' %>");

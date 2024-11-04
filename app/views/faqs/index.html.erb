@@ -1,0 +1,5 @@
+<h1><%= t('pages_nav.faqs') %></h1>
+<% @faqs.each_with_index do |faq, index| %>
+  <p><%= faq.question %></p>
+  <p><%= faq.answer %></p>
+<% end %>

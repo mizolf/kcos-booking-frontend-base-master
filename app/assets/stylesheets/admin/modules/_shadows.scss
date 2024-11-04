@@ -1,0 +1,21 @@
+.shadow--top {
+  box-shadow: 0 -0.25rem 1rem -0.25rem rgba($color-gray, 0.5);
+}
+
+.shadow--right {
+  box-shadow: 0.25rem 0 1rem 0.25rem rgba($color-gray, 0.5);
+}
+
+.shadow--bottom {
+  box-shadow: 0 0.25rem 1rem -0.25rem rgba($color-gray, 0.5);
+}
+
+.shadow--left {
+  box-shadow: -0.25rem 0 1rem -0.25rem rgba($color-gray, 0.5);
+}
+
+.shadow--full {
+  box-shadow: 0 0 1rem rgba($color-gray, 0.5);
+}
+
+// TODO: Razine sjene

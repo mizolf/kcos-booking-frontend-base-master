@@ -1,0 +1,15 @@
+<div class="tabs tabs__wrapper tabs-margin--small">
+  <div class="tabs__navigation">
+    <a class= "btn--tabs js_tabs"><%= t('post.post_tabs.basic') %></a>
+    <a class= "btn--tabs js_tabs"><%= t('post.post_tabs.content') %></a>
+    <a class= "btn--tabs js_tabs"><%= t('post.post_tabs.seo') %></a>
+  </div>
+</div>
+
+<%= hidden_field_tag :tab, params[:tab] || 0 %>
+
+<script>
+  $(function(){
+    initTabs(<%= params[:tab] %>);
+  })
+</script>

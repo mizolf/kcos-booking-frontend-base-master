@@ -1,0 +1,71 @@
+.alert-box{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px 10px $navigation-width;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.success{
+  color: white;
+  background-color: $color-success;
+}
+
+.alert{
+  color: white;
+  background-color: $color-alert;
+}
+
+
+/*------------------------------------*\
+** INDICATORS
+\*------------------------------------*/
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+
+  &--green {
+    background-color: $color-created;
+  }
+
+  &--orange {
+    background-color: $color-edited;
+  }
+
+  &--red {
+    background-color: $color-deleted;
+  }
+}
+
+.activity {
+
+  .indicator {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: 1.14rem;
+  }
+
+  .table__item--wrap .table__item:last-child {
+    position: relative;
+    padding-left: 2.57rem!important;
+  }
+}
+
+.messages {
+
+  .indicator {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: -0.57rem;
+  }
+
+  .table__item--wrap .table__item:nth-child(2) {
+    position: relative;
+  }
+}

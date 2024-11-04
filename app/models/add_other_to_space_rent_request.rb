@@ -1,0 +1,2 @@
+class AddOtherToSpaceRentRequest < ApplicationRecord
+end

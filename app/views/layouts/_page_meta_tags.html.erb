@@ -1,0 +1,8 @@
+<% content_for :title, page_meta_tag.title %>
+<% content_for :og_title, page_meta_tag.resolve_og_title %>
+<% content_for :image, "#{request.base_url}#{page_meta_tag.image}" unless page_meta_tag.image.blank? %>
+<% content_for :author, AppInfo.name  %>
+<% content_for :type, 'webasite' %>
+<% content_for :keywords, page_meta_tag.keywords %>
+<% content_for :description, page_meta_tag.description %>
+<% content_for :edit_meta_tags_link, admin_page_meta_tag_path(page_meta_tag) %>

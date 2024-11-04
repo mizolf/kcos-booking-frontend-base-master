@@ -1,0 +1,12 @@
+<% unless space_booking_terms.blank? %>
+	<div class="space-term-items-wrapper">
+		<h2 class="datepicker__heading"><%= t('space_booking.picked_terms') %></h2>
+		<ul class="space-term-items">
+			<% space_booking_terms.each_with_index do |space_booking_term, index| %>
+				<li data-aos="fade-up" data-aos-once="true" data-aos-delay="<%= index * 100 %>">
+	        		<%= render 'space_bookings/space_booking_term', space_booking_term: space_booking_term %>
+	      		</li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>

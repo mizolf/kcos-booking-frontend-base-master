@@ -1,0 +1,19 @@
+<div class="section__wrap--4">
+
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit btn__group--3">
+      <%= link_to [:admin, legal_page], class: "table__icon" do %>
+        <%= inline_svg "icons/eye-ban-18.svg" %>
+      <% end %>
+      <%= link_to [:admin, legal_page], method: :delete, data: { confirm: t('delete_confirm') }, class: "table__icon" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+
+    <div class="admin-legal_page__item">
+      <div class="text--center">
+        <h2><%= legal_page.name %></h2>
+      </div>
+    </div>
+  </section>
+</div>

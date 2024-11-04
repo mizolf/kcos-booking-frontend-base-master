@@ -1,0 +1,5 @@
+<div class="sortable sortable--col-12" data-url="<%= sort_admin_documents_path %>">
+	<% documents.each do |document| %>
+		<div class="sortable-item" id="<%= dom_id(document)%>"><%= render 'admin/documents/document', document: document %></div>
+	<% end %>
+</div>

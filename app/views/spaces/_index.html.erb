@@ -1,0 +1,9 @@
+<h2>Prostori</h2>
+<p>Come and see the violence inherent in the system. Help! Help! I'm being repressed! What is the capital of Assyria? Oh, king eh? Very nice. And how'd you get that, eh? By exploiting the workers. By hanging on to outdated imperialist dogma which perpetuates the economic and social differences in our society.</p>
+<% @spaces.each do |space| %>
+  <%= image_tag space.featured_image.image_url(:medium) unless space.featured_image.blank? %>
+  <%= link_to space_path(space) do %>
+    <p><%= space.name %></p>
+  <% end %>
+  <%= surface(space.surface_area)  %> - <%= humanized_money_with_symbol(space.book_price) %> po terminu
+<% end %>

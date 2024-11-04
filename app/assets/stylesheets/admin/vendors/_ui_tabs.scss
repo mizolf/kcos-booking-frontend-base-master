@@ -1,0 +1,41 @@
+// tabs
+
+.ui-widget-header {
+  background: transparent !important;
+}
+
+.ui-tabs-nav {
+  background-color: transparent !important;
+  height: 30px;
+  margin-top: 1rem !important;
+}
+
+.ui-tabs-anchor {
+  color: $color-primary !important;
+  outline:none;
+}
+
+.ui-tabs-active a {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: white !important;
+  border-color: #CCCCCC;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  border-radius: 5px 5px 0 0;
+  color: #222222 !important;
+  position: relative;
+  z-index: 5;
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  position: relative;
+  top: -10px !important;
+  border: none;
+  margin: 0 0 -5px 0;
+  background: none;
+}

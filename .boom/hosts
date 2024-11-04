@@ -1,0 +1,5 @@
+[backup]
+backup.bambooapp.eu:12321 ansible_ssh_user=deployer
+
+[droplets]
+kcos_booking.dev.bambooapp.eu:12321 ansible_ssh_user=deployer

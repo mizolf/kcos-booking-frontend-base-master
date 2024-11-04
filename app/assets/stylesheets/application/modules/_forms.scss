@@ -1,0 +1,76 @@
+/*------------------------------------*\
+** SEARCH
+\*------------------------------------*/
+
+.form--search {
+  display: inline-block;
+
+  & > * {
+    display: inline-block;
+  }
+}
+
+
+
+/*------------------------------------*\
+** DEFAULTS
+\*------------------------------------*/
+
+.form__fieldset {
+  border: none;
+  color: $base-font-color;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1/2*$gutter;
+}
+
+.form__field {
+  margin-bottom: 1/2*$gutter;
+}
+
+.input, .textarea {
+  border: $input-border;
+  color: $base-font-color;
+  background-color: $white--true;
+  padding: $input-padding;
+  display: block;
+  width: 100%;
+  font-family: $base-font-family;
+  font-weight: $font-weight--regular;
+  transition: $transition-time;
+  border-radius: $input-radius;
+
+  &:focus {
+    border-color: $color-primary;
+    transition: $transition-time;
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: $base-font-color;
+  }
+}
+
+.legend {}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: $font-weight--semibold;
+}
+
+
+.form__field--error {
+  .input, .textarea {
+    border: 1px solid $color-alert;
+    transition: $transition-time;
+    outline: 0;
+  }
+}
+
+.form__alert {
+  font-size: 0.8rem;
+}
+
+.form__alert--error {
+  color: $color-alert;
+}

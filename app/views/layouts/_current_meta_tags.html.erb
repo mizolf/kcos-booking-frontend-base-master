@@ -1,0 +1,22 @@
+<h2><%= t('current_meta_tags') %></h2>
+<div class="current_meta_tags">
+	<div>
+		<label class="text--primary text--bold">name="og_title"</label>
+		<p><%= content_for?(:og_title) ? yield(:og_title) : AppInfo.name %></p>
+		<label class="text--primary text--bold">name="image"</label>
+		<p><%= image_tag content_for?(:image) ? yield(:image) : image_url('seo.jpg') || image_url('seo.jpg'), style: "width: 200px;" %></p>
+		<label class="text--primary text--bold">name="type"</label>
+		<p><%= content_for?(:type) ? yield(:type) : 'website' %></p>
+		<label class="text--primary text--bold">name="author"</label>
+		<p><%= content_for?(:author) ? yield(:author) : 'BambooLab' %></p>
+	</div>
+	<div>
+		<label class="text--primary text--bold">name="description"</label>
+		<p><%= content_for?(:description) ? yield(:description) : AppInfo.seo_description %></p>
+		<label class="text--primary text--bold">name="keywords"</label>
+		<p><%= content_for?(:keywords) ? yield(:keywords) : AppInfo.seo_keywords %></p>
+	</div>
+</div>
+<div class="edit_meta_tags">
+	<%= link_to "&#128394; #{t('edit')}", yield(:edit_meta_tags_link), class: 'btn btn--primary btn--small' if content_for?(:edit_meta_tags_link) %>
+</div>

@@ -1,0 +1,72 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.accounts') %></h1>
+
+  <%= link_to t('admin.new_record'), new_admin_admin_path, class: "btn btn--primary btn--large" %>
+</header>
+
+<section class="section section--12 section--double users">
+	<table class="clear-admin-agent-styles table datatable table__icon--4">
+		<thead>
+			<tr class="table__head--wrap">
+		    <th class="table__head col col--2"><%= t('admin.email') %></th>
+		    <th class="table__head col col--1"><%= t('admin.role') %></th>
+		    <th class="table__head col col--1"><%= t('admin.number_of_logins') %></th>
+		    <th class="table__head col col--1"><%= t('admin.number_of_logs') %></th>
+		    <th class="table__head col col--1"><%= t('actions') %></th>
+		  </tr>
+		</thead>
+		
+		<tbody>
+			<% @admins.each do |admin| %>
+	  		<tr class="table__item--wrap">
+		      <td class="table__item col col--2 account--activity">
+			      <%= image_tag admin.image_url(:thumb), class: "activity__img" %>
+			      <%= admin.full_name %>
+		      </td>
+		      <td class="table__item col col--1 js_admin_body" style="<%= "cursor: pointer;" if admin.moderator? %>">
+		      	<span class="js_admin_role"><%= admins_role(admin) %></span>
+		      	<div class="js_admin_permissions users__premissions--wrap" style="display: none;">
+		      		<%= render 'admin/admins/permissions_info', admin: admin if admin.moderator? %>
+	     			</div>
+		      </td>
+		      <td class="table__item col col--1"><%= admin.sign_in_count %></td>
+		      <td class="table__item col col--1"><%#= admin.action_logs.size %></td>
+		      <td class="table__item table__icon--wrap col col--1">	
+					<%= link_to admin_admin_path(admin), class: "table__icon",  "data-tooltip" => t('show') do %>
+						<%= inline_svg "icons/eye-ban-18.svg" %>
+					<% end %>
+
+					<% if permission_to_edit(admin) %>
+						<%= link_to edit_admin_admin_path(admin), class: "table__icon",  "data-tooltip" => t('edit') do %>
+							<%= inline_svg "icons/pen-group-3.svg" %>
+						<% end %>
+					<% end %>
+
+			    	<% if permission_to_delete(admin) %>
+						<%= link_to admin_admin_path(admin), method: :delete, data: {confirm: t('delete_confirm')}, class: "table__icon", "data-tooltip" => t('delete') do %>
+							<%= inline_svg "icons/trash-simple.svg" %>
+						<% end %>
+					<% end %>
+
+					<div class="users__arrow--wrap">
+						<%= inline_svg "icons/shape-arrow-down.svg", class: "users__arrow js_admin_btn" if admin.moderator? %>
+					</div>
+		      </td>
+				</tr>
+		  <% end %>
+		</tbody>
+	</table>
+</section>
+
+<script>
+	$('.js_admin_btn').click(function(){
+		$(this).parents(".table__item").siblings(".js_admin_body").children(".js_admin_permissions").slideToggle();
+		$(this).toggleClass("active");
+	});
+	$('.js_admin_body').click(function(){
+		$(this).children(".js_admin_permissions").slideToggle();
+		$(this).parents(".table__item--wrap").find(".js_admin_btn").toggleClass("active");
+	});
+init_datatable({lang: "<%= I18n.locale %>"});
+
+</script>

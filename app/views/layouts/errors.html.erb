@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+  <title>Error page</title>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <%= stylesheet_link_tag 'application' %>
+  <%#= javascript_include_tag 'application' %>
+
+  <%= analytics_init if Rails.env.production? %>
+
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
+</head>
+
+<body>
+
+  <main role="main" class="main-errors">
+
+    <%= yield %>
+
+  </main>
+
+</body>
+</html>

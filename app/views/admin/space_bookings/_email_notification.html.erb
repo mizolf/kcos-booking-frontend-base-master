@@ -1,0 +1,9 @@
+<p><%= t('space_booking.send_notification_desc') %></p>
+<p><%= t('space_booking.last_email_sent', timestamp: timestamp(space_booking.last_status_seen_updated_at)) if space_booking.last_status_seen_updated_at %></p>
+<div class="text--right">
+	<% if space_booking.any_status_changes? %>
+		<%= link_to t('space_booking.send_notification'), send_notification_admin_space_booking_path(space_booking), method: :patch, data: { confirm: t('space_booking.send_confirm', email: space_booking.email) }, remote: true, class: 'btn btn--primary' %>
+	<% else %>
+		<div class="btn btn--primary disabled"><%= t('space_booking.send_notification') %></div>
+	<% end %>
+</div>

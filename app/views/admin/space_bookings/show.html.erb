@@ -1,0 +1,60 @@
+<header class="header header--small">
+	<%= link_to admin_space_bookings_path, class: "btn btn--back" do %>
+		<div class="arrow--left"></div>
+	<% end %>
+
+	<div class="header__content">
+		<h1><%= t('admin_nav.space_bookings') %></h1>
+		<p><%= t('overview') %></p>
+	</div>
+</header>
+
+<section class="section section--10 section--padded">
+	<h2><%= t('space_booking.bookings_for') %> 
+		<% if @space_booking.space %>
+		  <%= link_to @space_booking.space.name, space_path(@space_booking.space), class: 'link' %>
+		<% else %>
+		  <em><%= t('space.deleted') %></em>
+		<% end %>
+	</h2>
+	<p><em><%= t('space_booking_term.declining_description') %></em></p>
+</section>
+
+<section class="section section--4 section--padded">
+	<label class="label"><%= tf('space_booking.full_name') %></label>
+	<p><%= @space_booking.full_name %></p>
+	<label class="label"><%= tf('space_booking.organisation') %></label>
+	<p><%= @space_booking.organisation %></p>
+	<label class="label"><%= tf('space_booking.phone') %></label>
+	<p><%= @space_booking.phone %></p>
+	<label class="label"><%= tf('space_booking.email') %></label>
+	<p><%= mail_to @space_booking.email, @space_booking.email, class: 'link' %></p>
+	<label class="label"><%= tf('space_booking.people_count') %></label>
+	<p><%= @space_booking.people_count %></p>
+	<label class="label"><%= tf('space_booking.purpose') %></label>
+	<p><%= @space_booking.purpose %></p>
+</section>
+
+<section class="section--4">
+	<% @space_booking.space_booking_terms.each do |space_booking_term| %>
+		<div class="section section--padded">
+			<h3><%= format_date(space_booking_term.date) %> <%= interval_string(space_booking_term.interval) %></h3>
+			<%= label_tag :status, tf('space_booking_term.status') %>
+			<%= select_tag :status, options_for_select(SpaceBookingTerm::STATUS_VALUES.map{ |s| [t("space_booking_term.status.#{s}"), s] }, space_booking_term.status), data: { space_booking_term_id: space_booking_term.id }, class: 'input', disabled: !space_booking_term.status_can_be_changed? %>
+		</div>
+	<% end %>
+	<div id="email-notification" class="section section--padded">
+		<%= render 'email_notification', space_booking: @space_booking %>
+	</div>
+</section>
+
+<script>
+	$('[data-space-booking-term-id]').on('change', function(){
+		var id = $(this).data('space-booking-term-id');
+		var status = $(this).val();
+		$.ajax({
+			url: `/admin/termini/${id}/status/${status}`,
+			method: 'PATCH'
+		})
+	})
+</script>

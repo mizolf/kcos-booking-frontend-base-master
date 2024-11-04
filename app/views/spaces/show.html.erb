@@ -1,0 +1,33 @@
+<% content_for :image, image_url(@space.featured_image.image_url(:medium))%>
+<% content_for :description, seo_description((@space.description.strip_tags.truncate(120, separator: ' '))) %>
+<% content_for :title, "Stara Pekara - " + @space.name %>
+<% unless @space.space_images.blank? %>
+  <% @space.space_images.each do |image| %>
+    <%= link_to image_tag(image.image), image_url(image.image), data: {lightbox: 'space', title: @space.name} %>
+  <% end %>
+<% end %>
+<h1>
+  <%= @space.name %>
+</h1>
+<p>
+  <%= @space.description.html_safe %></p>
+<p>
+  <span><%= surface(@space.surface_area) %></span>
+  na raspolaganju
+</p>
+<% if  @space.bookable %>
+  <p>
+    <span><%= humanized_money_with_symbol(@space.book_price) %></span>
+    po terminu
+  </p>
+<% end %>
+<% if  @space.rentable %>
+  <p><span><%= humanized_money_with_symbol(@space.rent_price) %></span>
+    mjesečno</p>
+<% end %>
+<% if @space.available %>
+  <%= link_to t('space.rent_monthly', price: humanized_money_with_symbol(@space.rent_price)), new_space_rent_request_space_path(@space), class: 'section__button' if @space.rentable %>
+  <%= link_to t('space.rent_hourly', price: humanized_money_with_symbol(@space.book_price)), booking_general_space_path(@space), class: 'section__button' if @space.bookable %>
+<% else %>
+  <%= t('space.unavailable') %>
+<% end %>

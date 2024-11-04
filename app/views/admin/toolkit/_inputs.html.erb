@@ -1,0 +1,364 @@
+<!-- ### INPUTS ### -->
+
+<section class="section">
+
+  <h2 class="toolkit__headline">Inputs</h2>
+
+  <section class="subsection">
+    <pre><code>
+      file/location
+    </code></pre>
+  </section>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Text</h3>
+
+  <section class="subsection relative">
+    <code>
+      <xmp>
+        <div class="form__field">
+          <%%= f.label :name, class: "label" %>
+          <%%= f.text_field :name, class: "input"%>
+        </div>
+      </xmp>
+      <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+    </code>
+  </section>
+
+
+  <div class="wrapper">
+
+    <div class="form__field">
+      <label class="label">Input</label>
+      <input class="input" type="text"">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Textarea</h3>
+
+  <section class="subsection relative">
+    <code>
+      <xmp>
+        <div class="form__field">
+          <%%=f.label :message, class: "label"%>
+          <%%=f.text_area :message,class: "input"%>
+        </div>
+      </xmp>
+      <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+    </code>
+  </section>
+
+  <div class="wrapper">
+
+    <div class="form__field">
+      <label class="label">Poruka</label>
+      <textarea class="textarea" placeholder="..." rows="8"></textarea>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Datepicker</h3>
+
+  <section class="subsection relative">
+    <code>
+      <xmp>
+        <div class="form__field">
+          <%%= f.label :publish_at, class: "label" %>
+          <%%= f.text_field :publish_at, class: "js-datepicker input input--datepicker" %>
+        </div>
+      </xmp>
+      <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+    </code>
+  </section>
+
+  <div class="wrapper">
+
+    <div class="form__field">
+      <label class="label">Input</label>
+      <input class="input input--datepicker js-datepicker" type="text" placeholder: "-- / -- / ----">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Checkbox</h3>
+
+  <div class="wrapper">
+
+    <div class="form__field">
+      <label class="label label--large">Facebook</label>    
+      <div class="input--checkbox__wrapper">
+        <div class="input--checkbox">
+          <input type="checkbox" id="fb-page-likes" class="filter-colors">
+          <label for="fb-page-likes"></label>
+        </div>
+        <label for="fb-page-likes">
+          <span >Page likes</span>
+        </label>
+      </div>
+      <div class="input--checkbox__wrapper">
+        <div class="input--checkbox">
+          <input type="checkbox" id="fb-post-likes" class="filter-colors">
+          <label for="fb-post-likes"></label>
+        </div>
+        <label for="fb-post-likes">
+          <span >Avg. likes per post</span>
+        </label>
+      </div>
+      <div class="input--checkbox__wrapper">
+        <div class="input--checkbox">
+          <input type="checkbox" value="Shares" id="fb-post-shares" class="filter-colors">
+          <label for="fb-post-shares"></label>
+        </div>
+        <label for="fb-post-shares">
+          <span >Avg. shares per post</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Radio</h3>
+
+  <div class="wrapper">
+
+    <div class="input__wrapper">
+      <div class="input--radio">
+        <input type="radio" id="event_type_private_event">
+        <label for="event_type_private_event"></label>
+      </div>
+      <label for="event_type_private_event" class="text--secondary cursor--pointer"><%=t('private')%></label>
+    </div>
+
+    <div class="input__wrapper">
+      <div class="input--radio">
+        <input type="radio" id="event_type_public_event">
+        <label for="event_type_public_event"></label>
+      </div>
+      <label for="event_type_public_event" class="text--secondary cursor--pointer"><%=t('public')%></label>
+    </div>
+    
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Image fields normal/small</h3>
+
+  <section class="subsection relative">
+      <code>
+        <xmp>
+          <div class="field input__field--text">
+            <%%= f.label :image, class: "label" %>
+            <div class="image_field">
+              <img src="<%%= f.object.image_url %>" class= "img_prev">
+              <p class="text--center"><%%= t('image_upload') %></p>
+              <%%= f.field :image, class: 'image_file_field' %>
+              <%%= f.hidden_field :image_cache %>
+            </div>
+          </div>
+        </xmp>
+        <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+      </code>
+  </section>
+    
+  <div class="wrapper">
+
+    <fieldset class="form__fieldset">
+      <div class="field input__field--text">
+        <label  class="label">Slika</label>
+        <div class="image_field">
+          <img class="img_prev">
+          <p class="text--center">Povucite sliku ili učitajte klikom</p>
+          <%= file_field_tag :image, class: "image_file_field" %>
+          <%= hidden_field_tag :image_cache %>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+
+    <section class="subsection relative">
+      <code>
+        <xmp>
+          <div class="field input__field--text">
+            <%%= f.label :image, class: "label" %>
+            <div class="image_field image_field--small">
+              <img src="<%%= f.object.image_url %>" class= "img_prev">
+              <p class="text--center"><%%= t('image_upload') %></p>
+              <%%= f.field :image, class: 'image_file_field' %>
+              <%%= f.hidden_field :image_cache %>
+            </div>
+          </div>
+        </xmp>
+        <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+      </code>
+  </section>
+
+  <div class="wrapper">
+
+    <fieldset class="form__fieldset">
+      <div class="field input__field--text">
+        <label  class="label">Slika</label>
+        <div class="image_field image_field--small">
+          <img class="img_prev">
+          <%= file_field_tag :image, class: "image_file_field" %>
+          <%= hidden_field_tag :image_cache %>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Url</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Password</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Mail</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Attachment</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Icons</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Disabled</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Large / small</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Range slider</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>
+
+
+<script type="text/javascript">
+  init_datepicker();
+</script>

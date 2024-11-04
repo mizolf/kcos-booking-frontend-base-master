@@ -1,0 +1,13 @@
+<div class="admin-buttons">
+	<% if current_admin %>
+		<% unless params[:visitor_view] %>
+			<%= link_to "&#128065; #{t('visitor_view')}".html_safe, url_for(visitor_view: :true), title: t('visitor_view_title'), class: 'btn btn--small btn--secondary' %>
+		<% else %>
+			<%= link_to "&#128065; #{t('admin_view')}".html_safe, url_for(visitor_view: nil), title: t('admin_view_title'), class: 'btn btn--small btn--secondary' %>
+		<% end %>
+	  <% if content_for?(:edit_link) %>
+	    <%= link_to "&#128394; #{t('edit')}".html_safe, yield(:edit_link), class: 'btn btn--secondary btn--small' %>
+	  <% end %>
+	  <button class="meta-tags-button btn btn--primary btn--small" title='<%= t('see_meta_tags') %>' onclick='inject_in_modal("<%= j render 'layouts/current_meta_tags' %>", "meta-tags")'>&#128269; SEO</button>
+	<% end %>
+</div>

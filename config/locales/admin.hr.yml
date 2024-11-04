@@ -1,0 +1,20 @@
+hr:
+  unlimited: "Neograničeno"
+  permissions: "Ovlasti"
+  logged_as: "Prijavljeni ste kao"
+  activity: "Aktivnosti"
+  deleted_admin: "Obrisani administrator"
+  deleted_post: "Obrisana novost"
+  resource_post: "Novost"
+  resource_permissions:
+    access_denied: "Nemate ovlasti"
+    dependency_explanation: "Moguće je da neke od navedenih ovlasti ne daju potpunu kontrolu nad nekim dijelovima aplikacije."
+    admins: "Upravljanje administratorskim računima"
+    contact_infos: "Kontakt"
+    posts: "Novosti"
+    description:
+      admins: "Osim svih dolje navedenih ovlasti admin upravlja i računima moderatora"
+      admin_accounts: "Upravljanje sadržaajem" 
+      contact_messages: "Čitanje poruka"
+      contact_infos: "Izmjena kontakt podataka i pregled kontakt poruka."
+      posts: "Upravljanje zapisima novosti"

@@ -1,0 +1,40 @@
+// http://callmenick.com/post/simple-responsive-tabs-javascript-css
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint ($medium) {
+    flex-direction: row;
+  }
+}
+
+.tabs__navigation {
+  margin-bottom: $gutter;
+
+  @include breakpoint ($medium) {
+    margin-right: $gutter;
+    margin-bottom: 0;
+    flex-basis: 30vw;
+  }
+}
+
+.tabs__content {
+  padding-top: $gutter;
+  border-top: 2px solid $color-primary;
+
+  & > div {
+    display: none;
+  }
+
+  & > .is-active {
+    display: block;
+  }
+
+  @include breakpoint ($medium) {
+    flex-basis: 70vw;
+    border-bottom: 2px solid $color-primary;
+    border-top: 0;
+    padding-top: 0;
+  }
+}

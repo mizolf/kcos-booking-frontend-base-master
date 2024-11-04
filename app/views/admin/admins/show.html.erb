@@ -1,0 +1,58 @@
+<header class="header header--small">
+  <%= link_to admin_admins_path, class: "btn btn--back" do %>
+    <div class="arrow--left"></div>
+  <% end %>
+
+  <div class="header__content">
+    <h1><%= t('admin_nav.accounts') %></h1>
+    <p><%= t('preview') %></p>
+  </div>
+</header>
+
+<div class="section__wrap--4 users">
+  <h2 class="main__subtitle--small"><%= t('admin.profile') %></h2>
+
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit">
+      <% if permission_to_edit(@admin) %>
+        <%= link_to edit_admin_admin_path(@admin), class: "btn btn--edit" do %>
+          <%= inline_svg "icons/pen-group-3.svg" %>
+        <% end %>
+      <% end %>
+
+      <% if permission_to_delete(@admin) %>
+        <%= link_to admin_admin_path(@admin), method: :delete, data: {confirm: t('delete_confirm')}, class: "btn btn--remove" do %>
+          <%= inline_svg "icons/trash-simple.svg" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="account--profile">
+      <%= image_tag @admin.image_url(:thumb), class: "account__img" %>
+      <h3 class="account__name"><%= @admin.full_name %></h3>
+      <p class="account__email"><%= @admin.email %></p>
+    </div>
+  </section>
+
+  <h2 class="main__subtitle"><%= t('permissions') %></h2>
+
+  <section class="section section--col section--padded">
+    <% if @admin.moderator? %>
+      <%= render 'admin/admins/permissions_info', admin: @admin %>
+    <% else %>
+      <p><%= t('unlimited') %></p>
+    <% end %>
+  </section>
+</div>
+
+<div class="section__wrap--8">
+  <h2 class="main__subtitle--small header--double"><%= t('activity') %></h2>
+
+  <section class="section--col">
+    <%= render 'admin/action_logs/action_logs_container', action_logs: @admin.action_logs %>
+
+    <span id="js_show_more_link">
+      <%#= link_to_next_page @action_logs, t('show_more'), params:{id: @admin.id}, class: 'btn', remote: true %>
+    </span>
+  </section>
+</div>

@@ -1,0 +1,248 @@
+/*------------------------------------*\
+# LAYOUT
+\*------------------------------------*/
+
+.layout {
+
+  &--text {
+    max-width: $text-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+
+  &--main {
+    grid-column: 1/span 12;
+    max-width: $width ;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+
+  &--full {
+    max-width: 1440px;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include breakpoint ($medium) {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+  }
+
+  &--padded {
+    padding: 2 * $gutter;
+  }
+}
+
+.section--margin {
+  margin-top: 3 * $gutter;
+  margin-bottom: 3 * $gutter;
+}
+
+.section--margin {
+  margin-top: 6 * $gutter;
+  margin-bottom: 6 * $gutter;
+}
+
+
+
+
+/*------------------------------------*\
+# GRID
+\*------------------------------------*/
+
+.grid--flex {
+  display: flex;
+  // flex-flow: row wrap;
+}
+
+.grid--gutters {
+  margin-left: calc( #{$gutter} / -2 );
+  margin-right: calc( #{$gutter} / -2 );
+}
+
+.grid--gutters > .cell {
+  padding-left: calc( #{$gutter} / 2 );
+  padding-right: calc( #{$gutter} / 2 );
+}
+
+.cell {
+  box-sizing: border-box;
+}
+
+.cell--auto {
+  flex: 1;
+}
+
+@for $i from 1 through 12 {
+  .cell--#{$i} {
+    flex: 0 0 calc( 100% * ( #{$i} / 12 ) );
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @include breakpoint ($value) {
+    @for $i from 1 through 12 {
+      .cell--#{$i}--#{$key} {
+        flex: 0 0 calc( 100% * ( #{$i} / 12 ) );
+      }
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+# GRID UTILITIES
+\*------------------------------------*/
+
+.grid--center {
+  justify-content: center;
+}
+
+
+
+/*------------------------------------*\
+# CSS GRID
+\*------------------------------------*/
+
+.grid {
+  margin: 0;
+
+  &--12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 1fr));
+
+    .grid--12 {
+      grid-column-gap: 1.43rem;
+    }
+  }
+}
+
+.section {
+  background: $white;
+  border-radius: $input-radius;
+  box-shadow: 0 1px 2px 0 rgba(45, 45, 45, 0.1);
+  margin-bottom: 2rem;
+
+  &--2, &__wrap--2 {
+    grid-column: auto/span 2;
+
+    &:first-of-type {
+      grid-column: 1/span 2;
+    }
+  }
+
+  &--4, &__wrap--4 {
+    grid-column: auto/span 4;
+
+    &:first-of-type {
+      grid-column: 1/span 4;
+    }
+  }
+
+  &--6, &__wrap--6 {
+    grid-column: auto/span 6;
+
+    &:first-of-type {
+      //grid-column: 1/span 6;
+    }
+  }
+
+  &--8, &__wrap--8 {
+    grid-column: auto/span 8;
+
+    &:first-of-type {
+      grid-column: 1/span 8;
+    }
+  }
+
+  &--10, &__wrap--10 {
+    grid-column: auto/span 10;
+
+    &:first-of-type {
+      grid-column: 1/span 10;
+    }
+  }
+
+  &--12, &__wrap--12 {
+    grid-column: 1/span 12;
+  }
+
+  &--double {
+    display: flex;
+    min-height: 50vh;
+  }
+
+  &--col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--padded {
+    padding-top: 1.71rem;
+    padding-bottom: 1rem;
+    padding-left: 1.71rem;
+    padding-right: 1.71rem;
+  }
+}
+
+.action-log--padding {
+  padding: $gutter 0;
+}
+
+
+/*------------------------------------*\
+# IE ADJUSTMENTS
+\*------------------------------------*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  
+  .grid--12 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .section--4, .section__wrap--4 {
+    width: 29%;
+  }
+
+  .section--6, .section__wrap--6 {
+    width: 49%;
+  }
+
+  .section--8, .section__wrap--8 {
+    width: 69%;
+  }
+
+  .section--12, .section__wrap--12 {
+    width: 100%;
+  }
+
+  .main {
+    width: 82%;
+  }
+}
+
+/*------------------------------------*\
+# DEV SERVER NOTICE
+\*------------------------------------*/
+
+.dev-server-notice {
+  background-color: $color-alert;
+  padding: 0.625rem;
+  text-align: center;
+  color: $white;
+  position: fixed;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  font-size: 1rem;
+  min-height: 2.625rem;
+}

@@ -1,0 +1,43 @@
+<nav class="navigation">
+  <%= link_to "Bamboo Lab", "http://bamboolab.eu", class: "logo--bamboo", target: "_blank" %>
+
+  <div class="navigation__content">
+    <div class="navigation__account">
+      <%= link_to admin_admin_path(current_admin), class: "account__link" do %>
+        <%= image_tag current_admin.image_url(:thumb), class: "account__img" %>
+      <% end %>
+      <%= inline_svg "icons/shape-arrow-down.svg", class: "account__arrow" %>
+    </div>
+
+      <div class="dropdown">
+        <%= link_to t('admin_nav.account_options'), admin_admin_account_path, class: "dropdown__link" %>
+        <%= link_to t("admin_nav.log_out"), destroy_admin_session_path, data: {method: :delete}, class: "dropdown__link" %>
+      </div>
+  </div>
+</nav>
+
+<div class="js_notifications"><%= render 'layouts/admin/notifications' %></div>
+
+<script>
+  $('.account__arrow').on('click', function(){
+    $(this).toggleClass('active');
+    $(".dropdown").animate({height: 'toggle'});
+  });
+
+  $(".dropdown").click(function(e){
+    e.stopPropagation();
+  });
+
+   $(".account__arrow").click(function(e){
+    e.stopPropagation();
+  });
+
+  $(document).click(function(){
+    if($(".account__arrow").hasClass("active")) {
+      $(".dropdown").animate({height: 'toggle'});
+      $(".account__arrow").removeClass("active");
+    }
+  });
+
+
+</script>

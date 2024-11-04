@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+  <title><%= "Admin | #{AppInfo.name} CMS" %></title>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <%= stylesheet_link_tag 'admin', media: 'all' %>
+  <%= javascript_include_tag 'admin' %>
+
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
+</head>
+
+<body>
+
+   <div class="layout--main mobile-splash">
+    <%= inline_svg "icons/x2_black.svg" %>
+    <p class="text--center text--large strong"><%= t('mobile_dashboard_info') %></p>
+    <br>
+    <a href="javascript:history.back()" class="btn btn--primary"><%= t('back') %></a>
+  </div>
+
+  <div class="<%= 'grid grid--12' unless @navigation_disabled %> hidden--small">
+
+    <%= render 'layouts/admin/navigation' unless @navigation_disabled %>
+
+    <div class="<%= @navigation_disabled ? 'main layout--main' : 'main' %>">
+      <%= render 'layouts/admin/header' unless @header_disabled %>
+
+      <div class="grid grid--12 <%= 'main__content' unless @navigation_disabled %>">
+        <%= yield %>
+      </div>
+
+      <%#= render 'layouts/admin/footer' unless @footer_disabled %>
+    </div>
+
+  </div>
+
+  <div id="popup-message"></div>
+
+  <%#= render 'layouts/modal' %>
+</body>
+</html>

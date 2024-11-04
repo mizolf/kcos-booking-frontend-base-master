@@ -1,0 +1,4 @@
+<%= render 'spaces/index' %>
+<%= render 'home/about' unless @page_content.about_project.blank? %>
+<%= render 'home/news' if @post %>
+<%= render 'home/contact' %>

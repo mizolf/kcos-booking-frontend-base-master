@@ -1,0 +1,5 @@
+<h2><%= t('pages_nav.about') %></h2>
+<article>
+<%= @page_content.about_project.html_safe %>
+</article>
+<%= render 'home/gallery' if @page_content.gallery_images.any? %>

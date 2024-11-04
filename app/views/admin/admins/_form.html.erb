@@ -1,0 +1,123 @@
+<%= form_for [:admin, @admin], :html => {role: 'form', class: 'form'} do |f| %>
+
+  <div class="grid grid--12">
+
+    <div class="section__wrap--4">
+      <section class="section section--padded">
+
+        <%= f.submit t('save'), class: 'btn btn--primary btn--medium btn--save', data: {disable_with: 'Molim pričekajte...'} %>
+
+        <fieldset class="form__fieldset">
+          <%= render partial: 'layouts/admin/error_messages', as: :object, object: @admin %>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+
+          <% if @admin.persisted? and @admin == current_admin %>
+
+            <h2><%= f.label "Slika" %></h2>
+            <div class="image-field">
+              <%= image_tag f.object.image_url(:thumb), id: "img_prev", alt: "Click \"Browse\" to add an image" %>
+            </div>
+
+            <div class="field" >
+              <%= f.file_field :image, :onchange => "readURL(this);" %>
+            </div>
+
+          <% end %>
+
+          <div class="form__field input__field--text">
+            <%= f.label :first_name, class: 'label' %>
+            <%= f.text_field :first_name, class: "input" %>
+          </div>
+
+          <div class="form__field input__field--text">
+            <%= f.label :last_name, class: 'label' %>
+            <%= f.text_field :last_name, class: "input" %>
+          </div>
+
+          <div class="form__field input__field--text">
+            <%= f.label "#{:email}*", class: 'label' %>
+            <%= f.text_field :email, class: "input" %>
+          </div>
+
+        </fieldset>
+
+        <% if @admin.persisted? and @admin == current_admin %>
+
+          <fieldset class="form__fieldset">
+            <div class="form__field input__field--text">
+              <%= f.label :password, class: 'label' %>
+              <%= f.password_field :password, class: "input" %>
+            </div>
+
+            <div class="form__field input__field--text">
+              <%= f.label :password_confirmation, class: 'label' %>
+              <%= f.password_field :password_confirmation, class: "input" %>
+            </div>
+
+          </fieldset>
+
+        <% end %>
+
+      </section>
+    </div>
+
+    <div class="section__wrap--8">
+      <section class="section section--padded">
+
+        <% if current_admin.superadmin && !@admin.superadmin %>
+          <div class="form__field input__field--checkbox">
+            <div class="checkbox--admin">
+              <%= f.check_box :admin, class: "", id: "admin_checkbox" %>
+              <%= f.label :admin, t("resource_permissions.admins"), class: 'input__label', for: 'admin_checkbox' %>
+              <%= f.label :admin, t("resource_permissions.description.admins"), class: 'input__label--secondary' %>
+            </div>
+          </div>
+        <% end %>
+
+
+        <% unless current_admin == @admin %>
+          <div id="permission_list">
+            <p class="users__notification"><%= t('resource_permissions.dependency_explanation') %></p>
+
+            <%= f.fields_for :resource_permissions do |ff| %>
+              <div class="form__field">
+                <%= ff.hidden_field :resource, class: "input" %>
+              </div>
+
+              <div class="form__field input__field--checkbox">
+                <div class="checkbox">
+                  <%= ff.check_box :permitted, class: "" %>
+                  <%= ff.label :permitted, t("resource_permissions.#{ff.object.resource}"), class: 'input__label' %>
+                  <%= ff.label :permitted, t("resource_permissions.description.#{ff.object.resource}"), class: 'input__label--secondary' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+      </section>
+    </div>
+
+  </div>
+
+<% end %>
+
+<script>
+  $(function(){
+      togglePermissionList();
+    });
+
+    $("#admin_checkbox").change(function() {
+        togglePermissionList();
+      });
+
+    function togglePermissionList(){
+        if ($("#admin_checkbox").is(":checked")){
+            $("#permission_list").slideUp();
+          }else{
+              $("#permission_list").slideDown();
+            }
+      }
+</script>

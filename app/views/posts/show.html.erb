@@ -1,0 +1,15 @@
+<% content_for :title, "#{AppInfo.name} | #{@post.title.truncate(40, divider:" ")}" %>
+<% content_for :og_title, "#{@post.resolve_seo_title}" %>
+<% content_for :image, "#{request.base_url}#{@post.resolve_seo_image}" %>
+<% content_for :author, AppInfo.name  %>
+<% content_for :type, 'article' %>
+<% content_for :keywords, @post.seo_keywords %>
+<% content_for :description, @post.resolve_seo_description %>
+<% content_for :edit_link, admin_post_path(@post) %>
+<% content_for :edit_meta_tags_link, admin_post_path(@post, tab: 2) %>
+<h1><%= @post.title %></h1>
+<%= post_timestamp(@post.publish_at) %>
+<%= image_tag @post.image_url(:large) %>
+<article>
+<%= @post.text.html_safe %>
+</article>

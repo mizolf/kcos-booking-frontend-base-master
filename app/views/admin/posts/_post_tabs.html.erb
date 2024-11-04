@@ -1,0 +1,6 @@
+<div class="tabs tabs__wrapper tabs-margin--small">
+  <div class="tabs__navigation">
+    <%= active_link_to t('admin_nav.unpublished_posts'), admin_unpublished_posts_path, class: 'btn--tabs', active: [['admin/posts'],[]] && params[:filter] == :unpublished, class_active: 'is-active' %>
+    <%= active_link_to t('admin_nav.published_posts'), admin_posts_path, class: 'btn--tabs', active: :exact, class_active: 'is-active' %>
+  </div>
+</div>

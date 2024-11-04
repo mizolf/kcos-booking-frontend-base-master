@@ -1,0 +1,11 @@
+<div id="posts">
+  <% posts.each do |post| %>
+    <%= image_tag post.image_url(:medium) %>
+    <%= link_to post_path(post) do %>
+      <p><%= post.title %></p>
+    <% end %>
+    <%= post.summary %>
+    <%= post_timestamp(post.publish_at) %>
+  <% end %>
+  <%= paginate posts, remote: true %>
+</div>

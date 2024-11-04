@@ -1,0 +1,21 @@
+en:
+  unlimited: "Unlimited"
+  permissions: "Permissions"
+  logged_as: "Logged in as"
+  activity: "Activities"
+  deleted_admin: "Deleted Account"
+  deleted_post: "Deleted Post"
+  resource_post: "Post"
+  resource_contact_info: "Contact Info"
+  resource_permissions:
+    access_denied: "Access Denied"
+    dependency_explanation: "It is possible that some of these permissions do not give full control over some parts of the application."
+    admins: "Managing Accounts"
+    contact_infos: "Contact Information"
+    posts: "Posts"
+    description:
+      admins: "Admin has all permissions."
+      contact_infos: "Has permission to change contact information and to read contact messages."
+      admin_accounts: "Managing accounts"
+      contact_messages: "Reading messages"
+      posts: "Managing posts."

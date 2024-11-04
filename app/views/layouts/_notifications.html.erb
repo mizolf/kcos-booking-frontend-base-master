@@ -1,0 +1,19 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) and msg.length > 0 %>
+    <div class="close js_close_flash">
+      <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+        <%= content_tag :p, msg %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<script>
+  $("body").on("mousemove touchmove", function(){
+    $(".alert-box").delay(3000);
+    $(".alert-box").fadeOut(500,function() { $(".alert-box").remove() });
+    $(".js_close_flash").on("click", function() {
+        $(".alert-box").fadeOut(500,function() { $(".alert-box").remove() });
+    });
+  });
+</script>

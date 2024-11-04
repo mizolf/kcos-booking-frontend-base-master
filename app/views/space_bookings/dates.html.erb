@@ -1,0 +1,228 @@
+<section class="section">
+  <div class="section__wrapper">
+    <h1 class="section__title"><%= t('space_booking.terms') %></h1>
+    <div class="section__content">
+      <div class="layout--form layout--padded--double">
+        <div class="datepicker">
+          <div class="datepicker__inner-wrapper">
+            <h2 class="datepicker__heading"><%= t('space_booking.pick_date') %></h2>
+            <div class="datepicker__header">
+              <div class="datepicker__nav">
+                <button type="button" id="prev-week" onclick="prevWeek()"><%= inline_svg 'icons/arrowleft_black.svg' %></button>
+                <span class="datepicker__month text--capitalize">Tjedan</span>
+                <button type="button" id="next-week" onclick="nextWeek()"><%= inline_svg 'icons/arrowright_black.svg' %></button>
+              </div>
+              <div class="datepicker__nav">
+                <button type="button" id="prev-month" onclick="prevMonth()"><%= inline_svg 'icons/arrowleft_black.svg' %></button>
+                <span class="datepicker__month text--capitalize" id="month"></span>
+                <button type="button" id="next-month" onclick="nextMonth()"><%= inline_svg 'icons/arrowright_black.svg' %></button>
+              </div>
+            </div>
+            <div class="datepicker__days" id="days">
+              <% 7.times do |weekday| %>
+                <div data-aos="fade-in" data-aos-once="true" data-aos-delay="<%= weekday * 100 %>">
+                  <div class="js_day day-item">
+                    <span class="js_day_number day-item__number"></span>
+                    <span class="js_day_name day-item__name text--capitalize"></span>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div id="term-intervals" class="datepicker__time">
+            </div>
+          </div>
+          <%= form_for @space_booking, url: booking_save_dates_space_path(@space), method: :post do |f| %>
+            <%= hidden_field_tag :time_date, Date.current + 1.day %>
+            <%= hidden_field_tag :time_interval %>
+            <% if f.object.errors[:base].any? %>
+              <div class="space-booking-notice">
+                <div class="space-booking-notice__content form__alert form__alert--error">
+                  <p><%= f.object.errors[:base].join(', ') %></p>
+                </div>
+              </div>
+            <% end %>
+            <div class="space-booking-terms" id="space-booking-terms">
+              <%= render 'space_bookings/space_booking_terms', space_booking_terms: @space_booking.space_booking_terms %>
+            </div>
+            <div>
+              <%= f.check_box :consent %>
+              <%= f.label :consent do %>
+                <%= @app_settings.space_booking_consent.remove_tag("p").html_safe %>
+              <% end %>
+            </div>
+            <%= link_to t('space_booking.back_to_general'), booking_general_space_path(@space), class: 'btn btn--secondary subsection' %>
+            <%= f.submit t('space_booking.finish'), id: 'submit-button', class: 'btn btn--primary subsection', disabled: f.object.consent != "1" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('#space_booking_consent').on("change", function(){
+    if($(this).is(':checked')){
+      $('#submit-button').removeAttr("disabled");
+    } else {
+      $('#submit-button').attr("disabled", "disabled");
+    }
+  })
+  
+  var current_date = moment(new Date());
+  var selected_date = $("#time_date").val();
+  var selected_interval = $("#time_interval").val();
+  if (selected_date) {
+    current_date = moment(selected_date);
+  }
+  
+  renderWeek(current_date);
+  if($('#time_date').val()){
+    getIntervals($('#time_date').val());
+  }
+  
+  function nextWeek() {
+    current_date.add(7, 'days');
+    renderWeek(current_date);
+  }
+  
+  function prevWeek() {
+    if (current_date > moment(new Date())) {
+      current_date.add(-7, 'days');
+      renderWeek(current_date);
+    }
+  }
+  
+  function nextMonth() {
+    current_date.add(1, 'M').startOf('month');
+    renderWeek(current_date);
+  }
+  
+  function prevMonth() {
+    if (current_date > moment(new Date())) {
+      current_date.add(-1, 'M');
+      renderWeek(current_date);
+    }
+  }
+  
+  function getWeek(date) {
+      var day = moment(date).startOf('isoWeek');
+      var end_of_week = moment(date).endOf('isoWeek');
+      var days = [];
+      while (day <= end_of_week) {
+          days.push(day.toDate());
+          day = day.clone().add(1, 'd');
+      }
+      return days;
+  }
+  
+  function renderWeek(date) {
+    var days = getWeek(date);
+    $("#days").find(".js_day").each(function(i) {
+        $(this).attr('data-date', moment(days[i]).lang("hr").format('YYYY-M-D'));
+        $(this).removeClass('is-disabled');
+        if (moment(days[i]).startOf('day') <= moment(new Date()).startOf('day')) {
+            $(this).addClass('is-disabled');
+        }
+        $(this).find('.js_day_number').text(moment(days[i]).lang("hr").format('D'));
+        $(this).find('.js_day_name').text(moment(days[i]).lang("hr").format('ddd'));
+    })
+    $(".js_day").removeClass('is-selected');
+    $("[data-date='" + moment(selected_date).lang("hr").format('YYYY-M-D') + "']").addClass('is-selected');
+    $("#month").text(moment(date).lang("hr").format('MMMM YYYY'));
+  }
+  
+  $(document).on("click", "[data-date]:not(.is-disabled):not(.is-selected)", function() {
+    $("#time_date").val($(this).attr('data-date'));
+    selected_date = $("#time_date").val();
+    $("[data-date]").removeClass('is-selected');
+    $(this).addClass('is-selected');
+    getIntervals($(this).attr('data-date'));
+  })
+  
+  function getIntervals(date){
+    $.get('<%= get_date_terms_space_path(@space) %>?date=' + date);
+  }
+  
+  $(document).on('click', '#add_term:not([disabled])', function(){
+    $('#add_term').addClass('disabled', 'disabled');
+    var date = $('#time_date').val();
+    var time_from = $('.js-time-segment.selected:first').data('time');
+    var time_to = $('.js-time-segment.selected:last').data('time');
+    $.post( "<%= add_term_space_path(@space) %>", {
+      date: date,
+      time_from: time_from,
+      time_to: time_to
+    });
+  })
+  
+  $(document).on('click', '.js-time-segment', function(){
+    if($('.picking-from').length && !$(this).data('available-from')){
+      return false;
+    }
+    if($('.js-time-segment.selected').length > 1 || $(this).hasClass('selected')){
+      $('.selected').removeClass('selected');
+    } else {
+      if(!$(this).hasClass('unselectable')){
+        $(this).addClass('selected');
+      }
+    }
+    handleUnselectableSegments();
+  })
+  
+  function handleUnselectableSegments(){
+    $("#add_term").attr('disabled', 'disabled');
+    $('.time-segments__item-wrapper--selected').removeClass('time-segments__item-wrapper--selected');
+    $('.time-segments').removeClass('picking-from');
+    var selected_count = $('.js-time-segment.selected').length;
+    if(selected_count == 2){
+      handleBothSelected();
+    }
+    if(selected_count == 1){
+      handleOneSelected();
+    }
+    if(selected_count == 0){
+      handleNoneSelected();
+    }
+  }
+  
+  function handleBothSelected(){
+    var from = parseInt($('.js-time-segment.selected:first').data('time'));
+    var to = parseInt($('.js-time-segment.selected:last').data('time'));
+    $('.js-time-segment').each(function(){
+      var time = parseInt($(this).data('time'));
+      if(time < from || (time > to)){
+        $(this).addClass('unselectable');
+      } else {
+        $(this).addClass('time-segments__item-wrapper--selected');
+      }
+    })
+    $('.time-segments__item-wrapper--selected:last').removeClass('time-segments__item-wrapper--selected');
+    $("#add_term").removeAttr('disabled');
+  }
+  
+  function handleOneSelected(){
+    var from = parseInt($('.js-time-segment.selected:first').data('time'));
+    $('.js-time-segment').each(function(){
+      if(!$(this).hasClass('unselectable')){
+        var time = parseInt($(this).data('time'));
+        // Disable all past dots
+        if(time < from){
+          $(this).addClass('unselectable');
+        } else {
+          // Disable all dots after taken interval
+          if($(this).data('taken')) {
+            $('.js-time-segment:gt(' + $(this).index() + ')').addClass('unselectable');
+          }
+          // Disable all dots that don't give full hours
+          if(time % 60 != from % 60){
+            $(this).addClass('unselectable');
+          }
+        }
+      }
+    })
+  }
+  
+  function handleNoneSelected(){
+    $('.time-segments:not(.picking-from)').addClass('picking-from');
+    $('.js-time-segment').removeClass('unselectable');
+  }
+</script>

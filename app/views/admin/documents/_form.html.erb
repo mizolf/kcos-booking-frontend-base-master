@@ -1,0 +1,32 @@
+<%= form_for [:admin, @document], html: {class: 'form grid'} do |f| %>
+  <div class="form__field">
+    <%= f.label :name, class: "label" %>
+    <%= f.text_field :name, class: "input js_validate_len-max(80)" %>
+  </div>
+
+  <div class="form__field">
+    <%= f.label :document_file, tf('document.file') %>
+    <p><button type="button" onclick="$('#document_file').trigger('click')" class=""><%= t('document.attach_file') %></button></p>
+    <%= f.file_field :file, class: 'input', onchange: 'renderFileName(this)', accept: ".pdf,.doc,.docx,.xlsx,.xls" %>
+    <%= f.hidden_field :file_cache %>
+    <p><em id="file-name"><%= f.object.file&.path&.split("/")&.last || f.object.file_cache&.split("/")&.last %></em></p>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('save'), class: "btn btn--primary sticky-submit", data: { disable_with: t('please_wait') } %>
+  </div>
+<% end %>
+
+<script>
+  load_tiny ("<%= I18n.locale %>");
+
+  function renderFileName(file_field){
+    $('#file-name').text(file_field.files.item(0).name.replace(/ /g,"_"));
+  }
+</script>
+
+<style>
+  input[type='file'].input {
+    display: none;
+  }
+</style>

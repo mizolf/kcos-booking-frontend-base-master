@@ -1,0 +1,435 @@
+/*------------------------------------*\
+# LAYOUT
+\*------------------------------------*/
+
+.toolkit__wrapper {
+  
+}
+
+.toolkit__navigation {
+  padding-top: 2rem;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: $gutter;
+  position: fixed;
+}
+
+.toolkit__navigation-block {
+  margin-bottom: 1/4*$gutter;
+}
+
+.toolkit__navigation-head {
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-primary;
+  }
+}
+
+.toolkit__navigation-separator {
+  height: 1px;
+  width: 100%;
+  background-color: $color-gray--light;
+  margin-top: 1/4*$gutter;
+  margin-bottom: 1/4*$gutter;
+}
+
+.toolkit__separator {
+  height: 1px;
+  width: 100%;
+  background-color: $color-gray--light;
+  margin-top: 1/4*$gutter;
+  margin-bottom: 1/4*$gutter;
+}
+
+.toolkit__navigation-item {
+  color: $color-gray--light;
+  font-size: 0.8rem;
+}
+
+.toolkit__content {
+  //width: 80%;
+  padding: $gutter;
+  padding-left: 0;
+  margin-left: -$gutter;
+
+  & > .js-toolkit-section {
+    display: none;
+  }
+
+  .section {
+    padding: $gutter;
+  }
+
+}
+
+.toolkit__tables {
+  .section {
+    padding: 0;
+  }
+}
+
+.toolkit__nav--user-wrapper {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toolkit__headline {
+  color: $color-primary;
+}
+
+.toolkit__subheadline {
+  border-left: 2px solid $color-primary;
+  padding-left: 0.5 * $gutter;
+}
+
+
+
+/*------------------------------------*\
+# COLORS
+\*------------------------------------*/
+
+.toolkit__colors-wrapper {
+  display: flex;
+}
+
+.toolkit__color-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 50px;
+}
+
+.toolkit__color-box--primary {
+  background-color: $color-primary;
+}
+
+.toolkit__color-box--secondary {
+  background-color: $color-secondary;
+}
+
+.toolkit__color-box--tertiary {
+  background-color: $color-tertiary;
+}
+
+.toolkit__color-box--info {
+  background-color: $color-info;
+}
+
+.toolkit__color-box--success {
+  background-color: $color-success;
+}
+
+.toolkit__color-box--warning {
+  background-color: $color-warning;
+}
+
+.toolkit__color-box--alert {
+  background-color: $color-alert;
+}
+
+.toolkit__color-box--trueblack {
+  background-color: $black;
+}
+
+.toolkit__color-box--black {
+  background-color: $black;
+}
+
+.toolkit__color-box--lightergray {
+  background-color: $color-gray--lighter;
+}
+
+.toolkit__color-box--lightgray {
+  background-color: $color-gray--light;
+}
+
+.toolkit__color-box--gray {
+  background-color: $color-gray;
+}
+
+.toolkit__color-box--darkgray {
+  background-color: $color-gray--dark;
+}
+
+.toolkit__color-box--darkergray {
+  background-color: $color-gray--darker;
+}
+
+.toolkit__color-box--white {
+  background-color: $white;
+}
+
+.toolkit__color-box--truewhite {
+  background-color: $white;
+}
+
+
+
+/*------------------------------------*\
+# ICONS
+\*------------------------------------*/
+
+.toolkit__icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .table__icon {
+    padding: $gutter;
+  }
+}
+
+.toolkit__icon {
+  width: 10%;
+  max-height: 64px;
+  padding: 1/4*$gutter;
+}
+
+
+
+/*------------------------------------*\
+# GRID
+\*------------------------------------*/
+
+.toolkit__grid .cell {
+  margin-bottom: 1rem;
+}
+
+
+
+/*------------------------------------*\
+# LAYOUT
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# TYPOGRAPHY
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# BUTTONS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# TABLES
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# FORMS
+\*------------------------------------*/
+
+.form--toolkit {
+
+}
+
+
+
+
+
+/*------------------------------------*\
+# INPUTS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# FIGURES
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# NOTIFICATOINS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# ACCORDION
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# TABS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# SLIDER
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# CAROUSEL
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# MEDIA OBJECT
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# NAVIGATION
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# TOOLTIPS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# TAGS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# LOGOS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# REFERENCES
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# SUMMARY
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# ERROR PAGES
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# HEADER
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# FOOTER
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# MAILER
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# CAPTCHA
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# MAPS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# COOKIES
+\*------------------------------------*/
+
+.toolkit__cookies-wrapper {
+
+  .cookies__wraper {
+    position: relative !important;
+  }
+}
+
+
+
+/*------------------------------------*\
+# PROJECT SPECIFIC
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+# UTILITIES
+\*------------------------------------*/
+
+
+
+

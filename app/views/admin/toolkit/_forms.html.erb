@@ -1,0 +1,164 @@
+<!-- ### FORMS ### -->
+
+<section class="section">
+
+  <h2 class="toolkit__headline">Forms</h2>
+
+  <section class="subsection">
+    <pre><code>
+      modules/_forms.scss
+      vendors/_captcha.scss
+      visitor/form_validation.js
+      visitor/stackable.js
+    </code></pre>
+  </section>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">HTML</h3>
+
+  <div class="wrapper">
+
+    <form class="form form--toolkit">
+
+      <fieldset class="form__fieldset">
+
+        <div class="form__field">
+          <label class="label">Input</label>
+          <input class="input" type="text"">
+        </div>
+
+        <div class="form__field">
+          <label class="label">Required input <span class="text--alert text--large">*</span></label>
+          <input class="input" type="text">
+        </div>
+
+        <div class="form__field">
+          <label class="label">Email</label>
+          <input class="input input--email" type="text" placeholder="ime.prezime@mail.com">
+        </div>
+
+        <div class="form__field">
+          <label class="label">Password</label>
+          <input class="input input--password" type="text" placeholder="********">
+        </div>
+
+        <div class="form__field">
+          <label class="label">Poruka</label>
+          <textarea class="textarea" placeholder="..." rows="8"></textarea>
+        </div>
+
+
+      </fieldset>
+
+      <fieldset class="form__fieldset">
+        <button class="btn btn--primary">Pošalji</button>
+      </fieldset>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Error notifications</h3>
+
+  <div class="wrapper">
+
+    <div class="form__field form__field--error">
+      <label class="label">Required input <span class="text--alert text--large">*</span></label>
+      <input class="input" type="text">
+      <div class="form__alert form__alert--error">Error notification</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Form fieldset</h3>
+
+  <section class="subsection relative">
+    <code>
+      <xmp>
+        <fieldset class="fieldset">
+          <legend class="label">Form fieldset</legend>
+            <div class="form__field">
+              <label class="label">Ime i prezime</label>
+              <input class="input" type="text"">
+            </div>
+            <div class="form__field">
+              <label class="label">Email</label>
+              <input class="input" type="mail"">
+            </div>
+        </fieldset>
+        <%%= link_to "+", root_path, class:"btn btn--primary add-fields" %>
+      </xmp>
+      <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+    </code>
+  </section>
+
+  <div class="wrapper">
+
+    <fieldset class="fieldset">
+      <legend class="label">Form fieldset</legend>
+
+        <div class="form__field">
+          <label class="label">Ime i prezime</label>
+          <input class="input" type="text"">
+        </div>
+        <div class="form__field">
+          <label class="label">Email</label>
+          <input class="input" type="mail"">
+        </div>
+    </fieldset>
+
+    <%= link_to "+", root_path, class:"btn btn--primary add-fields" %>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Search</h3>
+
+  <div class="wrapper">
+
+    <form class="form form--search">
+
+      <input class="input" type="text"">
+      <button class="btn btn--primary">Search</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- ##  ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Thankyou page</h3>
+
+  <div class="wrapper">
+
+
+
+  </div>
+
+</section>

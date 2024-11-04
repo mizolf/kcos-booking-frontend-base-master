@@ -1,0 +1,70 @@
+/*------------------------------------*\
+** DEFAULTS
+\*------------------------------------*/
+
+.pagination {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: -2.14rem;
+
+  &--prev, &--next, &__btn {
+    color: #aaaaaa;
+    font-size: 0.86rem;
+    line-height: 1.67;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &--prev {
+    margin-right: 0.71rem;
+  }
+
+  &--next {
+    margin-left: 0.71rem;
+  }
+
+  &__btn {
+    margin-left: 0.14rem;
+    margin-right: 0.14rem;
+    padding: 0.14rem 0.29rem;
+  }
+
+  &__btn.current {
+    color: $white;
+    background-color: $color-primary;
+    border-radius: 2px;
+  }
+}
+
+
+
+// WILL PAGINATE
+
+.will--pagination {
+  text-align: center;
+
+  .current {
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: 1px solid $color-primary;
+    background-color: $color-primary;
+    color: $white;
+    font-style: normal;
+  }
+
+  a {
+    padding: 0.5rem;
+    border: 1px solid $white;
+    transition: 0.3s;
+    color: $color-primary;
+  }
+
+  a:hover {
+    border-radius: 15px;
+    border: 1px solid $color-primary;
+    font-style: normal;
+  }
+
+}

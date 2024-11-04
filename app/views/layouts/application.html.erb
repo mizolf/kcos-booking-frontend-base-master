@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+  <title>
+    <%= content_for?(:title) ? yield(:title) : AppInfo.name %>
+  </title>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : '' %>"/>
+  <meta name="keywords" content='<%= content_for?(:keywords) ? yield(:keywords) : '' %>'/>
+  <meta name="author" content="<%= content_for?(:author) ? yield(:author) : 'Bamboo Lab' %>"/>
+  <meta name="theme-color" content="#0077AE">
+  <meta property="og:title" content="<%= content_for?(:og_title) ? yield(:og_title) : AppInfo.name %>"/>
+  <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : '' %>"/>
+  <meta property="og:image" content="<%= content_for?(:image) ? yield(:image) : image_url('seo.jpg') %>"/>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <%= javascript_include_tag 'application' %>
+  <%= analytics_init if ENV['BOOM_ENV'] == 'production' %>
+  <%= render 'layouts/shim' %>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
+</head>
+
+<body>
+  <%= render 'layouts/page_meta_tags', page_meta_tag: @page_meta_tag if @page_meta_tag %>
+    <div class="overlay js-body-overlay"></div>
+
+  <%= render 'layouts/admin_buttons' unless hide_admin_hud? %>
+  <%= render 'layouts/navigation' unless @navigation_disabled %>
+  <%= render 'layouts/header' if @show_header %>
+
+
+  <main role="main" class="main js-main">
+    <div class="nav-logo-wrapper">
+    <%= link_to inline_svg('logo.svg'), root_path(anchor: 'home'), class: 'nav-logo' %>
+    </div>
+    <div id="notifications">
+      <%= render 'layouts/notifications' %>
+    </div>
+    <%= yield %>
+  </main>
+
+  <%= render 'layouts/modal' %>
+  <%= render 'layouts/footer' unless @footer_disabled %>
+  <%= raw bamboolab_cookies(button: "OK", text: "#{Rails.application.class.parent_name} koristi kolačiće za pružanje boljeg korisničkog iskustva i funkcionalnosti stranice.", more_link: "http://www.aboutcookies.org/", more_text: "Saznaj više") %>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqk1x_cbFW-7QVFllaotVVEEutFkDGMII&callback=initMap&libraries=places&v=weekly"
+    async
+  ></script>
+</body>
+</html>

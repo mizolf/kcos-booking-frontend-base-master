@@ -1,0 +1,26 @@
+<section class="section section--bookings">
+  <div class="section__wrapper">
+    <h1 class="section__title"><%= t('space_booking.title') %></h1>
+    <div class="section__content">
+      <h2><%= t('space_booking.terms_for') %> 
+        <% if @space_booking.space %>
+          <%= link_to @space_booking.space.name, space_path(@space_booking.space), class: 'link' %>
+        <% else %>
+          <em><%= t('space.deleted') %></em>
+        <% end %>
+      </h2>
+      <div class="space-term-items is-wide">
+        <% @space_booking.space_booking_terms.each_with_index do |space_booking_term, index| %>
+          <div class="space-term-item <%#= 'is-invalid' unless space-term.is_doable? %>" data-aos="fade-in" data-aos-delay="<%= index * 50 %>" data-aos-offset="-100" >
+            <span class="space-term-item__date"><%= space_booking_term.date.strftime('%d.%m.%Y') %></span>
+            <span>
+              <span class="space-term-item__time"><%= interval_string(space_booking_term.interval) %></span>
+              <span class="space-term-item__status"><%= t("space_booking_term.status.#{space_booking_term.status}") %></span>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div data-aos="fade-up" data-aos-offset="-100"><%= link_to t('space.back_to_home'), root_path, class: 'section__button' %></div>
+  </div>
+</section>

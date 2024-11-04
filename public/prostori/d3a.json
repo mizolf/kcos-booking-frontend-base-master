@@ -1,0 +1,89 @@
+PanoramaStudioViewerParams = {
+"panoramaStudioViewer": {
+"key": "488126600948",
+"control": {
+        "mousemode": "drag",
+        "touchmode": "drag"
+    },
+"data": {
+        "id": "globalData",
+        "messageBoxStyle": "min-width: 25%; text-shadow: none; line-height: 100%; color:#000; font-family: Arial,Helvetica,Sans-Serif; font-size: 15px; font-weight: 400; text-align:left; border-radius: 3px; border: rgba(0,0,0,0.66) solid 1px; box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.66);background: rgba(255,255,255,0.75);"
+    },
+"include": [
+        {
+            "src": "d3a_controls.json"
+        }
+    ],
+"node": {
+	"autoplay": {
+	        "pan": 2,
+	        "restart": 5,
+	        "status": "on",
+	        "tilt": 0,
+	        "zoom": 1
+	    },
+	"camera": {
+	        "maxhfov": 110,
+	        "maxpan": 360,
+	        "maxtilt": 90,
+	        "minpan": 0,
+	        "mintilt": -90
+	    },
+	"hotspot": [
+	        {
+	            "animation": {
+	                "duration": 1.28,
+	                "frames": 32,
+	                "height": 64,
+	                "width": 64
+	            },
+	            "bitmap": "pap_rings.png",
+	            "bitmapscale": "1.0",
+	            "bitmaptype": "floating",
+	            "href": "d3.html",
+	            "opacity": "1.00;1.00",
+	            "position": "160.2556,13.7444",
+	            "target": "",
+	            "transition": "zoomin,2;blend,2",
+	            "unit": "deg"
+	        },
+	        {
+	            "animation": {
+	                "duration": 1.28,
+	                "frames": 32,
+	                "height": 64,
+	                "width": 64
+	            },
+	            "bitmap": "pap_rings.png",
+	            "bitmapscale": "1.0",
+	            "bitmaptype": "floating",
+	            "href": "d3b.html",
+	            "opacity": "1.00;1.00",
+	            "position": "160.0447,4.0447",
+	            "target": "",
+	            "transition": "zoomin,2;blend,2",
+	            "unit": "deg"
+	        }
+	    ],
+	"hotspots": {
+	        "visible": true
+	    },
+	"id": "d3a",
+	"image":{"baseindex":1,"bitmap":[{"back":{"src":"d3a_tiles/d3a_t_1b_%0y_%0x.jpg"},"down":{"src":"d3a_tiles/d3a_t_1d_%0y_%0x.jpg"},"front":{"src":"d3a_tiles/d3a_t_1f_%0y_%0x.jpg"},"height":5977,"left":{"src":"d3a_tiles/d3a_t_1l_%0y_%0x.jpg"},"right":{"src":"d3a_tiles/d3a_t_1r_%0y_%0x.jpg"},"tilesize":480,"up":{"src":"d3a_tiles/d3a_t_1u_%0y_%0x.jpg"},"width":5977},{"back":{"src":"d3a_tiles/d3a_t_2b_%0y_%0x.jpg"},"down":{"src":"d3a_tiles/d3a_t_2d_%0y_%0x.jpg"},"front":{"src":"d3a_tiles/d3a_t_2f_%0y_%0x.jpg"},"height":2989,"left":{"src":"d3a_tiles/d3a_t_2l_%0y_%0x.jpg"},"right":{"src":"d3a_tiles/d3a_t_2r_%0y_%0x.jpg"},"tilesize":480,"up":{"src":"d3a_tiles/d3a_t_2u_%0y_%0x.jpg"},"width":2989},{"back":{"src":"d3a_tiles/d3a_t_3b_%0y_%0x.jpg"},"down":{"src":"d3a_tiles/d3a_t_3d_%0y_%0x.jpg"},"front":{"src":"d3a_tiles/d3a_t_3f_%0y_%0x.jpg"},"height":1495,"left":{"src":"d3a_tiles/d3a_t_3l_%0y_%0x.jpg"},"right":{"src":"d3a_tiles/d3a_t_3r_%0y_%0x.jpg"},"tilesize":480,"up":{"src":"d3a_tiles/d3a_t_3u_%0y_%0x.jpg"},"width":1495},{"back":{"src":"d3a_tiles/d3a_t_4b_%0y_%0x.jpg"},"down":{"src":"d3a_tiles/d3a_t_4d_%0y_%0x.jpg"},"front":{"src":"d3a_tiles/d3a_t_4f_%0y_%0x.jpg"},"height":748,"left":{"src":"d3a_tiles/d3a_t_4l_%0y_%0x.jpg"},"right":{"src":"d3a_tiles/d3a_t_4r_%0y_%0x.jpg"},"tilesize":480,"up":{"src":"d3a_tiles/d3a_t_4u_%0y_%0x.jpg"},"width":748},{"back":{"src":"d3a_tiles/d3a_t_5b_%0y_%0x.jpg"},"down":{"src":"d3a_tiles/d3a_t_5d_%0y_%0x.jpg"},"front":{"src":"d3a_tiles/d3a_t_5f_%0y_%0x.jpg"},"height":374,"left":{"src":"d3a_tiles/d3a_t_5l_%0y_%0x.jpg"},"right":{"src":"d3a_tiles/d3a_t_5r_%0y_%0x.jpg"},"tilesize":480,"up":{"src":"d3a_tiles/d3a_t_5u_%0y_%0x.jpg"},"width":374}],"multilevel":true,"preview":{"src":"d3a_tiles/d3a_preview.jpg"},"projection":"cubic"},
+	"textbox": [
+	        {
+	            "align": "top",
+	            "style": " color:#ffffff; font-family: Arial,Helvetica,sans-serif; text-shadow: 0px 0px 3.8px #000000, 0px 0px 2.5px #000000, 0px 0px 1.7px #000000; font-size: 12px; font-weight: bold; text-align:center;",
+	            "text": "Konferencijska dvorana",
+	            "yoff": "4px"
+	        }
+	    ],
+	"view": {
+	        "hfov": 90,
+	        "pan": 338,
+	        "tilt": 6.18
+	    }
+},
+"version": "4.1"
+}
+}

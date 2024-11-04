@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g transform="translate(0, 0)"><line x1="0.5" y1="5.5" x2="15.5" y2="5.5" fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round"></line>
+    <path d="M15.5,5.5v-2a1,1,0,0,0-1-1H1.5a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1h5" fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round"></path>
+    <line x1="4.5" y1="0.5" x2="4.5" y2="2.5" fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round"></line>
+    <line x1="11.5" y1="0.5" x2="11.5" y2="2.5" fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round"></line>
+    <circle cx="11.5" cy="11.5" r="4" fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></circle>
+    <polyline points="11.5 9.5 11.5 11.5 13.5 11.5" fill="none" stroke="#444444" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></polyline></g></svg>

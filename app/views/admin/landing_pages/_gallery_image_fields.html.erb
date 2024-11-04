@@ -1,0 +1,10 @@
+<div class="js_image_wrapper section__img--wrap">
+	<%= f.hidden_field :image, class: "js_image_data" %>
+	<%= f.check_box :_destroy, value: true %>
+	<%= f.label :_destroy, t('delete') %>
+	<%= f.hidden_field :position, class: "js_position" %>
+	<%= f.hidden_field :image_cache %>
+	<%= image_tag f.object.image_url || f.object.image_cache || "", class: "section__img js_image_preview" %>
+	<%= f.label :image_alt %>
+	<%= f.text_field :image_alt %>
+</div>

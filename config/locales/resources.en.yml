@@ -1,0 +1,47 @@
+en:
+#RESOURCES
+  admin:
+    new_record: "New admin"
+    number_of_logins: "Number of logins"
+    first_name: "First name"
+    profile: "Profile"
+    last_name: "Last name"
+    email: "Email"
+    role: "Role"
+    password: "Password"
+    password_confirmation: "Password confirmation"
+    image: "Image "
+    number_of_logins: "Number of logins"
+    number_of_logs: "Number of logs"
+    resource_permissions: "Resource permissions"
+#RESOURCE PERMISSIONS#
+  resource_permissions:
+    admin: "Admin"
+    admin_description: "Admin has all permissions"
+    admin_accounts: "Admin account"
+    admin_accounts_description: "View and manage accounts"
+    contact_messages: "Contact messages"
+    contact_messages_description: "Read messages sent from web page"
+#RESOURCE FIELDS#
+  activerecord:
+    attributes:
+      admin:
+        first_name: "First name "
+        last_name: "Last name "
+        email: "Email adresa "
+        role: "Role "
+        password: "Password "
+        password_confirmation: "Password confirmation "
+        image: "Image "
+        remember_me: "Remember me"
+        current_password: "Current password"
+#RESOURCE ERRORS#
+    errors:
+      models:
+        admin:
+          attributes:
+            current_password:
+              blank: "Please provide your current password"
+              invalid: "Invalid password"
+            password_confirmation:
+              confirmation: "Your password and pasword confirmation don't match"

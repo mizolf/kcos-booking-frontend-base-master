@@ -1,0 +1,6 @@
+<div class="email--wrapper">
+	<h1 class="margin--bottom"><%= t('mailing.space_booking_notification.title') %></h1>
+	<p><%= t('mailing.space_booking_notification.subtitle') %></p>
+	<%= link_to t('mailing.space_booking_notification.button'), space_booking_url(token: @space_booking.token), class: "btn btn--primary" %>
+	<div class="email--footer"><%= AppInfo.name %> <%= Date.today.year %></div>
+</div>

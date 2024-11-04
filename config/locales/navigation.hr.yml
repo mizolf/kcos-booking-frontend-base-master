@@ -1,0 +1,31 @@
+hr:
+# ADMIN NAVIGATION
+  admin_nav:
+    account: "Račun"
+    accounts: "Korisnici"
+    log_out: "Odjavi se"
+    go_to_web: "Povratak na web stranice"
+    account_options: "Izmijeni svoj račun"
+    spaces: "Prostori"
+    space_bookings: "Rezervacije prostora"
+    space_rent_requests: "Zahtjevi za najam"
+    space_bookings: "Rezervacije"
+    posts: "Novosti"
+    documents: "Dokumenti"
+    faqs: "Česta pitanja"
+    page_meta_tags: "Meta oznake stranica"
+    legal_pages: "Pravne stranice"
+    published_posts: "Objavljene"
+    unpublished_posts: "Neobjavljene"
+    app_settings: "Postavke"
+    landing_page: "Početna stranica"
+  # PAGES NAVIGATION
+  pages_nav:
+    home: "Naslovnica"
+    about: "O projektu"
+    posts: "Novosti"
+    spaces: 'Prostori'
+    contact: "Kontakt"
+    documents: "Dokumenti"
+    faqs: "Često postavljana pitanja"
+    gallery: "Galerija"

@@ -1,0 +1,106 @@
+<div class="sidebar">
+  <nav class="sidebar__content">
+    <%= link_to admin_root_path, class: 'sidebar__logo', title: 'Stara Pekara' do %>
+      <%= inline_svg 'logo.svg', class: 'logo-primary', title: 'Stara Pekara' %>
+    <% end %>
+
+    <% if current_admin.permitted?(:admins) %>
+      <%= active_link_to admin_admins_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/users.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.accounts") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:admins) %>
+      <%= active_link_to admin_page_meta_tags_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/programs.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.page_meta_tags") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:admins) %>
+      <%= active_link_to admin_landing_page_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/house-icon.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.landing_page") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:admins) %>
+      <%= active_link_to admin_spaces_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/offices.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.spaces") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_space_bookings_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/appointments.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.space_bookings") %>
+        <%= nav_indicator(id: 'unread-bookings', unread: SpaceBooking.unread.count) %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_space_rent_requests_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/calendar-icon.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.space_rent_requests") %>
+        <%= nav_indicator(id: 'unread-rent-requests', unread: SpaceRentRequest.unread.count) %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_posts_path, class: 'sidebar__link', active: [['admin/posts'], []], class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/news.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.posts") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_documents_path, class: 'sidebar__link', active: [['admin/documents'], []], class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/report.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.documents") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_faqs_path, class: 'sidebar__link', active: [['admin/faqs'], []], class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/services.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.faqs") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_legal_pages_path, class: 'sidebar__link', active: [['admin/legal_pages'], []], class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/law.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.legal_pages") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_app_setting_path(settings: 'tekst-pristanka'), class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/tool-1.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.app_settings") %>
+      <% end %>
+    <% end %>
+
+    <% if current_admin.permitted?(:contact_messages) %>
+      <%= active_link_to admin_toolkit_path, class: 'sidebar__link', active: :inclusive, class_active: 'active-link' do %>
+        <%= inline_svg "icons/nav/tool-1.svg", class: 'sidebar__icon' %>
+        <%= t("admin_nav.toolkit") %>
+      <% end %>
+    <% end %>
+
+    <%= link_to root_path, class: 'sidebar__link' do %>
+      <%= inline_svg "icons/nav/exit.svg", class: 'sidebar__icon' %>
+      <%= t("admin_nav.go_to_web") %>
+    <% end %>
+  </nav>
+</div>
+
+<style>
+    .js_messages_count{
+        background: red;
+        padding: 3px 5px;
+        border-radius: 50px;
+    }
+</style>

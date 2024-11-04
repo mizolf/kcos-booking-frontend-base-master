@@ -1,0 +1,20 @@
+<div class="section__wrap--4">
+
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit btn__group--3">
+      <%= link_to [:admin, document], class: "table__icon" do %>
+        <%= inline_svg "icons/eye-ban-18.svg" %>
+      <% end %>
+      <%= link_to admin_document_path(document), method: :delete, data: {confirm: t('delete_confirm')}, class: "table__icon" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+
+    <div class="admin-document__item">
+      <div class="text--center">
+        <h2><%= document.name %></h2>
+        <p class="text--large"><%= link_to document.file_url.split('/').last, document.file_url, target: '_blank', class: 'link' %></p>
+      </div>
+    </div>
+  </section>
+</div>

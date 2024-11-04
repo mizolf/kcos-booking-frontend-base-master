@@ -1,0 +1,20 @@
+<h2 class="datepicker__heading"><%= t('space_booking.pick_time') %></h2>
+<p class="datepicker__subheading"><em><%= t('space_booking.whole_hour_description') %></em></p>
+<ul class="time-segments picking-from">
+	<% time_select(@space.bookable_from, @space.bookable_to).each_with_index do |segment, index| %>
+		<li 
+			data-aos="fade-in" data-aos-once="true" data-aos-delay="<%= index * 50 %>"
+			class="time-segments__item-wrapper js-time-segment"
+			data-time="<%= segment[1] %>"
+			data-available-from="<%= !in_any_of_intervals?(segment[1], @taken_intervals.map{ |i| [i[0]-30, i[1]-30] }) && segment[1] + 30 < @space.bookable_to %>"
+			data-taken="<%= in_any_of_intervals?(segment[1], @taken_intervals.map{ |i| [i[0], i[1]-30] }) %>"
+		>
+			<span class="time-segments__item"><%= segment[0] %></span>
+			<span class="time-segments__item-dash"></span>
+		</li>
+	<% end %>
+</ul>
+
+<div class="datepicker__actions">
+	<button type="button" id="add_term" class="hidden btn--small btn--primary" disabled="disabled"><%= t('space_booking_term.add_term') %></button>
+</div>

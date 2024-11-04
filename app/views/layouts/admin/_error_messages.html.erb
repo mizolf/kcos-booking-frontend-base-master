@@ -1,0 +1,18 @@
+<% if object.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert-error">
+        <h2><%= "Broj grešaka: #{object.errors.count}" %></h2>
+      </div>
+      <div class="alert-error-list">
+        <% object.errors.full_messages.each do |msg| %>
+            <p>* <%= msg %></p>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
+<script>
+  $(function(){
+    $('#error_explanation').delay(1000).animate({backgroundColor: '#FFFFFF', color: "#c62828"}, 1000);
+  });
+</script>

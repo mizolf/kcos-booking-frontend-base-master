@@ -1,0 +1,412 @@
+/*------------------------------------*\
+# CORE BUTTONS
+\*------------------------------------*/
+
+button, .btn {
+  border: none;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: $font-weight--semibold;
+
+  padding-left: $button-padding--lr;
+  padding-right: $button-padding--lr;
+  padding-top: $button-padding--tb;
+  padding-bottom: $button-padding--tb;
+  border-radius: $button-radius;
+
+  transition: $transition-time;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0px 0px transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+/*------------------------------------*\
+# GRAYSCALE
+\*------------------------------------*/
+
+.btn--white {
+  background-color: $white--true;
+  color: $black;
+
+
+  &:focus, &:active, &:hover {
+    background-color: darken($white--true, 5%);
+  }
+}
+
+.btn--gray {
+  background-color: $color-gray;
+  color: $white;
+
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-gray, 5%);
+  }
+}
+
+.btn--black {
+  background-color: $black--true;
+  color: $white;
+
+  &:active {
+    background-color: lighten($black--true, 5%);
+  }
+
+  &:focus, &:hover {
+    background-color: lighten($black--true, 20%);
+  }
+}
+
+
+
+/*------------------------------------*\
+# PRIMARY / SECONDARY / TERTIARY
+\*------------------------------------*/
+
+.btn--primary {
+  background-color: $color-primary;
+  color: $white;
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-primary, 5%);
+  }
+}
+
+.btn--primary--light {
+  background-color: lighten($color-primary, 20%);
+  color: $white;
+
+  &:focus, &:active, &:hover {
+    background-color: lighten($color-primary, 25%);
+  }
+}
+
+.btn--secondary {
+  background-color: $color-secondary;
+  color: $white;
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-secondary, 5%);
+  }
+}
+
+.btn--tertiary {
+  background-color: $color-tertiary;
+  color: $white;
+
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-tertiary, 5%);
+  }
+}
+
+
+
+/*------------------------------------*\
+# LARGE / SMALL
+\*------------------------------------*/
+
+.btn--large {
+  padding-left: 2*$button-padding--lr;
+  padding-right: 2*$button-padding--lr;
+  padding-top: 2*$button-padding--tb;
+  padding-bottom: 2*$button-padding--tb;
+
+  &.btn__icon {
+    background-position: 2*$button-icon--size center;
+    padding-left: 3.5 * $button-icon--size;
+  }
+}
+
+.btn--small {
+  padding-left: 1/2*$button-padding--lr;
+  padding-right: 1/2*$button-padding--lr;
+  padding-top: 1/2*$button-padding--tb;
+  padding-bottom: 1/2*$button-padding--tb;
+
+  &.btn__icon {
+    background-position: 2*$button-icon--size center;
+    padding-left: 3.5 * $button-icon--size;
+  }
+}
+
+.btn--spacing {
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+}
+
+
+
+/*------------------------------------*\
+# FULL WIDTH
+\*------------------------------------*/
+
+.btn--full {
+  display: block;
+  width: 100%;
+}
+
+
+
+/*------------------------------------*\
+# GHOST
+\*------------------------------------*/
+
+.btn--ghost {
+  background-color: transparent;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+
+  &:focus, &:active, &:hover {
+    background-color: lighten($color-primary, 5%);
+    color: $white;
+  }
+}
+
+
+
+/*------------------------------------*\
+# UNDERLINE
+\*------------------------------------*/
+
+.btn--underline {
+  background-color: transparent;
+  color: $black;
+  border-bottom: 2px solid $black;
+
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+
+  &:active {
+    border-bottom: 2px solid lighten($color-primary, 5%);
+  }
+
+  &:focus, &:hover {
+    border-bottom: 2px solid $color-primary;
+  }
+}
+
+
+
+/*------------------------------------*\
+# ARROW
+\*------------------------------------*/
+
+.btn--arrow {
+  @extend .btn--primary;
+
+  background-image: image-url('icons/followright_white.svg');
+  background-repeat: no-repeat;
+  background-size: $button-icon--size;
+  background-position: right $button-icon--size center;
+  padding-right: 2.5 * $button-icon--size;
+}
+
+.btn--arrow--simple {
+  color: $color-primary;
+  font-weight: $font-weight--bold;
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+
+  &:hover {
+    .icon--arrow::before {
+      width: 0.75rem;
+    }
+  }
+
+  .icon--arrow {
+
+    &::before {
+      content: '';
+      margin-left: 0.5rem;
+      width: 0.5rem;
+      border-bottom: 4px solid $color-primary;
+      display: inline-block;
+      vertical-align: middle;
+      transition: $transition-time;
+      margin-top: -2px;
+    }
+
+    &::after {
+      content: '';
+      width: 0.5rem;
+      height: 0.5rem;
+      border-bottom: 3px solid $color-primary;
+      border-right: 3px solid $color-primary;
+      transform: rotate(-45deg);
+      margin-left: -6px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -1px;
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+# DISABLED
+\*------------------------------------*/
+
+.btn--disabled {
+  background-color: $color-gray;
+  color: $color-gray--darker;
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.5;
+
+  &:focus, &:active, &:hover {
+    background-color: $color-gray;
+    color: $color-gray--darker;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+
+
+/*------------------------------------*\
+# ICONS
+\*------------------------------------*/
+
+.btn__icon {
+  background-repeat: no-repeat;
+  background-size: $button-icon--size;
+  background-position: $button-icon--size center;
+  padding-left: 2.5 * $button-icon--size;
+}
+
+.btn--like {
+  @extend .btn--primary;
+  background-image: image-url('icons/heartempty_black.svg');
+}
+
+.btn--like--full {
+  background-image: image-url('icons/heartfull_black.svg') !important;
+  animation: pulse 0.5s 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    background-size: 1.5rem;
+    background-position: 1.5rem center;
+  }
+  50% {
+    background-size: 2rem;
+    background-position: 1.25rem center;
+  }
+  100% {
+    background-size: 1.5rem;
+    background-position: 1.5rem center;
+  }
+}
+
+.btn--add {
+  @extend .btn--primary;
+  background-image: image-url('icons/add_black.svg');
+  transition: background-position 0s ease;
+}
+
+.btn--mail {
+  @extend .btn--primary;
+  background-image: image-url('icons/mail_black.svg');
+}
+
+.btn--download {
+  @extend .btn--primary;
+  background-image: image-url('icons/download_black.svg');
+}
+
+.btn--play {
+  @extend .btn--primary;
+  background-image: image-url('icons/play2_black.svg');
+}
+
+.btn--share {
+  @extend .btn--primary;
+  background-image: image-url('icons/share_black.svg');
+}
+
+.btn--thumbs {
+  @extend .btn--primary;
+  background-image: image-url('icons/like_black.svg');
+}
+
+
+
+/*------------------------------------*\
+# Utility
+\*------------------------------------*/
+
+.btn--create {
+  @extend .btn--small;
+  background-color: $color-success;
+  color: $white;
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-success, 5%);
+  }
+}
+
+.btn--update {
+  @extend .btn--small;
+  background-color: $color-warning;
+  color: $black;
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-warning, 5%);
+  }
+}
+
+.btn--remove {
+  @extend .btn--small;
+  background-color: $color-alert;
+  color: $white;
+
+  &:focus, &:active, &:hover {
+    background-color: darken($color-alert, 5%);
+  }
+}
+
+
+
+/*------------------------------------*\
+# BUTTON GROUP
+\*------------------------------------*/
+
+.btn-group {
+  display: inline-block;
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: nowrap;
+
+  & .btn {
+    border-radius: 0;
+  }
+
+  & .btn:first-child {
+    border-top-left-radius: $button-radius;
+    border-bottom-left-radius: $button-radius;
+  }
+
+  & .btn:last-child {
+
+    border-top-right-radius: $button-radius;
+    border-bottom-right-radius: $button-radius;
+  }
+}

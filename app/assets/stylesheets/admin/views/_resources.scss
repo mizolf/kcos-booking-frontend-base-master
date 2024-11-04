@@ -1,0 +1,120 @@
+.post__content{
+	width: 50%;
+}
+
+.post__intro{
+	padding: 30px;
+	font-size: 20px;
+}
+
+.highlighting_posts{
+	display: flex;
+}
+
+.highlighted_posts{
+	background-color: white;
+	position: fixed;
+	right: 0;
+	top: 70px;
+}
+
+.other_posts{
+	
+}
+.post__highlighting{
+	display: flex;
+	align-items: center;
+	width: 400px;
+	flex-direction: column;
+	text-align: center;
+}
+.contact__card{
+	border: 1px silver solid; margin:5px;
+	padding-left: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact__card--links{
+	margin: 10px;
+	min-width: 100px;
+}
+
+.contact__icon {
+	width: 25px;
+	margin-right: 1.34rem;
+
+	&:first-child {
+		width: 18px;
+		height: 24px;
+		transform: translateY(5%);
+
+		& path {
+			fill: $color-primary;
+		}
+	}
+
+	@include breakpoint ($large) {
+    margin-right: $gutter;
+  }
+}
+
+.gallery__card{
+	border: silver solid 1px;
+	padding: 15px;
+	margin: 10px;
+}
+
+
+.gallery__card--links{
+	margin: 10px;
+	min-width: 100px;
+}
+
+.gallery__header{
+	padding-left: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+}
+
+.post__card{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid silver;
+	padding: 10px;
+	margin: 10px;
+}
+
+.post__card--links{
+	margin: 10px;
+	min-width: 100px;
+}
+
+.account--button{
+	display: flex;
+	allign-items: center;
+	justify-content: center;
+}
+
+.account--icon{
+	width: 18px;
+	height: 18px;
+	margin-right: 5px;
+	fill: white;
+	transform: translateY(3px);
+}
+
+.log_action__wrapper{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	padding: 2px;
+	margin: 4px;
+	border: 1px silver solid;
+}
+.log_action__admin_identicon{
+	//margin: 5px;
+}

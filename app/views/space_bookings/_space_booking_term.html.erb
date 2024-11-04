@@ -1,0 +1,8 @@
+<div class="space-term-item <%#= 'is-invalid' unless space-term.is_doable? %>">
+  <span class="space-term-item__date"><%= space_booking_term.date.strftime('%d.%m.%Y') %></span>
+  <span>
+    <span class="space-term-item__time"><%= interval_string([space_booking_term.time_from, space_booking_term.time_to]) %></span>
+    <span class="space-term-item__duration">(<%= space_booking_term.hours_duration %>h)</span>
+  </span>
+  <%= link_to inline_svg('icons/close.svg'), destroy_term_space_path(@space, space_booking_term), method: :delete, remote: true, class: 'space-term-item__close' %>
+</div>

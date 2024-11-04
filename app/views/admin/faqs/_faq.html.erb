@@ -1,0 +1,20 @@
+<div class="section__wrap--4">
+
+  <section class="section section--col section--padded">
+    <div class="btn__group--edit btn__group--3">
+      <%= link_to [:admin, faq], class: "table__icon" do %>
+        <%= inline_svg "icons/eye-ban-18.svg" %>
+      <% end %>
+      <%= link_to admin_faq_path(faq), method: :delete, data: {confirm: t('delete_confirm')}, class: "table__icon" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+
+    <div class="admin-faq__item">
+      <div class="text--center">
+        <h2><%= faq.question %></h2>
+        <p><%= faq.answer %></p>
+      </div>
+    </div>
+  </section>
+</div>

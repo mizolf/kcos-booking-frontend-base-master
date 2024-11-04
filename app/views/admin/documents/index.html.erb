@@ -1,0 +1,7 @@
+<header class="header header--double">
+  <h1><%= t('admin_nav.documents') %></h1>
+  <%= link_to t('new_record'), new_admin_document_path, class: 'btn btn--primary' %>
+</header>
+<div id="documents" class="section--6">
+	<%= render 'documents', documents: @documents %>
+</div>

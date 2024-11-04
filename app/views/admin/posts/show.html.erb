@@ -1,0 +1,14 @@
+<header class="header header--small">
+	<%= link_to @post.published? ? admin_posts_path : admin_unpublished_posts_path, class: "btn btn--back" do %>
+		<div class="arrow--left"></div>
+	<% end %>
+
+	<div class="header__content">
+		<h1><%= t('admin_nav.posts') %></h1>
+		<p><%= t('editing') %></p>
+	</div>
+</header>
+
+<section class="section section--12 section--padded">
+	<%= render 'form' %>
+</section>

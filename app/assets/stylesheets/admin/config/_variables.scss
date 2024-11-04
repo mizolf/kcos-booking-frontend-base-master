@@ -1,0 +1,196 @@
+/*------------------------------------*\
+** COLORS
+\*------------------------------------*/
+
+$bamboo                 : #A4D867; // http://mera.se/PMS/367C.html
+
+$black                  : #000000;
+$mine-shaft             : #323232;
+$asbestos               : #7f8c8d;
+$concrete               : #95a5a6;
+$silver                 : #c0c0c0;
+$mercury                : #E5E5E5;
+$alabaster              : #fafafa;
+$clouds                 : #ecf0f1;
+$white                  : #ffffff;
+
+$turquoise              : #1abc9c;
+$green-sea              : #16a085;
+$emerald                : #2ecc71;
+$nephritis              : #27ae60;
+$peter-river            : #3498db;
+$belize-hole            : #2980b9;
+$amethyst               : #9b59b6;
+$wisteria               : #8e44ad;
+$sun-flower             : #f1c40f;
+$orange                 : #f39c12;
+$carrot                 : #e67e22;
+$pumpkin                : #d35400;
+$alizarin               : #e74c3c;
+$pomegranate            : #c0392b;
+$wet-asphalt            : #34495e;
+$midnight-blue          : #2c3e50;
+
+$color-gray--lighter    : #dddddd;
+$color-gray--light      : darken(#cccccc, 10%);;
+$color-gray             : #989898;
+$color-gray--dark       : #747474;
+$color-gray--darker     : #2d2d2d;
+
+$color-primary          : #0077AE;
+$color-secondary        : #212121;
+$color-tertiary         : #49ae21;
+
+$color-info             : #2196f3;
+$color-success          : #006738;
+$color-warning          : #fb8c00;
+$color-alert            : #f44336;
+
+$color-created          : #49ae21;
+$color-deleted          : #ed1414;
+$color-edited           : #d89f1f;
+
+
+
+/*------------------------------------*\
+** FONT WEIGHTS
+\*------------------------------------*/
+
+$font-weight--light:     300;
+$font-weight--regular:   400;
+$font-weight--medium:    500;
+$font-weight--semibold:  600;
+$font-weight--bold:      700;
+$font-weight--extrabold: 800;
+$font-weight--heavy:     900;
+
+$font-weights: (
+  light: $font-weight--light,
+  regular: $font-weight--regular,
+  medium: $font-weight--medium,
+  semibold: $font-weight--semibold,
+  bold: $font-weight--bold,
+  extrabold: $font-weight--extrabold,
+  heavy: $font-weight--heavy
+);
+
+
+
+/*------------------------------------*\
+** BREAKPOINTS
+\*------------------------------------*/
+
+$small: 0;
+$medium: 640px;
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1440px;
+
+$breakpoints: (
+  small   : $small,
+  medium  : $medium,
+  large   : $large,
+  xlarge  : $xlarge,
+  xxlarge : $xxlarge
+);
+
+
+
+/*------------------------------------*\
+** BUTTONS
+\*------------------------------------*/
+
+$button-radius: 0;//0.29rem;
+$button-padding--lr: 1.86rem;
+$button-padding--tb: 0.71rem;
+$button-icon--size: 1rem;
+
+
+
+/*------------------------------------*\
+** INPUTS
+\*------------------------------------*/
+
+$input-radius: 0; //0.29rem;
+$input-padding: 1rem 1.14rem;
+$input-border: 1px solid #d8d8d8;
+
+
+
+/*------------------------------------*\
+** FONT SIZES
+\*------------------------------------*/
+
+$p-font-sizes: (
+  small  : (1rem, 1.5),
+  medium : (1rem, 1.5),
+  large  : (1rem, 1.5),
+  xlarge : (1rem, 1.5),
+  xxlarge: (1rem, 1.5)
+);
+
+$h1-font-sizes: (
+  small  : (1.29rem, 1.25),
+  medium : (1.29rem, 1.5),
+  large  : (2rem, 1.5),
+  xlarge : (2rem, 1.5),
+  xxlarge: (2rem, 1.5)
+);
+
+$h2-font-sizes: (
+  small  : (1.14rem, 1.25),
+  medium : (1.14rem, 1.5),
+  large  : (1.29rem, 1.5),
+  xlarge : (1.29rem, 1.5),
+  xxlarge: (1.29rem, 1.5)
+);
+
+$h3-font-sizes: (
+  small  : (1rem, 1.5),
+  medium : (1rem, 1.5),
+  large  : (1.14rem, 1.5),
+  xlarge : (1.14rem, 1.5),
+  xxlarge: (1.14rem, 1.5)
+);
+
+$h4-font-sizes: (
+  small  : (1rem, 1.5),
+  medium : (1rem, 1.5),
+  large  : (1rem, 1.5),
+  xlarge : (1rem, 1.5),
+  xxlarge: (1rem, 1.5)
+);
+
+$h5-font-sizes: (
+  small  : (0.86rem, 1.5),
+  medium : (0.86rem, 1.5),
+  large  : (0.86rem, 1.5),
+  xlarge : (0.86rem, 1.5),
+  xxlarge: (0.86rem, 1.5)
+);
+
+$h6-font-sizes: (
+  small  : (0.71rem, 1.5),
+  medium : (0.71rem, 1.5),
+  large  : (0.71rem, 1.5),
+  xlarge : (0.71rem, 1.5),
+  xxlarge: (0.71rem, 1.5)
+);
+
+
+
+/*------------------------------------*\
+# SETTINGS
+\*------------------------------------*/
+
+$gutter: 1rem;
+$width: 100rem;
+$navigation-width: 15vw;
+$text-width: 40rem;
+
+
+/*------------------------------------*\
+# TRANSITIONS
+\*------------------------------------*/
+
+$transition-time: 0.2s;

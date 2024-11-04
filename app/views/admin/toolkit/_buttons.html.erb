@@ -1,0 +1,98 @@
+<!-- ### BUTTONS ### -->
+
+<section class="section">
+
+  <h2 class="toolkit__headline">Buttons</h2>
+
+  <section class="subsection">
+    <pre><code>
+      modules/_buttons.scss
+    </code></pre>
+  </section>
+
+</section>
+
+
+<!-- ## PRIMARY ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Primary</h3>
+
+  <div class="wrapper">
+
+    <button class="btn btn--primary">Primary button</button>
+
+  </div>
+
+</section>
+
+
+<!-- ## BUTTON GROUP ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Button group</h3>
+
+  <section class="subsection relative">
+    <code>
+      <xmp>
+        <div class="btn__group--edit">
+          <%%= link_to admin_toolkit_path, class: "btn btn--edit" do %>
+            <%%= inline_svg "icons/pen-group-3.svg" %>
+          <%% end %>
+
+          <%%= link_to admin_toolkit_path, class: "btn btn--remove" do %>
+            <%%= inline_svg "icons/trash-simple.svg" %>
+          <%% end %>
+        </div>
+      </xmp>
+      <%= inline_svg "icons/copy.svg", class:"copy_to_clipboard" %>
+    </code>
+  </section>
+
+  <div class="wrapper">
+
+    <div class="btn__group--edit">
+      <%= link_to admin_toolkit_path, class: "btn btn--edit" do %>
+        <%= inline_svg "icons/pen-group-3.svg" %>
+      <% end %>
+
+      <%= link_to admin_toolkit_path, class: "btn btn--remove" do %>
+        <%= inline_svg "icons/trash-simple.svg" %>
+      <% end %>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ## SMALL / LARGE ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Small / Large</h3>
+
+  <div class="wrapper">
+
+    <button class="btn btn--priumary btn--small">Small button</button>
+    <button class="btn btn--secondary btn--large">Large button</button>
+
+  </div>
+
+</section>
+
+<!-- ## FULL WIDTH ## -->
+
+<section class="section">
+
+  <h3 class="toolkit__subheadline">Full width</h3>
+
+  <div class="wrapper">
+
+    <button class="btn btn--full">Full width button</button>
+
+  </div>
+
+</section>

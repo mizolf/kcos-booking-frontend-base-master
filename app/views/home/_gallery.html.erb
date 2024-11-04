@@ -1,0 +1,5 @@
+<% @page_content.gallery_images.each_with_index do |gallery_image, index| %>
+  <%= link_to image_url(gallery_image.image_url(:large)), alt: resolve_image_alt(gallery_image), title: resolve_image_alt(gallery_image) do %>
+    <%= image_tag(gallery_image.image_url(:medium)) %>
+  <% end %>
+<% end %>

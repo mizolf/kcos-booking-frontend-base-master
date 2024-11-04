@@ -1,0 +1,109 @@
+body{
+    .modal {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s, opacity 0.3s linear;
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba($black, 0.2); /* Black w/ opacity */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .modal-content{
+            transform: translateY(+1000px);
+            transition: transform 0.3s;
+        }
+    }
+
+    &.modal--opened{
+        overflow: hidden;
+        .modal{
+            visibility: visible;
+            opacity: 1;
+            .modal-content{
+                transform: translateY(0);
+                transition: transform 0.4s;
+            }
+        }
+        main{
+            filter: blur(4px);
+        }
+    }    
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: $white;
+    padding: $gutter*2;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    max-width: unset;
+
+    @include breakpoint($large) {
+        width: auto;
+        height: auto;
+        min-height: 50vh;
+        min-width: 40vw;
+    }
+}
+
+/* Modal injected content */
+#modal-injected_content{
+    //max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: $gutter*2;
+    right: $gutter*2;
+    width: $gutter*0.75;
+    height: $gutter*0.75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.meta-tags {
+    label {
+        color: $color-primary;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+    p {
+        margin-top: 0.25rem;
+    }
+}
+
+/*------------------------------------*\
+# IE ADJUSTMENTS
+\*------------------------------------*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  
+  .modal-content {
+    
+    .input__field--text .input {
+        width: 100%;
+    }
+  }
+}
+

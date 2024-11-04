@@ -1,0 +1,21 @@
+.main-errors {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errors-wrapper {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+
+    svg {
+    	max-width: 2rem;
+		max-height: 2rem;
+		margin-bottom: 3rem;
+    }
+}

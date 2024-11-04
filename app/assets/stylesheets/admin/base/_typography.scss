@@ -1,0 +1,177 @@
+/*------------------------------------*\
+** FONT TYPO
+\*------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin-ext');
+
+@font-face {
+  font-family: 'SF-Pro-Display-Regular';
+  src: font-url('SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: $font-weight--regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-RegularItalic';
+  src: font-url('SF-Pro-Display-RegularItalic.otf') format('opentype');
+  font-weight: $font-weight--regular;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Medium';
+  src: font-url('SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: $font-weight--semibold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Bold';
+  src: font-url('SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: $font-weight--bold;
+  font-style: normal;
+}
+
+$base-font-family: 'SF-Pro-Display-Regular', sans-serif;
+$base-font-weight: $font-weight--regular;
+$base-font-size: 14px;
+$base-line-height: 1.4;
+$base-font-color: $color-gray--dark;
+
+$category-font-family: 'SF-Pro-Display-Medium', sans-serif;
+$description-font-family: 'SF-Pro-Display-RegularItalic', sans-serif;
+$heading-font-family: 'SF-Pro-Display-Bold', sans-serif;
+
+
+
+/*------------------------------------*\
+** VERTICAL RHYTHM
+\*------------------------------------*/
+
+// todo
+
+
+
+/*------------------------------------*\
+** HEADINGS
+\*------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-gray--darker;
+  font-family: $heading-font-family;
+  font-weight: $font-weight--regular;
+  margin: 0;
+  margin-bottom: 0.67em;
+  padding: 0;
+}
+
+h1 {
+  @include font-size($h1-font-sizes);
+  font-weight: $font-weight--bold;
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+}
+
+
+
+/*------------------------------------*\
+** LISTS
+\*------------------------------------*/
+
+ul li {
+  list-style-type: none;
+}
+
+ol li {
+  list-style-type: none;
+}
+
+
+
+/*------------------------------------*\
+** LINKS
+\*------------------------------------*/
+
+a {
+  outline-width: 0;
+  text-decoration: none;
+  transition: .2s ease-in;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.link {
+  color: $color-primary;
+}
+
+a.link:focus,
+a.link:active,
+a.link:hover {
+  color: $color-secondary;
+}
+
+.link--underline, 
+.link--underline:hover,
+.link--underline:active,
+.link--underline:focus {
+  text-decoration: underline;
+}
+
+/*------------------------------------*\
+** FONT WEIGHTS
+\*------------------------------------*/
+
+@each $name, $value in $font-weights {
+  .text--#{$name} {
+    font-weight: $value;
+  }
+}
+
+
+
+/*------------------------------------*\
+** OTHER
+\*------------------------------------*/
+
+b, strong, .strong {
+  font-weight: $font-weight--bold;
+}
+
+p {
+  font-family: $base-font-family;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+code {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
