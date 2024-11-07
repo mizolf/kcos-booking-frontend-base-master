@@ -2,10 +2,11 @@ development:
   adapter: postgresql
   encoding: utf8
   database: local_kcos_booking_dev_bambooapp_eu
-  host: localhost
+  host: 
   pool: 5
   username: myapp
   password: password1
+  gssencmode: disable
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -18,12 +19,13 @@ test:
   pool: 5
   username: myapp
   password: password1
+  gssencmode: disable
 
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: kcos_booking_dev_bambooapp_eu
-  host: localhost
-  pool: 5
-  username: rails
-  password: secret
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: kcos_booking_dev_bambooapp_eu
+#   host: localhost
+#   pool: 5
+#   username: rails
+#   password: secret

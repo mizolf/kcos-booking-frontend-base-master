@@ -23,15 +23,9 @@
   line-height: $min-line-height;
 
   @media screen and (min-width: $min-vw) {
-    font-size: calc(
-      #{$min-font-size} + #{strip-rem-unit($max-font-size - $min-font-size)} *
-        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-    );
+    font-size: calc(#{$min-font-size} + #{strip-rem-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
 
-    line-height: calc(
-      #{$min-line-height} + #{strip-rem-unit($max-line-height - $min-line-height)} *
-        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-    );
+    line-height: calc(#{$min-line-height} + #{strip-rem-unit($max-line-height - $min-line-height)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
   }
 
   @media screen and (min-width: $max-vw) {
@@ -46,15 +40,18 @@
 
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
-    @if $fs-breakpoint == small {
+    @if $fs-breakpoint ==small {
       @include make-font-size($fs-font-size);
     }
+
     @else {
+
       // If $fs-font-size is a key that exists in
       // $fs-breakpoints, use the value
       @if map-has-key($fs-breakpoints, $fs-breakpoint) {
         $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
       }
+
       @media screen and (min-width: $fs-breakpoint) {
         @include make-font-size($fs-font-size);
       }
@@ -69,14 +66,17 @@
 \*------------------------------------*/
 
 @mixin make-font-size($fs-font-size) {
+
   // If $fs-font-size is a list, include
   // both font-size and line-height
-  @if type-of($fs-font-size) == "list" {
+  @if type-of($fs-font-size)=="list" {
     font-size: nth($fs-font-size, 1);
+
     @if (length($fs-font-size) > 1) {
       line-height: nth($fs-font-size, 2);
     }
   }
+
   @else {
     font-size: $fs-font-size;
   }
@@ -89,19 +89,19 @@
 \*------------------------------------*/
 
 // Legacy fallback
-@mixin breakpoint($name){
-  @media only screen and (min-width:$name + 1px) {
+@mixin breakpoint($name) {
+  @media only screen and (min-width:#{ $name + 1px }) {
     @content;
   }
 }
 
-@mixin min-breakpoint($name){
-  @media only screen and (min-width:$name + 1px) {
+@mixin min-breakpoint($name) {
+  @media only screen and (min-width:#{ $name + 1px }) {
     @content;
   }
 }
 
-@mixin max-breakpoint($name){
+@mixin max-breakpoint($name) {
   @media only screen and (max-width:$name) {
     @content;
   }
@@ -128,9 +128,13 @@
 @mixin card($depth) {
   @if $depth < 1 {
     box-shadow: none;
-  } @else if $depth > 5 {
+  }
+
+  @else if $depth >5 {
     @warn "Invalid $depth `#{$depth}` for mixin `card`.";
-  } @else {
+  }
+
+  @else {
     box-shadow: bottom-shadow($depth), top-shadow($depth);
   }
 }

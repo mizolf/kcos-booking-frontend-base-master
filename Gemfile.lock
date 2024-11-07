@@ -333,7 +333,7 @@ DEPENDENCIES
   mini_magick
   money-rails (~> 1.12)
   normalize-rails
-  pg (>= 0.18, < 2.0)
+  pg (~> 1.0)
   premailer-rails
   pry
   pry-rails
