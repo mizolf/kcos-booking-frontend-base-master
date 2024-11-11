@@ -2,7 +2,8 @@
 # CORE BUTTONS
 \*------------------------------------*/
 
-button, .btn {
+button,
+.btn {
   border: none;
   display: inline-block;
   font-size: 1rem;
@@ -38,7 +39,9 @@ button, .btn {
   color: $black;
 
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($white--true, 5%);
   }
 }
@@ -48,7 +51,9 @@ button, .btn {
   color: $white;
 
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-gray, 5%);
   }
 }
@@ -61,7 +66,8 @@ button, .btn {
     background-color: lighten($black--true, 5%);
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: lighten($black--true, 20%);
   }
 }
@@ -76,7 +82,9 @@ button, .btn {
   background-color: $color-primary;
   color: $white;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-primary, 5%);
   }
 }
@@ -85,7 +93,9 @@ button, .btn {
   background-color: lighten($color-primary, 20%);
   color: $white;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: lighten($color-primary, 25%);
   }
 }
@@ -94,7 +104,9 @@ button, .btn {
   background-color: $color-secondary;
   color: $white;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-secondary, 5%);
   }
 }
@@ -104,7 +116,9 @@ button, .btn {
   color: $white;
 
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-tertiary, 5%);
   }
 }
@@ -164,10 +178,12 @@ button, .btn {
 .btn--ghost {
   background-color: transparent;
   color: $color-primary;
-  border: 1px solid $color-primary;
+  border: 2px solid $color-primary;
 
-  &:focus, &:active, &:hover {
-    background-color: lighten($color-primary, 5%);
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: lighten($color-primary, 1%);
     color: $white;
   }
 }
@@ -193,7 +209,8 @@ button, .btn {
     border-bottom: 2px solid lighten($color-primary, 5%);
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     border-bottom: 2px solid $color-primary;
   }
 }
@@ -268,7 +285,9 @@ button, .btn {
   pointer-events: none;
   opacity: 0.5;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: $color-gray;
     color: $color-gray--darker;
     cursor: default;
@@ -306,10 +325,12 @@ button, .btn {
     background-size: 1.5rem;
     background-position: 1.5rem center;
   }
+
   50% {
     background-size: 2rem;
     background-position: 1.25rem center;
   }
+
   100% {
     background-size: 1.5rem;
     background-position: 1.5rem center;
@@ -358,7 +379,9 @@ button, .btn {
   background-color: $color-success;
   color: $white;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-success, 5%);
   }
 }
@@ -368,7 +391,9 @@ button, .btn {
   background-color: $color-warning;
   color: $black;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-warning, 5%);
   }
 }
@@ -378,7 +403,9 @@ button, .btn {
   background-color: $color-alert;
   color: $white;
 
-  &:focus, &:active, &:hover {
+  &:focus,
+  &:active,
+  &:hover {
     background-color: darken($color-alert, 5%);
   }
 }
