@@ -43,10 +43,15 @@ h2 {
 
 h3 {
   @include fluid-typography($h3-font-sizes);
+  
 }
 
 h4 {
   @include fluid-typography($h4-font-sizes);
+  font-family: 'Source Sans 3', sans-serif;
+  color: $color-primary;
+  font-weight: 700;
+  margin: 0;
 }
 
 h5 {
@@ -80,12 +85,12 @@ ol li {
 .link {
   outline-width: 0;
   text-decoration: none;
-  color: $color-primary;
+  color: $black--true;
   transition: 0.2s;
 }
 
 .link:hover, .link:focus, .link:active {
-  color: lighten($color-primary, 10%);
+  color: lighten($black--true, 10%);
 }
 
 /*------------------------------------*\
@@ -147,6 +152,7 @@ p {
   @include font-size($copy-font-sizes);
   font-family: $base-font-family;
   margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
 pre,
@@ -156,6 +162,7 @@ code {
   margin-bottom: 1rem;
   display: block;
 }
+
 
 /*------------------------------------*\
 ** FONT WEIGHTS

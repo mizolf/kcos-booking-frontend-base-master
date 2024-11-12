@@ -1,14 +1,23 @@
-<div class="layout--main">
+<div class="layout--main flex flex--column">
   <h2><%= t('pages_nav.contact') %></h2>
-  <p>
-    Adresa<br>
-    Trg Vatroslava Lisinskog 11<br>
-    31000 Osijek, Hrvatska<br>
-    Telefon
-  </p>
-  <p><%= link_to '+385 (0)31 229 181', 'tel:+38531229181' %></p>
-  <p>E-mail
-    <%= mail_to 'info@starapekara.eu', 'info@starapekara.eu' %>
-  </p>
+  <div class="contact">
+    <div class="contact-description">
+      <h4>Adresa</h4>
+      <p>Trg Vatroslava Lisinskog 11<br>31000 Osijek, Hrvatska</p>
+      
+    </div>
+    <div class="contact-description">
+      <h4>Telefon</h4>
+      <p>
+        <%= link_to '+385 (0)31 229 181', 'tel:+38531229181', class: 'link' %>
+      </p>
+    </div>
+  
+    <div class="contact-description">
+      <h4>E-mail</h4>
+      <p>
+        <%= mail_to 'info@starapekara.eu', 'info@starapekara.eu', class: 'link' %>
+      </p>
+    </div>
+  </div>
 </div>
-
