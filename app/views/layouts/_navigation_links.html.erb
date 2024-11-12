@@ -9,6 +9,13 @@
 <%= active_link_to t('pages_nav.documents'), documents_path, class_active: 'is-active', active: [['documents'], []], class: 'nav__link nav__link--2nd__part' %>
 <%= active_link_to t('pages_nav.faqs'), faqs_path, class_active: 'is-active', active: [['faqs'], []], class: 'nav__link nav__link--2nd__part' %>
 <hr class='nav-divider'>
+<p class='nav__link--3rd__part'>
+  © <%= Time.now.year %>. Stara Pekara
+</p>
+<p class="nav__link--3rd__part">
+  Sufinancirala Europska unija
+</p>
 <% LegalPage.listed.each do |legal_page| %>
   <%= active_link_to legal_page.name, legal_page, class_active: 'is-active', active: :exact, class: 'nav__link nav__link--3rd__part' %>
 <% end %>
+

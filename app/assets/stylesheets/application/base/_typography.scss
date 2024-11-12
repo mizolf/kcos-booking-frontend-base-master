@@ -7,7 +7,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
-$base-font-family: 'Raleway', sans-serif;
+$base-font-family: 'Source Sans 3', sans-serif;
 $base-font-weight: $font-weight--regular;
 $base-font-size: 16px;
 $base-line-height: 1.6;
@@ -35,6 +35,10 @@ h1 {
 
 h2 {
   @include fluid-typography($h2-font-sizes);
+  color: $color-primary;
+  font-size: 3rem;
+  text-align: center;
+  line-height: 65.18px;
 }
 
 h3 {
