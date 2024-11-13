@@ -148,6 +148,19 @@
     color: $white--true;
   }
 
+  .nav-icon{
+    width: 98px;
+    height: 98px;
+    background-color: $color-primary;
+    border-radius: 0;
+    padding: 0.625rem;
+  }
+
+  .nav-logo{
+    width: 78.4px;
+    height: 76.86px;
+  }
+
   &__logo {
     display: block;
     height: 2rem;
