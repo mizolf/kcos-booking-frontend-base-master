@@ -1,3 +1,4 @@
+
 var position = $(window).scrollTop(); 
 
 // should start at 0
@@ -9,10 +10,13 @@ $(window).scroll(function() {
 
    
       if(scroll > position) {
+        if($('.burger-button').hasClass('is-active')){
+          toggleMenu();
+        }
 
         if($('.sticky-header').hasClass("sticky-header--up")) {
           $('.sticky-header').removeClass("sticky-header--up");
-          $('.sticky-header').addClass("sticky-header--down");
+          $('.sticky-header').addClass("sticky-header--down");   
         }
         else {
           $('.sticky-header').addClass("sticky-header--down");
