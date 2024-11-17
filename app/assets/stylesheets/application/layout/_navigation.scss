@@ -42,8 +42,25 @@
     }
   }
 }
+
 .nav__link--active{
   font-weight: bold;
+}
+
+.nav-logo-wrapper{
+  opacity: 1;
+  width: 98px;
+  height: 98px;
+  background-color: $color-primary;
+  border-radius: 0;
+  padding: 0.625rem;
+}
+
+.nav-logo{
+  svg{
+    width: 78.4px;
+    height: 76.86px;
+  }  
 }
 
 
@@ -155,11 +172,6 @@
     background-color: $color-primary;
     border-radius: 0;
     padding: 0.625rem;
-  }
-
-  .nav-logo{
-    width: 78.4px;
-    height: 76.86px;
   }
 
   &__logo {

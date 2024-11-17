@@ -1,8 +1,8 @@
-<%= link_to t('pages_nav.home'), root_path(anchor: 'naslovna'), class: 'nav__link' %>
-<%= link_to t('pages_nav.about'), root_path(anchor: 'o-nama'), class: 'nav__link' %>
+<%= link_to t('pages_nav.home'), root_path(anchor: 'Naslovnica'), class: 'nav__link js-anchor' %>
+<%= link_to t('pages_nav.about'), root_path(anchor: 'O projektu'), class: 'nav__link' %>
 <%= link_to t('pages_nav.posts'), posts_path, class: 'nav__link'  %>
-<%= link_to t('pages_nav.spaces'), root_path(anchor: 'prostori'), class: 'nav__link'  %>
-<%= link_to t('pages_nav.contact'), root_path(anchor: 'kontakt'), class: 'nav__link'  %>
+<%= link_to t('pages_nav.spaces'), root_path(anchor: 'Prostori'), class: 'nav__link'  %>
+<%= link_to t('pages_nav.contact'), root_path(anchor: 'Kontakt'), class: 'nav__link'  %>
 <hr class='nav-divider'>
 <%= active_link_to 'Mailers', '/rails/mailers', class_active: 'is-active', class: 'nav__link nav__link--2nd__part' if Rails.env.development?%>
 <%= link_to "&#129384; Admin".html_safe, admin_root_path unless current_admin.nil? || hide_admin_hud? %>
