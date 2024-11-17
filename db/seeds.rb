@@ -5,12 +5,16 @@ include SeedMethods
 puts 'Begin Seeding...                🧐'
 
 print 'Admin...........................'
-Admin.create!(first_name: "Bamboo",
-  last_name: "Lab",
-  password: "vise nije adminadmin",
-  superadmin: true,
-  email: "contact@bamboolab.eu")
-print '✅'
+begin
+  Admin.create!(first_name: "Bamboo",
+    last_name: "Lab",
+    password: "vise nije adminadmin",
+    superadmin: true,
+    email: "contact@bamboolab.eu")
+  print '✅'
+rescue => e
+  puts "❌ Error: #{e.message}"
+end
 puts ''
 
 unless Space.count > 0

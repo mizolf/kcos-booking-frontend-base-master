@@ -1,5 +1,9 @@
 hr:
 # ERRORS
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Zapis nije važeći"
   locale_missing: "Jezik ne postoji"
   text404: "Nažalost, stranica koju tražite ne postoji."
   text500: "Greška na serveru."
