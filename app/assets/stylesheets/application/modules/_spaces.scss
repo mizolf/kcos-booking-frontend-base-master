@@ -1,5 +1,6 @@
 .spaces{
     margin-inline: 122px;
+    padding-block: 60px;
 }
 
 .spaces-text{
@@ -9,3 +10,63 @@
     line-height: 28.8px;
     text-align: center;
 }
+
+.spaces-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.image{
+    position: relative;
+    width: 342px;
+    height: 342px;
+    overflow: hidden;
+}
+
+.space-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.image-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 342px;
+    height: 342px;
+    background-color: rgba($color-primary,0.6);
+    z-index: 1;
+    padding: 10px;
+}
+
+.space-title{
+    color: $white--true;
+    font-weight: 400;
+    font-family: $base-font-family;
+    font-size: 2.25rem;
+    line-height: 45.25px;
+    margin: 0;
+}
+
+.space-name{
+    font-family: $heading-font-family;
+    font-size: 6rem;
+    font-weight: 400;
+    margin: 0;
+    color: $white--true;
+}
+
+.space-cost{
+    font-family: $base-font-family;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $white--true;
+    margin: 0;
+}
+
