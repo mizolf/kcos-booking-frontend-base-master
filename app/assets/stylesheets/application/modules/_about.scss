@@ -1,8 +1,38 @@
-// .nav-icon{
-//     opacity: 1;
-//     width: 98px;
-//     height: 98px;
-//     background-color: $color-primary;
-//     border-radius: 0;
-//     padding: 0.625rem;
-//   }
+.about{
+    padding-block: 60px;
+}
+
+.about-title{
+    margin: 0 0 8px 0;
+}
+
+.about-content{
+    width: 100%;
+}
+.about-content{
+    padding-inline-end: 10px;
+    font-family: $base-font-family;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $black--true;
+    a:-webkit-any-link{
+        text-decoration: none;
+    }
+}
+
+.about-images{
+    width: 100%;
+    overflow: hidden;
+    gap: 1.5rem;
+}
+
+.gallery-image{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+
+}

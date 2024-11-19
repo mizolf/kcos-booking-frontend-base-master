@@ -1,7 +1,11 @@
 <div class="layout--main">
-    <h2><%= t('pages_nav.about') %></h2>
-    <article>
-    <%= @page_content.about_project.html_safe %>
-    </article>
-    <%= render 'home/gallery' if @page_content.gallery_images.any? %>
+    <div class="about flex flex--column">
+        <h2 class="about-title"><%= t('pages_nav.about') %></h2>
+        <article class="about-content">
+            <%= @page_content.about_project.html_safe %>
+        </article>
+        <div class="about-images flex flex--row">
+            <%= render 'home/gallery' if @page_content.gallery_images.any? %>
+        </div>
+    </div>
 </div>
