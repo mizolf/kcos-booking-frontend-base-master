@@ -6,7 +6,11 @@
 <% content_for :description, @legal_page.resolve_seo_description %>
 <% content_for :edit_link, admin_legal_page_path(@legal_page) %>
 <% content_for :edit_meta_tags_link, admin_legal_page_path(@legal_page, tab: 1) %>
-<h1><%= @legal_page.title %></h1>
+
+
+<div class="layout--main">
+  <h1><%= @legal_page.title %></h1>
 <article>
   <%= @legal_page.content.html_safe %>
 </article>
+</div>

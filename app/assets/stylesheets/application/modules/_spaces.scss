@@ -1,3 +1,4 @@
+//MAIN PAGE SPACES SECTION
 .spaces{
     margin-inline: 122px;
     padding-block: 60px;
@@ -70,3 +71,70 @@
     margin: 0;
 }
 
+//SPACE PAGE
+.space{
+    padding-block: 60px;
+}
+
+.space-name{
+    font-family: $heading-font-family;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 65.18px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $color-primary;
+}
+
+.space-description{
+    font-family: $base-font-family;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $black--true;
+    text-wrap: pretty;
+}
+
+.space-price-info{
+    width: 100%;
+    padding: 1.5rem;
+    padding-block-end: 0;
+    gap: 1.5rem;
+}
+
+.space-price-box{
+    width: 440px;
+    height: 131px;
+    padding-block: 1.5rem;
+    border: 1px solid $color-primary;
+    margin-inline: auto;
+}
+
+.space-price{
+    font-family: $base-font-family;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 60.34px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $color-primary;
+    margin: 0;
+}
+
+.space-price-box__info{
+    font-family: $base-font-family;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 22.63px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $color-primary;
+    margin: 0;
+    padding: 0;
+}
