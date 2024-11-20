@@ -7,9 +7,16 @@
 <% content_for :description, @post.resolve_seo_description %>
 <% content_for :edit_link, admin_post_path(@post) %>
 <% content_for :edit_meta_tags_link, admin_post_path(@post, tab: 2) %>
-<h1><%= @post.title %></h1>
-<%= post_timestamp(@post.publish_at) %>
-<%= image_tag @post.image_url(:large) %>
-<article>
-<%= @post.text.html_safe %>
-</article>
+
+<div class="layout--main flex flex--column flex-align--center">
+    <div class="news-show flex flex--column flex-align--start">
+        <h1 class="news-show-title"><%= @post.title %></h1>
+        <p class="post-timestamp">
+            <%= post_timestamp(@post.publish_at) %>
+        </p>
+        <%= image_tag @post.image_url(:large), class: 'news-show-image' %>
+        <article class="news-show-text">
+            <%= @post.text.html_safe %>
+        </article>
+    </div>
+</div>
