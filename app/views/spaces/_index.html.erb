@@ -11,7 +11,7 @@
           <div class="image-text flex flex--between flex--column">
             <h3 class="space-title">Prostor</h3>
             <%= link_to space_path(space), style: "text-decoration: none;" do %>
-              <p class="space-name"><%= space.name[-1] %></p>
+              <p class="space-letter"><%= space.name[-1] %></p>
             <% end %>
             <p class="space-cost">
               <%= surface(space.surface_area)  %> - <%= humanized_money_with_symbol(space.book_price) %> po terminu

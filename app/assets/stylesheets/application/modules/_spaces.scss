@@ -52,7 +52,7 @@
     margin: 0;
 }
 
-.space-name{
+.space-letter{
     font-family: $heading-font-family;
     font-size: 6rem;
     font-weight: 400;
@@ -137,4 +137,8 @@
     color: $color-primary;
     margin: 0;
     padding: 0;
+}
+
+.monthly-price{
+    margin-block-start: 1.5rem;
 }

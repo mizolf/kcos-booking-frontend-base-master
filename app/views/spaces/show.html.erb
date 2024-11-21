@@ -27,11 +27,14 @@
       </div>
       <% if  @space.bookable %>
     </div>
-  
     <% end %>
     <% if  @space.rentable %>
-      <p><span><%= humanized_money_with_symbol(@space.rent_price) %></span>
-        mjesečno</p>
+    <div class="monthly-price">
+      <div class="space-price-box flex flex--column flex--center">
+        <span class="space-price"><%= humanized_money_with_symbol(@space.rent_price) %></span>
+        <p class="space-price-box__info">mjesečno</p>    
+      </div>
+    </div>
     <% end %>
     <% if @space.available %>
       <%= link_to t('space.rent_monthly', price: humanized_money_with_symbol(@space.rent_price)), new_space_rent_request_space_path(@space), class: 'btn--primary section__button' if @space.rentable %>
