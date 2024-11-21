@@ -1,0 +1,46 @@
+.documents-title{
+    font-family: $heading-font-family;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 86.91px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 60px;
+}
+
+.documents{
+    padding-block: 60px;
+}
+
+.document-name{
+    font-family: $base-font-family;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 30.17px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $black--true;
+    margin: 0;
+    padding: 0;
+}
+
+.document-item{
+    padding: 9px 12px;
+    border: none;
+    border-radius: 0;
+    background-color: rgba($black--true, 0.1);
+    &:hover{
+        background-color: rgba($color-primary, 0.2);  
+    }
+}
+
+.document-item__button{
+    background-color: $color-primary;
+    padding: 6px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
