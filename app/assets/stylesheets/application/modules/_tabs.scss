@@ -20,12 +20,9 @@
 }
 
 .tabs__content {
+  display: none;
   padding-top: $gutter;
   border-top: 2px solid $color-primary;
-
-  & > div {
-    display: none;
-  }
 
   & > .is-active {
     display: block;
@@ -38,3 +35,13 @@
     padding-top: 0;
   }
 }
+
+.tabs__question{
+  width: 100%;
+}
+
+
+.solid{
+  border-top: 3px solid #bbb;  
+}
+

@@ -19,5 +19,4 @@ $(function () {
     $content.eq($index).addClass('is-active');
     $tab.eq($index).addClass('is-active');
   }
-
 });

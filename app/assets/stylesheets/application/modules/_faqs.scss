@@ -1,0 +1,19 @@
+.faqs-title{
+    font-family: $heading-font-family;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 86.91px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.btn--faqs__closed{
+    background-color: $color-primary;
+    padding: 6px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+}
