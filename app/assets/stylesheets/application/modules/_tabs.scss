@@ -3,6 +3,7 @@
 .tabs {
   display: flex;
   flex-direction: column;
+  padding-block: 60px;
 
   @include breakpoint ($medium) {
     flex-direction: row;
