@@ -19,6 +19,7 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="/app/assets/stylesheets/application/vendors/_lightbox.scss">
 
   <%= javascript_include_tag 'application' %>
   <%= analytics_init if ENV['BOOM_ENV'] == 'production' %>
@@ -57,5 +58,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqk1x_cbFW-7QVFllaotVVEEutFkDGMII&callback=initMap&libraries=places&v=weekly"
     async
   ></script>
+  <script src="fslightbox.js"></script>
 </body>
 </html>
