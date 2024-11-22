@@ -2,12 +2,19 @@
 <% content_for :description, seo_description((@space.description.strip_tags.truncate(120, separator: ' '))) %>
 <% content_for :title, "Stara Pekara - " + @space.name %>
 
+<% unless @space.space_images.blank? %>
+  <div class="glide">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+      <% @space.space_images.each do |image| %>
+        <li class="glide__slide"><%= link_to image_tag(image.image), image_url(image.image), data: {lightbox: 'space', title: @space.name} %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %> 
 <div class="layout--main flex flex--column">
-  <% unless @space.space_images.blank? %>
-    <% @space.space_images.each do |image| %>
-      <%= link_to image_tag(image.image), image_url(image.image), data: {lightbox: 'space', title: @space.name} %>
-    <% end %>
-  <% end %>
+ 
   <div class="space flex flex--column">
     <h1 class="space-name">
       <%= @space.name %>
@@ -45,3 +52,15 @@
   </div>
   
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+  const config = {
+      type: 'carousel',
+      perView: 1.75,
+      focusAt: 'center',
+      startAt: 1,
+      gap: 48,
+  }
+  new Glide('.glide', config).mount()         
+</script>
