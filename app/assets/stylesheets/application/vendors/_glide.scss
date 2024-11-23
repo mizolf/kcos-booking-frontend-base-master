@@ -20,7 +20,7 @@
 }
 
 .glide__track {
-    overflow: hidden;
+    overflow: visible;
 }
 
 .glide__slides {
@@ -30,10 +30,11 @@
     backface-visibility: hidden;
     transform-style: preserve-3d;
     touch-action: pan-Y;
-    overflow: hidden;
+    overflow: visible;
     padding: 0;
     white-space: nowrap;
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
     will-change: transform;
 }
@@ -44,13 +45,33 @@
 
 
 .glide__slide {
-    width: 952px;
-    height: 480px;
+    width: 708px;
+    height: 356px;
+    margin-top: 22px;
+    margin-bottom: 60px;
     flex-shrink: 0;
+    transition: 0.3s linear;
     white-space: normal;
     user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.glide__slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.glide__slide--active{
+    width: 952px;
+    height: 480px;
+}
+
+.glide__slide--active img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .glide__slide a {
