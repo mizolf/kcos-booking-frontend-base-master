@@ -1,5 +1,23 @@
 <% @page_content.gallery_images.each_with_index do |gallery_image, index| %>
-  <%= link_to image_url(gallery_image.image_url(:large)), alt: resolve_image_alt(gallery_image), title: resolve_image_alt(gallery_image), data: { lightbox: "gallery" } do %>
-    <%= image_tag(gallery_image.image_url(:medium), class: "gallery-image") %>
+  <% if index < 4 %>
+    <% if index == 3 %>
+    <!-- <div class="hidden__overlay"> -->
+      <%= link_to image_url(gallery_image.image_url(:large)), alt: resolve_image_alt(gallery_image), title: resolve_image_alt(gallery_image), data: { lightbox: "gallery" } do %>
+      <div class="hidden__overlay">
+        <%= image_tag(gallery_image.image_url(:medium), class: "gallery-image fourth") %>
+        <span class="hidden__overlay--text">+<%= @page_content.gallery_images.size - 4 %></span>
+      </div>
+      <% end %>
+    <!-- </div> -->
+    <% else %>
+      <%= link_to image_url(gallery_image.image_url(:large)), alt: resolve_image_alt(gallery_image), title: resolve_image_alt(gallery_image), data: { lightbox: "gallery" } do %>
+        <%= image_tag(gallery_image.image_url(:medium), class: "gallery-image") %>
+      <% end %>
+    <% end %>
+
+  <% else %>
+    <%= link_to image_url(gallery_image.image_url(:large)), alt: resolve_image_alt(gallery_image), title: resolve_image_alt(gallery_image), data: { lightbox: "gallery" }, class: "hidden" do %>
+      <%= image_tag(gallery_image.image_url(:medium), class: "gallery-image") %>
+    <% end %>
   <% end %>
 <% end %>
