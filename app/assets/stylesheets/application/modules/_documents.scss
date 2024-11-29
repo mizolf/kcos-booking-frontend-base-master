@@ -1,3 +1,7 @@
+.main{
+    min-height: fit-content;
+}
+
 .documents-title{
     font-family: $heading-font-family;
     font-size: 4rem;
@@ -10,7 +14,7 @@
 }
 
 .documents{
-    padding-block: 60px;
+    padding-block: 120px 60px;
 }
 
 .document-name{
@@ -31,8 +35,13 @@
     border: none;
     border-radius: 0;
     background-color: rgba($black--true, 0.1);
+    cursor: pointer;
+    &:nth-child(odd){
+        background-color: $white--true;
+    }
     &:hover{
-        background-color: rgba($color-primary, 0.2);  
+        background-color: rgba($color-primary, 0.2);
+        cursor: pointer;
     }
 }
 

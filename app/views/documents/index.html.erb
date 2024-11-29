@@ -1,14 +1,13 @@
-<div class="layout--main">
+<div class="documents layout--main">
   <h2 class="documents-title"><%= t('pages_nav.documents') %></h2>
-  <div class="documents">
+
 
     <% @documents.each do |document| %>
     <div class="document-item flex flex--between">
       <p class="document-name"><%= document.name %></p>
       <%= link_to document.file_url, target: '_blank', class: 'document-item__button' do %>
-      <%= inline_svg 'icons/download.svg' %>
+        <%= inline_svg 'icons/download.svg' %>
       <% end %>
     </div>  
     <% end %>
-  </div>
 </div>
