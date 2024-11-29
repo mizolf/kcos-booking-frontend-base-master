@@ -48,7 +48,8 @@
 }
 
 .nav-logo-wrapper{
-  position: absolute;
+  position: sticky;
+  top: 0;
   z-index: 1;
   opacity: 1;
   width: 98px;
