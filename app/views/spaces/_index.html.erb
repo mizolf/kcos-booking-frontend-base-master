@@ -8,15 +8,15 @@
       <% @spaces.each do |space| %>
         <div class="image">
           <%= image_tag space.featured_image.image_url(:medium) unless space.featured_image.blank? %>
-          <div class="image-text flex flex--between flex--column">
-            <h3 class="space-title">Prostor</h3>
             <%= link_to space_path(space), style: "text-decoration: none;" do %>
-              <p class="space-letter"><%= space.name[-1] %></p>
-            <% end %>
-            <p class="space-cost">
-              <%= surface(space.surface_area)  %> - <%= humanized_money_with_symbol(space.book_price) %> po terminu
-            </p>
-          </div>    
+              <div class="image-text flex flex--between flex--column flex-align--center">
+                <h3 class="space-title">Prostor</h3>
+                <p class="space-letter"><%= space.name[-1] %></p>
+                <p class="space-cost">
+                  <%= surface(space.surface_area)  %> - <%= humanized_money_with_symbol(space.book_price) %> po terminu
+                </p>
+              </div>
+          <% end %>
         </div>
       <% end %>
     </div>

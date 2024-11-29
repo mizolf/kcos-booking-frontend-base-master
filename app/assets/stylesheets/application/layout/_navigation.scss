@@ -48,7 +48,7 @@
 }
 
 .nav-logo-wrapper{
-  position: relative;
+  position: absolute;
   z-index: 1;
   opacity: 1;
   width: 98px;
@@ -145,8 +145,7 @@
     line-height: 1.5rem;
     font-weight: 400;
     text-align: left;
-    margin-top: $gutter;
-    margin-bottom: $gutter;
+    margin-block: 0.75rem;
     color: $white--true;
     text-decoration: none;
   }
