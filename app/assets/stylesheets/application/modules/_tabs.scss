@@ -3,9 +3,8 @@
 .tabs {
   display: flex;
   flex-direction: column;
-  padding-block: 60px;
   width: 100%;
-
+  padding-block-start: 60px;
   @include breakpoint ($medium) {
     flex-direction: row;
   }
@@ -45,13 +44,25 @@
 
 .accordion__item{
   width: 100%;
+  &.active{
+    .solid{
+      border: none;
+    }
+    .btn--faqs{
+      .icon-plus{
+        opacity: 0;
+      }
+      .icon-minus{
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .js-accordion__head{
   cursor: pointer;
   width: 100%;
 }
-
 
 .solid{
   border-top: 1px solid lighten($black--true, 80%);  
