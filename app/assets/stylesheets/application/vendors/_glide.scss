@@ -13,6 +13,8 @@
     position: relative;
     width: 100%;
     box-sizing: border-box;
+    padding-block: 120px 60px;
+
 }
 
 .glide * {
@@ -21,16 +23,18 @@
 
 .glide__track {
     overflow: hidden;
+    height: 480px;
 }
 
 .glide__slides {
     position: relative;
     width: 100%;
+    height: 100%;
     list-style: none;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     touch-action: pan-Y;
-    overflow: visible;
+    overflow: hidden;
     padding: 0;
     white-space: nowrap;
     display: flex;
@@ -43,14 +47,10 @@
     user-select: none;
 }
 
-
 .glide__slide {
-    width: 708px;
-    height: 356px;
     margin-top: 22px;
     margin-bottom: 60px;
     flex-shrink: 0;
-    transition: 0.3s linear;
     white-space: normal;
     user-select: none;
     -webkit-touch-callout: none;
@@ -58,20 +58,13 @@
 }
 
 .glide__slide img{
-    height: 100%;
     width: 100%;
+    height: 356px;
     object-fit: cover;
-}
-
-.glide__slide--active{
-    width: 952px;
-    height: 480px;
 }
 
 .glide__slide--active img{
     height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 .glide__slide a {
