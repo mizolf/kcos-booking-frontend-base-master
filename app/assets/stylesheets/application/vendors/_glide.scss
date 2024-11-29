@@ -61,10 +61,11 @@
     width: 100%;
     height: 356px;
     object-fit: cover;
+    transition: height 0.3s linear;
 }
 
 .glide__slide--active img{
-    height: 100%;
+    height: 480px;
 }
 
 .glide__slide a {
