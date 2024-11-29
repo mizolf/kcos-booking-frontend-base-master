@@ -8,7 +8,7 @@
 <% content_for :edit_meta_tags_link, admin_legal_page_path(@legal_page, tab: 1) %>
 
 
-<div class="layout--main">
+<div class="legal_page layout--main">
     <h2 class="legal_page-title"><%= @legal_page.title %></h2>
     <article class="legal_page-content">
       <%= @legal_page.content.html_safe %>
