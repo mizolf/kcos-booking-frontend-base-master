@@ -4,6 +4,9 @@
 	justify-content: center;
 	margin-top: 3*$gutter;
 	margin-bottom: 3*$gutter;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: $base-font-family;
 }
 
 .pagination > .page {
@@ -25,9 +28,7 @@
   }
 
   &.current {
-    border-radius: 50%;
-    background: $color-primary;
-    color: $white;
+    color: $color-primary;
   }
 }
 

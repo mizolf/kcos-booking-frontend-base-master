@@ -5,6 +5,7 @@
 
 .news-title{
     margin: 0;
+    font-size: 3rem;
 }
 
 .post-title{
@@ -15,8 +16,9 @@
     line-height: 28.8px;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: lighten($black--true,20%);
-    margin: 0;
+    color: $black--true;
+    opacity: 0.8;
+    margin: 0 0 1.5rem 0;
 }
 
 .post-summary{
@@ -27,7 +29,8 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: lighten($black--true,20%);
+    color: $black--true;
+    opacity: 0.8;
     margin: 0;
 }
 
@@ -40,7 +43,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: lighten($black--true,40%);
-
+    margin-top: auto;
 }
 
 .post-image{
@@ -57,4 +60,15 @@
     margin-block-start: 3rem;
     gap: 1.5rem;
     height: 342px;
+}
+
+//news index page
+.news-index__title{
+    font-family: Bree Serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 86.91px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }

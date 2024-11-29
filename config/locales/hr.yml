@@ -1,4 +1,10 @@
 hr:
+  views:
+    pagination:
+      next: ">"
+      last: ">>"
+      previous: "<"
+      first: "<<"
 # ERRORS
   activerecord:
     errors:

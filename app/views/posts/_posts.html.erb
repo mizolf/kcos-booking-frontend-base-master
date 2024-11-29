@@ -1,9 +1,8 @@
-<div class="layout--main">
-  <div id="posts" class="flex flex--column">
-    <% posts.each do |post| %>
+<div id="posts" class="flex flex--column">
+  <% posts.each do |post| %>
     <div class="post-content flex flex--row flex-align--start">
       <%= image_tag post.image_url(:medium), class:'post-image' %>
-      <div class="post-description flex flex--column flex--between flex-align--start">
+      <div class="post-description flex flex--column flex-align--start">
         <%= link_to post_path(post), style: "text-decoration: none;" do %>
           <h3 class="post-title"><%= post.title %></h3>
         <% end %>
@@ -16,7 +15,6 @@
         </span>
       </div>
     </div>
-    <% end %>
-    <%= paginate posts %>
-  </div>
+  <% end %>
+  <%= paginate posts, class: 'pagination' %>
 </div>
